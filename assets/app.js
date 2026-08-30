@@ -114,11 +114,20 @@ export function applyTranslations(root = document) {
   // stay silent: mountChrome translates its own fragment, and a listener that
   // re-mounts on the event would call itself forever.
   if (root === document) {
-    const title = t("meta.title", null);
-    if (title && title !== "meta.title") document.title = title;
-    const desc = document.querySelector('meta[name="description"]');
-    const d = t("meta.description", null);
-    if (desc && d && d !== "meta.description") desc.setAttribute("content", d);
+    // Every page used to take meta.title, so the whole site announced itself
+    // as the home page — in the tab, in a bookmark, and in a shared link. A
+    // page names its own key on <html data-title-key>; only the home page,
+    // which names none, also owns the description.
+    const key = document.documentElement.dataset.titleKey || "meta.title";
+    const val = t(key, null);
+    if (val && val !== key) {
+      document.title = key === "meta.title" ? val : `${val} — gift.ceo`;
+    }
+    if (key === "meta.title") {
+      const desc = document.querySelector('meta[name="description"]');
+      const d = t("meta.description", null);
+      if (desc && d && d !== "meta.description") desc.setAttribute("content", d);
+    }
     document.dispatchEvent(new CustomEvent("i18n:applied", { detail: { lang } }));
   }
 }
@@ -170,6 +179,15 @@ export function safeUrl(raw) {
   let u;
   try { u = new URL(String(raw).trim()); } catch (e) { return null; }
   return (u.protocol === "http:" || u.protocol === "https:") ? u.href : null;
+}
+
+// Logos and photos are shown on an https page, so an http one would break the
+// padlock for the whole page rather than just fail quietly. Anything that is
+// not plainly https is dropped and the initial shows instead.
+export function safeImg(raw) {
+  const u = safeUrl(raw);
+  if (!u) return null;
+  return u.startsWith("https://") ? u : null;
 }
 
 export function el(html) {
@@ -311,10 +329,11 @@ export function giftCard(g, { link = true } = {}) {
   node.querySelector(".body").textContent = g.description || "";
   node.querySelector(".by strong").textContent = g.ceo_name || "";
   const co = node.querySelector(".co");
-  if (g.company_logo_url) {
+  const logo = safeImg(g.company_logo_url);
+  if (logo) {
     const img = document.createElement("img");
     img.className = "logo";
-    img.src = g.company_logo_url;
+    img.src = logo;
     img.alt = "";
     img.loading = "lazy";
     co.appendChild(img);
@@ -339,9 +358,10 @@ export function companyCard(c) {
     </a>`);
   node.querySelector(".nm").textContent = c.name || "";
   const badge = node.querySelector(".initial");
-  if (c.logo_url) {
+  const logo = safeImg(c.logo_url);
+  if (logo) {
     const img = document.createElement("img");
-    img.src = c.logo_url;
+    img.src = logo;
     img.alt = "";
     img.loading = "lazy";
     badge.replaceWith(img);

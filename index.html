@@ -13,7 +13,7 @@
 <meta property="og:description" content="A public list of gifts given personally by CEOs, under their own name and their company's name.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="alternate" hreflang="en" href="https://gift.ceo/?lang=en">
 <link rel="alternate" hreflang="ro" href="https://gift.ceo/?lang=ro">
 <link rel="alternate" hreflang="x-default" href="https://gift.ceo/">
@@ -62,7 +62,7 @@
 
   <section class="section wrap" id="companies">
     <h2><span data-i18n="feed.companies_title">Companies with a seat</span> <span class="count" id="coCount"></span></h2>
-    <div class="companies" id="companies"></div>
+    <div class="companies" id="companyList"></div>
   </section>
 
   <section class="section wrap" style="text-align:center">
@@ -83,10 +83,10 @@
 <footer class="foot" data-footer></footer>
 
 <script type="module">
-import { boot, sb, giftCard, companyCard, t } from "/assets/app.js?v=3";
+import { boot, sb, giftCard, companyCard, t } from "/assets/app.js?v=4";
 
 const feed = document.getElementById("feed");
-const companies = document.getElementById("companies");
+const companies = document.getElementById("companyList");
 
 // Both lists are read straight from the two public views, so what a visitor
 // sees is exactly what the database is willing to show anonymously.
