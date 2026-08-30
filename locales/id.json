@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Di sini hanya direktur utama yang memberi",
+    "description": "Daftar publik pemberian yang dilakukan langsung oleh para direktur utama, atas nama mereka sendiri dan nama perusahaannya. Satu kursi per perusahaan, 10 000 CHF sekali saja, selamanya."
+  },
+  "nav": {
+    "gifts": "Pemberian",
+    "companies": "Perusahaan",
+    "join": "Bergabung",
+    "dashboard": "Dasbor",
+    "signin": "Masuk",
+    "signout": "Keluar",
+    "language": "Bahasa"
+  },
+  "header": {
+    "badge": "🇨🇭 Dibuat di Swiss · Tersedia di seluruh dunia"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Di sini hanya direktur utama yang memberi.",
+    "sub": "Satu kursi per perusahaan. 10 000 CHF, sekali saja, selamanya. Setelah itu berilah sebanyak yang Anda mau."
+  },
+  "intro": {
+    "body": "Setiap pemberian di situs ini dilakukan langsung oleh seorang direktur utama, atas nama dirinya sendiri dan perusahaannya. Sebuah alat gratis untuk dunia. Bonus untuk tim. Saham bagi orang-orang yang membangun perusahaan. Satu hari pendampingan. Tanpa siaran pers, tanpa agensi — hanya seorang direktur yang berkata: inilah yang kami berikan."
+  },
+  "how": {
+    "title": "Cara kerjanya",
+    "step1": "Masuk dengan akun Google perusahaan Anda. Begitulah kami tahu bahwa ini memang perusahaan Anda.",
+    "step2": "Beli kursi perusahaan Anda: 10 000 CHF, sekali saja. Kursi itu milik perusahaan, selamanya — jika Anda pergi, penerus Anda yang mengambil alih.",
+    "step3": "Berikan. Terbitkan sebanyak apa pun pemberian, kapan pun Anda mau, dengan masa berlaku yang Anda pilih sendiri."
+  },
+  "why": {
+    "title": "Mengapa 10 000 CHF, sekali saja",
+    "body": "Ini bukan harga sebuah iklan. Ini sebuah saringan. Hanya direktur yang sungguh ingin memberi yang akan membayar untuk melakukannya secara terbuka, atas namanya sendiri. Itulah yang membuat setiap pemberian di situs ini nyata."
+  },
+  "feed": {
+    "title": "Daftarnya",
+    "body": "Pemberian muncul sesuai urutan diberikannya, bernomor mulai dari #1. Perusahaan muncul sesuai urutan bergabungnya. Tidak ada hal lain untuk dibeli.",
+    "empty": "Belum ada pemberian. Yang pertama akan menjadi #1.",
+    "companies_title": "Perusahaan yang memiliki kursi",
+    "companies_empty": "Belum ada perusahaan.",
+    "given_by": "diberikan oleh",
+    "valid_until": "berlaku sampai",
+    "no_expiry": "tanpa batas waktu",
+    "seat": "Kursi"
+  },
+  "sponsors": {
+    "title": "Sponsor",
+    "rotabo": "Dibuat di Swiss · Tersedia di seluruh dunia"
+  },
+  "cta": {
+    "primary": "Berikan pemberian pertama Anda. →"
+  },
+  "type": {
+    "world": "Pemberian untuk dunia",
+    "team": "Pemberian untuk tim",
+    "equity": "Saham untuk tim",
+    "mentoring": "Satu hari pendampingan"
+  },
+  "state": {
+    "active": "Aktif",
+    "ended": "Selesai",
+    "withdrawn": "Ditarik"
+  },
+  "footer": {
+    "smallprint": "gift.ceo adalah platform penerbitan. Setiap pemberian diterbitkan dan ditandatangani oleh orang yang menyatakan dirinya sebagai direktur utama perusahaan yang disebutkan, melalui akun Google Workspace perusahaan tersebut. Biaya kursi yang dibayarkan sekali tidak dapat dikembalikan. gift.ceo tidak memverifikasi maupun menjamin pemberian yang diuraikan.",
+    "terms": "Ketentuan",
+    "privacy": "Privasi"
+  },
+  "join": {
+    "title": "Ambil kursi perusahaan Anda",
+    "signin_cta": "Masuk dengan Google",
+    "no_hd": "Masuk dengan akun Google Workspace perusahaan Anda (@perusahaananda.com).",
+    "domain_mismatch": "Situs itu tidak cocok dengan domain akun Google Workspace Anda.",
+    "company_name": "Nama perusahaan",
+    "website": "Situs perusahaan",
+    "country": "Negara",
+    "logo": "Logo (opsional)",
+    "ceo_name": "Nama Anda, sebagaimana harus ditampilkan",
+    "linkedin": "LinkedIn (opsional)",
+    "photo": "Foto (opsional)",
+    "declaration": "Saya adalah direktur utama (atau pejabat tertinggi setara) perusahaan ini dan berwenang menerbitkan atas namanya.",
+    "terms_accept": "Saya telah membaca dan menerima Ketentuan.",
+    "submit": "Lanjut ke pembayaran — 10 000 CHF",
+    "takeover_title": "Perusahaan ini sudah punya kursi",
+    "takeover_body": "Seseorang dari perusahaan Anda sudah membeli kursinya. Anda dapat mengambil alih sebagai direktur utama yang menjabat. Pemberian yang sudah terbit tetap mencantumkan nama orang yang memberikannya.",
+    "takeover_cta": "Ambil alih kursi ini"
+  },
+  "thanks": {
+    "title": "Kursi Anda sedang diaktifkan…",
+    "body": "Pembayaran diterima. Halaman ini akan berlanjut sendiri begitu kursi aktif.",
+    "waiting": "Menunggu konfirmasi…"
+  },
+  "dashboard": {
+    "title": "Pemberian Anda",
+    "give": "Beri sesuatu",
+    "no_gifts": "Anda belum memberikan apa pun.",
+    "edit": "Ubah",
+    "end_now": "Akhiri pemberian ini sekarang",
+    "profile": "Profil Anda",
+    "company": "Perusahaan Anda",
+    "save": "Simpan",
+    "form_type": "Jenis pemberian apa",
+    "form_title": "Judul",
+    "form_description": "Deskripsi",
+    "form_claim": "Cara mendapatkannya",
+    "form_link": "Tautan (opsional)",
+    "form_valid": "Berlaku sampai",
+    "form_no_expiry": "Biarkan kosong jika tanpa batas waktu.",
+    "publish": "Terbitkan",
+    "cancel": "Batal",
+    "seat_pending": "Kursi Anda belum aktif."
+  },
+  "company_page": {
+    "seat": "Kursi",
+    "current_ceo": "Direktur utama saat ini",
+    "history": "Semua pemberian",
+    "website": "Situs web"
+  },
+  "errors": {
+    "generic": "Terjadi kesalahan. Silakan coba lagi.",
+    "not_signed_in": "Silakan masuk terlebih dahulu.",
+    "not_found": "Tidak ditemukan."
+  }
+}

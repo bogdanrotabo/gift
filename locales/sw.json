@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Hapa watoao ni wakurugenzi wakuu pekee",
+    "description": "Orodha ya wazi ya zawadi ambazo wakurugenzi wakuu hutoa wenyewe, kwa majina yao na ya kampuni zao. Kiti kimoja kwa kila kampuni, CHF 10 000 mara moja, milele."
+  },
+  "nav": {
+    "gifts": "Zawadi",
+    "companies": "Kampuni",
+    "join": "Jiunge",
+    "dashboard": "Dashibodi",
+    "signin": "Ingia",
+    "signout": "Toka",
+    "language": "Lugha"
+  },
+  "header": {
+    "badge": "🇨🇭 Imetengenezwa Uswisi · Inapatikana duniani kote"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Hapa watoao ni wakurugenzi wakuu pekee.",
+    "sub": "Kiti kimoja kwa kila kampuni. CHF 10 000, mara moja, milele. Kisha toa kadri unavyotaka."
+  },
+  "intro": {
+    "body": "Kila zawadi kwenye tovuti hii hutolewa na mkurugenzi mkuu mwenyewe, kwa jina lake na la kampuni yake. Zana ya bure kwa dunia. Bonasi kwa timu. Hisa kwa waliojenga kampuni. Siku moja ya ushauri. Hakuna taarifa kwa vyombo vya habari, hakuna mashirika — ni mkurugenzi tu anayesema: hiki ndicho tunachotoa."
+  },
+  "how": {
+    "title": "Jinsi inavyofanya kazi",
+    "step1": "Ingia kwa akaunti ya Google ya kampuni yako. Hivyo ndivyo tunavyojua kuwa ni kampuni yako kweli.",
+    "step2": "Nunua kiti cha kampuni yako: CHF 10 000, mara moja. Ni mali ya kampuni, milele — ukiondoka, mrithi wako anakichukua.",
+    "step3": "Toa. Chapisha zawadi nyingi upendavyo, wakati wowote, kwa tarehe ya mwisho unayochagua mwenyewe."
+  },
+  "why": {
+    "title": "Kwa nini CHF 10 000, mara moja",
+    "body": "Hii si bei ya tangazo. Ni kichujio. Ni mkurugenzi anayetaka kutoa kwa dhati pekee atakayelipa ili afanye hivyo hadharani, kwa jina lake mwenyewe. Ndicho kinachofanya kila zawadi kwenye tovuti hii kuwa ya kweli."
+  },
+  "feed": {
+    "title": "Orodha",
+    "body": "Zawadi huonekana kwa mpangilio zilivyotolewa, zikihesabiwa kuanzia #1. Kampuni huonekana kwa mpangilio zilivyojiunga. Hakuna kingine cha kununua.",
+    "empty": "Bado hakuna zawadi. Ya kwanza itakuwa #1.",
+    "companies_title": "Kampuni zenye kiti",
+    "companies_empty": "Bado hakuna kampuni.",
+    "given_by": "imetolewa na",
+    "valid_until": "inafaa hadi",
+    "no_expiry": "bila mwisho",
+    "seat": "Kiti"
+  },
+  "sponsors": {
+    "title": "Wafadhili",
+    "rotabo": "Imetengenezwa Uswisi · Inapatikana duniani kote"
+  },
+  "cta": {
+    "primary": "Toa zawadi yako ya kwanza. →"
+  },
+  "type": {
+    "world": "Zawadi kwa dunia",
+    "team": "Zawadi kwa timu",
+    "equity": "Hisa kwa timu",
+    "mentoring": "Siku moja ya ushauri"
+  },
+  "state": {
+    "active": "Inaendelea",
+    "ended": "Imekwisha",
+    "withdrawn": "Imeondolewa"
+  },
+  "footer": {
+    "smallprint": "gift.ceo ni jukwaa la kuchapisha. Kila zawadi huchapishwa na kutiwa saini na mtu aliyetangaza kuwa yeye ni mkurugenzi mkuu wa kampuni iliyotajwa, kwa kutumia akaunti ya Google Workspace ya kampuni hiyo. Ada ya kiti inayolipwa mara moja hairejeshwi. gift.ceo haithibitishi wala haihakikishi zawadi zilizoelezwa.",
+    "terms": "Masharti",
+    "privacy": "Faragha"
+  },
+  "join": {
+    "title": "Chukua kiti cha kampuni yako",
+    "signin_cta": "Ingia kwa Google",
+    "no_hd": "Ingia kwa akaunti ya Google Workspace ya kampuni yako (@kampuniyako.com).",
+    "domain_mismatch": "Tovuti hiyo hailingani na kikoa cha akaunti yako ya Google Workspace.",
+    "company_name": "Jina la kampuni",
+    "website": "Tovuti ya kampuni",
+    "country": "Nchi",
+    "logo": "Nembo (si lazima)",
+    "ceo_name": "Jina lako, kama linavyopaswa kuonekana",
+    "linkedin": "LinkedIn (si lazima)",
+    "photo": "Picha (si lazima)",
+    "declaration": "Mimi ni mkurugenzi mkuu (au kiongozi mkuu sawa na huyo) wa kampuni hii na nina idhini ya kuchapisha kwa niaba yake.",
+    "terms_accept": "Nimesoma Masharti na ninayakubali.",
+    "submit": "Endelea kwenye malipo — CHF 10 000",
+    "takeover_title": "Kampuni hii tayari ina kiti",
+    "takeover_body": "Mtu kutoka kampuni yako tayari amenunua kiti. Unaweza kukichukua ukiwa mkurugenzi wa sasa. Zawadi zilizochapishwa tayari zinabaki na jina la aliyezitoa.",
+    "takeover_cta": "Chukua kiti hiki"
+  },
+  "thanks": {
+    "title": "Kiti chako kinawashwa…",
+    "body": "Malipo yamepokelewa. Ukurasa huu utaendelea wenyewe mara kiti kitakapokuwa hai.",
+    "waiting": "Tunasubiri uthibitisho…"
+  },
+  "dashboard": {
+    "title": "Zawadi zako",
+    "give": "Toa zawadi",
+    "no_gifts": "Bado hujatoa chochote.",
+    "edit": "Hariri",
+    "end_now": "Maliza zawadi hii sasa",
+    "profile": "Wasifu wako",
+    "company": "Kampuni yako",
+    "save": "Hifadhi",
+    "form_type": "Aina gani ya zawadi",
+    "form_title": "Kichwa",
+    "form_description": "Maelezo",
+    "form_claim": "Jinsi ya kuidai",
+    "form_link": "Kiungo (si lazima)",
+    "form_valid": "Inafaa hadi",
+    "form_no_expiry": "Acha wazi ikiwa haina mwisho.",
+    "publish": "Chapisha",
+    "cancel": "Ghairi",
+    "seat_pending": "Kiti chako bado hakijawashwa."
+  },
+  "company_page": {
+    "seat": "Kiti",
+    "current_ceo": "Mkurugenzi mkuu wa sasa",
+    "history": "Zawadi zote",
+    "website": "Tovuti"
+  },
+  "errors": {
+    "generic": "Kuna hitilafu. Tafadhali jaribu tena.",
+    "not_signed_in": "Tafadhali ingia kwanza.",
+    "not_found": "Haikupatikana."
+  }
+}

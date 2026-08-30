@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — 此处只有首席执行官赠予",
+    "description": "首席执行官以本人及公司名义亲自赠予的礼物公开名录。每家公司一个席位，一次性 10 000 瑞士法郎，永久有效。"
+  },
+  "nav": {
+    "gifts": "礼物",
+    "companies": "公司",
+    "join": "加入",
+    "dashboard": "控制台",
+    "signin": "登录",
+    "signout": "退出",
+    "language": "语言"
+  },
+  "header": {
+    "badge": "🇨🇭 瑞士制造 · 全球可用"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "此处只有首席执行官赠予。",
+    "sub": "每家公司一个席位。10 000 瑞士法郎，一次，永久有效。此后想赠多少就赠多少。"
+  },
+  "intro": {
+    "body": "本站每一份礼物，都由一位首席执行官以本人及公司名义亲自赠出。一件免费的工具，献给世界。一笔给团队的奖金。给建起这家公司的人的股权。一天的指导。没有新闻稿，没有代理机构——只有一位首席执行官说：这就是我们所赠。"
+  },
+  "how": {
+    "title": "运作方式",
+    "step1": "用贵公司的 Google 账号登录。我们据此确认这确实是您的公司。",
+    "step2": "购买贵公司的席位：10 000 瑞士法郎，一次。席位属于公司，永久有效——您若离任，由继任者接手。",
+    "step3": "赠予。想发布多少礼物就发布多少，随时发布，有效期由您自定。"
+  },
+  "why": {
+    "title": "为何一次性 10 000 瑞士法郎",
+    "body": "这不是广告的价格，而是一道筛子。只有真心想赠予的首席执行官，才会付钱以本人名义公开去做。正因如此，本站的每一份礼物都是真的。"
+  },
+  "feed": {
+    "title": "名录",
+    "body": "礼物按赠出的先后顺序排列，自 #1 起编号。公司按加入的先后顺序排列。此外别无可买之物。",
+    "empty": "尚无礼物。第一份将是 #1。",
+    "companies_title": "已有席位的公司",
+    "companies_empty": "尚无公司。",
+    "given_by": "赠予者",
+    "valid_until": "有效期至",
+    "no_expiry": "无期限",
+    "seat": "席位"
+  },
+  "sponsors": {
+    "title": "赞助方",
+    "rotabo": "瑞士制造 · 全球可用"
+  },
+  "cta": {
+    "primary": "赠出您的第一份礼物。→"
+  },
+  "type": {
+    "world": "赠予世界的礼物",
+    "team": "赠予团队的礼物",
+    "equity": "给团队的股权",
+    "mentoring": "一天的指导"
+  },
+  "state": {
+    "active": "有效",
+    "ended": "已结束",
+    "withdrawn": "已撤回"
+  },
+  "footer": {
+    "smallprint": "gift.ceo 是一个发布平台。每份礼物均由自称为所述公司首席执行官的本人，通过该公司的 Google Workspace 账号发布并署名。席位的一次性费用不予退还。gift.ceo 不核实亦不担保所述礼物。",
+    "terms": "条款",
+    "privacy": "隐私"
+  },
+  "join": {
+    "title": "取得贵公司的席位",
+    "signin_cta": "使用 Google 登录",
+    "no_hd": "请使用贵公司的 Google Workspace 账号登录（@yourcompany.com）。",
+    "domain_mismatch": "该网址与您 Google Workspace 账号的域名不符。",
+    "company_name": "公司名称",
+    "website": "公司网站",
+    "country": "国家或地区",
+    "logo": "标志（可选）",
+    "ceo_name": "您的姓名，按希望显示的写法",
+    "linkedin": "LinkedIn（可选）",
+    "photo": "照片（可选）",
+    "declaration": "我是本公司的首席执行官（或同级最高负责人），有权代表本公司发布。",
+    "terms_accept": "我已阅读并接受条款。",
+    "submit": "前往付款 — 10 000 瑞士法郎",
+    "takeover_title": "该公司已有席位",
+    "takeover_body": "贵公司已有人购买了席位。您可以作为现任首席执行官接手。已发布的礼物仍保留原赠予者的姓名。",
+    "takeover_cta": "接手该席位"
+  },
+  "thanks": {
+    "title": "正在启用您的席位…",
+    "body": "款项已收到。席位一旦启用，本页会自行继续。",
+    "waiting": "等待确认…"
+  },
+  "dashboard": {
+    "title": "您的礼物",
+    "give": "赠予礼物",
+    "no_gifts": "您还未赠出任何礼物。",
+    "edit": "编辑",
+    "end_now": "立即结束此礼物",
+    "profile": "您的资料",
+    "company": "您的公司",
+    "save": "保存",
+    "form_type": "何种礼物",
+    "form_title": "标题",
+    "form_description": "说明",
+    "form_claim": "领取方式",
+    "form_link": "链接（可选）",
+    "form_valid": "有效期至",
+    "form_no_expiry": "留空表示无期限。",
+    "publish": "发布",
+    "cancel": "取消",
+    "seat_pending": "您的席位尚未启用。"
+  },
+  "company_page": {
+    "seat": "席位",
+    "current_ceo": "现任首席执行官",
+    "history": "全部礼物",
+    "website": "网站"
+  },
+  "errors": {
+    "generic": "出了点问题，请重试。",
+    "not_signed_in": "请先登录。",
+    "not_found": "未找到。"
+  }
+}

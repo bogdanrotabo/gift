@@ -167,5 +167,5 @@ the module are therefore referenced with a version query:
 changes**, or the change will not reach anyone who has already visited:
 
 ```bash
-sed -i "s/?v=3/?v=4/g" *.html
+sed -i "s/?v=5/?v=6/g" *.html
 ```

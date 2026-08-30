@@ -60,8 +60,10 @@ export const LANGS = [
 ];
 
 // Translated so far. Adding a language is one file in /locales plus its code
-// here — nothing else in the site needs to know.
-export const READY = new Set(["en", "ro"]);
+// here — nothing else in the site needs to know. All 38 are in, so this is the
+// same list as LANGS; it stays separate because a language should only be
+// offered once its file exists, and that is worth being able to say no to.
+export const READY = new Set(LANGS.map(l => l.code));
 
 const RTL = new Set(["ar", "ur"]);
 const STORAGE_KEY = "giftceo.lang";

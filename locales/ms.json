@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Di sini hanya ketua pegawai eksekutif yang memberi",
+    "description": "Senarai awam pemberian yang dibuat sendiri oleh ketua pegawai eksekutif, atas nama mereka dan nama syarikat mereka. Satu tempat bagi setiap syarikat, 10 000 CHF sekali sahaja, selamanya."
+  },
+  "nav": {
+    "gifts": "Pemberian",
+    "companies": "Syarikat",
+    "join": "Sertai",
+    "dashboard": "Papan pemuka",
+    "signin": "Log masuk",
+    "signout": "Log keluar",
+    "language": "Bahasa"
+  },
+  "header": {
+    "badge": "🇨🇭 Dibuat di Switzerland · Tersedia di seluruh dunia"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Di sini hanya ketua pegawai eksekutif yang memberi.",
+    "sub": "Satu tempat bagi setiap syarikat. 10 000 CHF, sekali sahaja, selamanya. Selepas itu berilah sebanyak yang anda mahu."
+  },
+  "intro": {
+    "body": "Setiap pemberian di laman ini dibuat sendiri oleh seorang ketua pegawai eksekutif, atas namanya dan nama syarikatnya. Alat percuma untuk dunia. Bonus untuk pasukan. Ekuiti untuk mereka yang membina syarikat. Sehari bimbingan. Tiada kenyataan akhbar, tiada agensi — hanya seorang ketua yang berkata: inilah yang kami beri."
+  },
+  "how": {
+    "title": "Cara ia berfungsi",
+    "step1": "Log masuk dengan akaun Google syarikat anda. Begitulah kami tahu ia memang syarikat anda.",
+    "step2": "Beli tempat syarikat anda: 10 000 CHF, sekali sahaja. Tempat itu milik syarikat, selamanya — jika anda berundur, pengganti anda mengambil alih.",
+    "step3": "Berilah. Terbitkan seberapa banyak pemberian yang anda mahu, bila-bila masa, dengan tarikh sah yang anda pilih sendiri."
+  },
+  "why": {
+    "title": "Mengapa 10 000 CHF, sekali sahaja",
+    "body": "Ini bukan harga iklan. Ini penapis. Hanya ketua yang benar-benar ingin memberi akan membayar untuk melakukannya secara terbuka, atas namanya sendiri. Itulah yang menjadikan setiap pemberian di laman ini benar."
+  },
+  "feed": {
+    "title": "Senarai",
+    "body": "Pemberian muncul mengikut susunan ia diberikan, bernombor bermula dari #1. Syarikat muncul mengikut susunan ia menyertai. Tiada apa-apa lagi untuk dibeli.",
+    "empty": "Belum ada pemberian. Yang pertama akan menjadi #1.",
+    "companies_title": "Syarikat yang mempunyai tempat",
+    "companies_empty": "Belum ada syarikat.",
+    "given_by": "diberikan oleh",
+    "valid_until": "sah sehingga",
+    "no_expiry": "tanpa tarikh tamat",
+    "seat": "Tempat"
+  },
+  "sponsors": {
+    "title": "Penaja",
+    "rotabo": "Dibuat di Switzerland · Tersedia di seluruh dunia"
+  },
+  "cta": {
+    "primary": "Berikan pemberian pertama anda. →"
+  },
+  "type": {
+    "world": "Pemberian kepada dunia",
+    "team": "Pemberian kepada pasukan",
+    "equity": "Ekuiti untuk pasukan",
+    "mentoring": "Sehari bimbingan"
+  },
+  "state": {
+    "active": "Aktif",
+    "ended": "Tamat",
+    "withdrawn": "Ditarik balik"
+  },
+  "footer": {
+    "smallprint": "gift.ceo ialah platform penerbitan. Setiap pemberian diterbitkan dan ditandatangani oleh orang yang mengaku dirinya ketua pegawai eksekutif syarikat yang dinamakan, menggunakan akaun Google Workspace syarikat tersebut. Bayaran sekali untuk tempat tidak akan dikembalikan. gift.ceo tidak mengesahkan dan tidak menjamin pemberian yang dinyatakan.",
+    "terms": "Terma",
+    "privacy": "Privasi"
+  },
+  "join": {
+    "title": "Ambil tempat syarikat anda",
+    "signin_cta": "Log masuk dengan Google",
+    "no_hd": "Log masuk dengan akaun Google Workspace syarikat anda (@syarikatanda.com).",
+    "domain_mismatch": "Laman itu tidak sepadan dengan domain akaun Google Workspace anda.",
+    "company_name": "Nama syarikat",
+    "website": "Laman web syarikat",
+    "country": "Negara",
+    "logo": "Logo (pilihan)",
+    "ceo_name": "Nama anda, sebagaimana yang patut dipaparkan",
+    "linkedin": "LinkedIn (pilihan)",
+    "photo": "Gambar (pilihan)",
+    "declaration": "Saya ialah ketua pegawai eksekutif (atau pegawai tertinggi yang setara) syarikat ini dan diberi kuasa untuk menerbitkan bagi pihaknya.",
+    "terms_accept": "Saya telah membaca dan menerima Terma.",
+    "submit": "Teruskan ke pembayaran — 10 000 CHF",
+    "takeover_title": "Syarikat ini sudah mempunyai tempat",
+    "takeover_body": "Seseorang dari syarikat anda sudah membeli tempat itu. Anda boleh mengambil alih sebagai ketua yang sedang memegang jawatan. Pemberian yang sudah diterbitkan kekal dengan nama orang yang memberikannya.",
+    "takeover_cta": "Ambil alih tempat ini"
+  },
+  "thanks": {
+    "title": "Tempat anda sedang diaktifkan…",
+    "body": "Pembayaran diterima. Halaman ini akan meneruskan sendiri sebaik sahaja tempat itu aktif.",
+    "waiting": "Menunggu pengesahan…"
+  },
+  "dashboard": {
+    "title": "Pemberian anda",
+    "give": "Beri sesuatu",
+    "no_gifts": "Anda belum memberi apa-apa.",
+    "edit": "Sunting",
+    "end_now": "Tamatkan pemberian ini sekarang",
+    "profile": "Profil anda",
+    "company": "Syarikat anda",
+    "save": "Simpan",
+    "form_type": "Jenis pemberian apa",
+    "form_title": "Tajuk",
+    "form_description": "Penerangan",
+    "form_claim": "Cara menuntutnya",
+    "form_link": "Pautan (pilihan)",
+    "form_valid": "Sah sehingga",
+    "form_no_expiry": "Biarkan kosong jika tiada tarikh tamat.",
+    "publish": "Terbitkan",
+    "cancel": "Batal",
+    "seat_pending": "Tempat anda belum aktif."
+  },
+  "company_page": {
+    "seat": "Tempat",
+    "current_ceo": "Ketua pegawai eksekutif semasa",
+    "history": "Semua pemberian",
+    "website": "Laman web"
+  },
+  "errors": {
+    "generic": "Ada sesuatu tidak kena. Sila cuba lagi.",
+    "not_signed_in": "Sila log masuk dahulu.",
+    "not_found": "Tidak dijumpai."
+  }
+}

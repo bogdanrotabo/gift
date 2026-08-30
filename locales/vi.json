@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Ở đây chỉ có tổng giám đốc tặng",
+    "description": "Danh sách công khai những món quà do các tổng giám đốc đích thân trao, dưới tên mình và tên công ty mình. Mỗi công ty một chỗ, 10 000 CHF một lần, mãi mãi."
+  },
+  "nav": {
+    "gifts": "Quà tặng",
+    "companies": "Công ty",
+    "join": "Tham gia",
+    "dashboard": "Bảng điều khiển",
+    "signin": "Đăng nhập",
+    "signout": "Đăng xuất",
+    "language": "Ngôn ngữ"
+  },
+  "header": {
+    "badge": "🇨🇭 Làm tại Thụy Sĩ · Dùng được trên toàn thế giới"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Ở đây chỉ có tổng giám đốc tặng.",
+    "sub": "Mỗi công ty một chỗ. 10 000 CHF, một lần, mãi mãi. Sau đó tặng bao nhiêu tùy bạn."
+  },
+  "intro": {
+    "body": "Mọi món quà trên trang này đều do một tổng giám đốc đích thân trao, dưới tên mình và tên công ty mình. Một công cụ miễn phí cho thế giới. Một khoản thưởng cho đội ngũ. Cổ phần cho những người đã dựng nên công ty. Một ngày cố vấn. Không thông cáo báo chí, không đại lý — chỉ một tổng giám đốc nói: đây là thứ chúng tôi tặng."
+  },
+  "how": {
+    "title": "Cách hoạt động",
+    "step1": "Đăng nhập bằng tài khoản Google của công ty bạn. Đó là cách chúng tôi biết đây đúng là công ty của bạn.",
+    "step2": "Mua chỗ cho công ty bạn: 10 000 CHF, một lần. Chỗ đó thuộc về công ty, mãi mãi — nếu bạn rời đi, người kế nhiệm sẽ tiếp quản.",
+    "step3": "Hãy tặng. Đăng bao nhiêu món quà tùy ý, vào lúc nào tùy ý, với ngày hiệu lực do bạn chọn."
+  },
+  "why": {
+    "title": "Vì sao 10 000 CHF, một lần",
+    "body": "Đây không phải giá một mẩu quảng cáo. Đây là một bộ lọc. Chỉ tổng giám đốc thật lòng muốn tặng mới trả tiền để làm điều đó công khai, dưới tên mình. Chính điều đó khiến mọi món quà trên trang này là thật."
+  },
+  "feed": {
+    "title": "Danh sách",
+    "body": "Quà tặng xuất hiện theo thứ tự được trao, đánh số từ #1. Công ty xuất hiện theo thứ tự tham gia. Không còn gì khác để mua.",
+    "empty": "Chưa có món quà nào. Món đầu tiên sẽ là #1.",
+    "companies_title": "Công ty đã có chỗ",
+    "companies_empty": "Chưa có công ty nào.",
+    "given_by": "được tặng bởi",
+    "valid_until": "có hiệu lực đến",
+    "no_expiry": "không hạn",
+    "seat": "Chỗ"
+  },
+  "sponsors": {
+    "title": "Nhà tài trợ",
+    "rotabo": "Làm tại Thụy Sĩ · Dùng được trên toàn thế giới"
+  },
+  "cta": {
+    "primary": "Trao món quà đầu tiên của bạn. →"
+  },
+  "type": {
+    "world": "Một món quà cho thế giới",
+    "team": "Một món quà cho đội ngũ",
+    "equity": "Cổ phần cho đội ngũ",
+    "mentoring": "Một ngày cố vấn"
+  },
+  "state": {
+    "active": "Đang có hiệu lực",
+    "ended": "Đã kết thúc",
+    "withdrawn": "Đã rút"
+  },
+  "footer": {
+    "smallprint": "gift.ceo là một nền tảng đăng tải. Mỗi món quà được đăng và ký bởi người đã tuyên bố mình là tổng giám đốc của công ty nêu tên, thông qua tài khoản Google Workspace của chính công ty đó. Khoản phí một lần cho chỗ không được hoàn lại. gift.ceo không kiểm chứng và không bảo đảm những món quà được mô tả.",
+    "terms": "Điều khoản",
+    "privacy": "Quyền riêng tư"
+  },
+  "join": {
+    "title": "Nhận chỗ cho công ty bạn",
+    "signin_cta": "Đăng nhập bằng Google",
+    "no_hd": "Đăng nhập bằng tài khoản Google Workspace của công ty bạn (@congtycuaban.com).",
+    "domain_mismatch": "Trang web đó không khớp với tên miền tài khoản Google Workspace của bạn.",
+    "company_name": "Tên công ty",
+    "website": "Trang web công ty",
+    "country": "Quốc gia",
+    "logo": "Biểu trưng (không bắt buộc)",
+    "ceo_name": "Tên của bạn, theo cách bạn muốn hiển thị",
+    "linkedin": "LinkedIn (không bắt buộc)",
+    "photo": "Ảnh (không bắt buộc)",
+    "declaration": "Tôi là tổng giám đốc (hoặc lãnh đạo cao nhất tương đương) của công ty này và được phép đăng tải nhân danh công ty.",
+    "terms_accept": "Tôi đã đọc và chấp nhận Điều khoản.",
+    "submit": "Tiếp tục thanh toán — 10 000 CHF",
+    "takeover_title": "Công ty này đã có chỗ",
+    "takeover_body": "Một người ở công ty bạn đã mua chỗ này. Bạn có thể tiếp quản với tư cách tổng giám đốc đương nhiệm. Những món quà đã đăng vẫn giữ tên người đã trao.",
+    "takeover_cta": "Tiếp quản chỗ này"
+  },
+  "thanks": {
+    "title": "Chỗ của bạn đang được kích hoạt…",
+    "body": "Đã nhận thanh toán. Trang này sẽ tự đi tiếp ngay khi chỗ hoạt động.",
+    "waiting": "Đang chờ xác nhận…"
+  },
+  "dashboard": {
+    "title": "Quà tặng của bạn",
+    "give": "Trao một món quà",
+    "no_gifts": "Bạn chưa trao gì cả.",
+    "edit": "Sửa",
+    "end_now": "Kết thúc món quà này ngay",
+    "profile": "Hồ sơ của bạn",
+    "company": "Công ty của bạn",
+    "save": "Lưu",
+    "form_type": "Loại quà nào",
+    "form_title": "Tiêu đề",
+    "form_description": "Mô tả",
+    "form_claim": "Cách nhận",
+    "form_link": "Liên kết (không bắt buộc)",
+    "form_valid": "Có hiệu lực đến",
+    "form_no_expiry": "Để trống nếu không có hạn.",
+    "publish": "Đăng",
+    "cancel": "Hủy",
+    "seat_pending": "Chỗ của bạn chưa hoạt động."
+  },
+  "company_page": {
+    "seat": "Chỗ",
+    "current_ceo": "Tổng giám đốc đương nhiệm",
+    "history": "Tất cả quà tặng",
+    "website": "Trang web"
+  },
+  "errors": {
+    "generic": "Có lỗi xảy ra. Vui lòng thử lại.",
+    "not_signed_in": "Vui lòng đăng nhập trước.",
+    "not_found": "Không tìm thấy."
+  }
+}

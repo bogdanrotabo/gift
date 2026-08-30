@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Burada yalnızca genel müdürler verir",
+    "description": "Genel müdürlerin kendi adlarına ve şirketlerinin adına bizzat yaptığı hediyelerin kamuya açık listesi. Şirket başına bir yer, bir defaya mahsus 10 000 CHF, sonsuza dek."
+  },
+  "nav": {
+    "gifts": "Hediyeler",
+    "companies": "Şirketler",
+    "join": "Katıl",
+    "dashboard": "Panel",
+    "signin": "Giriş yap",
+    "signout": "Çıkış yap",
+    "language": "Dil"
+  },
+  "header": {
+    "badge": "🇨🇭 İsviçre'de yapıldı · Dünya genelinde kullanılabilir"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Burada yalnızca genel müdürler verir.",
+    "sub": "Şirket başına bir yer. 10 000 CHF, bir defa, sonsuza dek. Sonra istediğiniz kadar verirsiniz."
+  },
+  "intro": {
+    "body": "Bu sitedeki her hediyeyi bir genel müdür, kendi adına ve şirketinin adına bizzat verir. Dünyaya ücretsiz bir araç. Ekibe bir ikramiye. Şirketi kuranlara hisse. Bir günlük mentorluk. Basın bülteni yok, ajans yok — sadece şunu söyleyen bir genel müdür: işte verdiğimiz bu."
+  },
+  "how": {
+    "title": "Nasıl işliyor",
+    "step1": "Şirketinizin Google hesabıyla giriş yapın. Gerçekten sizin şirketiniz olduğunu böyle biliyoruz.",
+    "step2": "Şirketinizin yerini satın alın: 10 000 CHF, bir defa. Yer şirkete aittir, sonsuza dek — siz ayrılırsanız, yerinize gelen devralır.",
+    "step3": "Verin. İstediğiniz kadar hediyeyi, istediğiniz zaman, kendi seçtiğiniz geçerlilik tarihiyle yayımlayın."
+  },
+  "why": {
+    "title": "Neden bir defaya mahsus 10 000 CHF",
+    "body": "Bu bir reklamın fiyatı değil. Bu bir filtre. Yalnızca gerçekten vermek isteyen bir genel müdür, bunu herkesin önünde ve kendi adıyla yapmak için para öder. Bu sitedeki her hediyeyi gerçek kılan da tam olarak budur."
+  },
+  "feed": {
+    "title": "Liste",
+    "body": "Hediyeler verildikleri sırayla, #1'den başlayarak numaralanmış olarak görünür. Şirketler katıldıkları sırayla görünür. Satın alınacak başka bir şey yok.",
+    "empty": "Henüz hediye yok. İlki #1 olacak.",
+    "companies_title": "Yeri olan şirketler",
+    "companies_empty": "Henüz şirket yok.",
+    "given_by": "veren",
+    "valid_until": "şu tarihe kadar geçerli",
+    "no_expiry": "süresiz",
+    "seat": "Yer"
+  },
+  "sponsors": {
+    "title": "Sponsorlar",
+    "rotabo": "İsviçre'de yapıldı · Dünya genelinde kullanılabilir"
+  },
+  "cta": {
+    "primary": "İlk hediyenizi verin. →"
+  },
+  "type": {
+    "world": "Dünyaya bir hediye",
+    "team": "Ekibe bir hediye",
+    "equity": "Ekibe hisse",
+    "mentoring": "Bir günlük mentorluk"
+  },
+  "state": {
+    "active": "Etkin",
+    "ended": "Sona erdi",
+    "withdrawn": "Geri çekildi"
+  },
+  "footer": {
+    "smallprint": "gift.ceo bir yayımlama platformudur. Her hediye, adı geçen şirketin genel müdürü olduğunu beyan eden kişi tarafından, o şirketin Google Workspace hesabı kullanılarak yayımlanır ve imzalanır. Yer için alınan tek seferlik ücret iade edilmez. gift.ceo, anlatılan hediyeleri doğrulamaz ve garanti etmez.",
+    "terms": "Koşullar",
+    "privacy": "Gizlilik"
+  },
+  "join": {
+    "title": "Şirketinizin yerini alın",
+    "signin_cta": "Google ile giriş yap",
+    "no_hd": "Şirketinizin Google Workspace hesabıyla giriş yapın (@sirketiniz.com).",
+    "domain_mismatch": "Bu web sitesi Google Workspace hesabınızın alan adıyla eşleşmiyor.",
+    "company_name": "Şirket adı",
+    "website": "Şirket web sitesi",
+    "country": "Ülke",
+    "logo": "Logo (isteğe bağlı)",
+    "ceo_name": "Adınız, görünmesini istediğiniz biçimde",
+    "linkedin": "LinkedIn (isteğe bağlı)",
+    "photo": "Fotoğraf (isteğe bağlı)",
+    "declaration": "Bu şirketin genel müdürüyüm (ya da eşdeğer en üst yöneticisiyim) ve onun adına yayım yapmaya yetkiliyim.",
+    "terms_accept": "Koşulları okudum ve kabul ediyorum.",
+    "submit": "Ödemeye geç — 10 000 CHF",
+    "takeover_title": "Bu şirketin zaten bir yeri var",
+    "takeover_body": "Şirketinizden biri yeri çoktan satın almış. Görevdeki genel müdür olarak devralabilirsiniz. Zaten yayımlanmış hediyeler, onları verenin adını korur.",
+    "takeover_cta": "Bu yeri devral"
+  },
+  "thanks": {
+    "title": "Yeriniz etkinleştiriliyor…",
+    "body": "Ödeme alındı. Yer etkinleşir etkinleşmez bu sayfa kendiliğinden devam edecek.",
+    "waiting": "Onay bekleniyor…"
+  },
+  "dashboard": {
+    "title": "Hediyeleriniz",
+    "give": "Bir hediye ver",
+    "no_gifts": "Henüz hiçbir şey vermediniz.",
+    "edit": "Düzenle",
+    "end_now": "Bu hediyeyi şimdi sonlandır",
+    "profile": "Profiliniz",
+    "company": "Şirketiniz",
+    "save": "Kaydet",
+    "form_type": "Ne tür bir hediye",
+    "form_title": "Başlık",
+    "form_description": "Açıklama",
+    "form_claim": "Nasıl alınır",
+    "form_link": "Bağlantı (isteğe bağlı)",
+    "form_valid": "Şu tarihe kadar geçerli",
+    "form_no_expiry": "Süresiz olması için boş bırakın.",
+    "publish": "Yayımla",
+    "cancel": "Vazgeç",
+    "seat_pending": "Yeriniz henüz etkin değil."
+  },
+  "company_page": {
+    "seat": "Yer",
+    "current_ceo": "Görevdeki genel müdür",
+    "history": "Tüm hediyeler",
+    "website": "Web sitesi"
+  },
+  "errors": {
+    "generic": "Bir şeyler ters gitti. Lütfen yeniden deneyin.",
+    "not_signed_in": "Lütfen önce giriş yapın.",
+    "not_found": "Bulunamadı."
+  }
+}
