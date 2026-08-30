@@ -169,3 +169,19 @@ changes**, or the change will not reach anyone who has already visited:
 ```bash
 sed -i "s/?v=5/?v=6/g" *.html
 ```
+
+## Search Console
+
+Verified on 30 August 2026 as a **URL-prefix property** for `https://gift.ceo/`,
+by the HTML-file method. `google1b1bcf074b1dcccd.html` sits in the repo root
+and must not be deleted — verification is re-checked, and losing the file
+loses the property along with the sitemap and every indexing request attached
+to it.
+
+The DNS-TXT route was tried first, for a domain property that would have
+covered www and http too. Porkbun's record form did not persist the value and
+the authoritative nameserver kept answering with no TXT at all, so the file
+method won. If a domain property is wanted later, the TXT is the only way and
+it has to go in by hand.
+
+`sitemap.xml` is submitted and read (3 URLs), and the home page is indexed.
