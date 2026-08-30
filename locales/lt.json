@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Čia dovanoja tik vadovai",
+    "description": "Viešas sąrašas dovanų, kurias generaliniai direktoriai dovanoja asmeniškai, savo ir savo įmonės vardu. Viena vieta įmonei, 10 000 CHF vieną kartą, visam laikui."
+  },
+  "nav": {
+    "gifts": "Dovanos",
+    "companies": "Įmonės",
+    "join": "Prisijungti",
+    "dashboard": "Skydelis",
+    "signin": "Prisijungti",
+    "signout": "Atsijungti",
+    "language": "Kalba"
+  },
+  "header": {
+    "badge": "🇨🇭 Pagaminta Šveicarijoje · Prieinama visame pasaulyje"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Čia dovanoja tik vadovai.",
+    "sub": "Viena vieta įmonei. 10 000 CHF, vieną kartą, visam laikui. Paskui dovanojate, kiek norite."
+  },
+  "intro": {
+    "body": "Kiekvieną dovaną šioje svetainėje asmeniškai dovanoja generalinis direktorius, savo ir savo įmonės vardu. Nemokamas įrankis pasauliui. Premija komandai. Dalys tiems, kurie sukūrė įmonę. Diena mentorystės. Jokių pranešimų spaudai, jokių agentūrų — tik vadovas, kuris sako: štai ką mes dovanojame."
+  },
+  "how": {
+    "title": "Kaip tai veikia",
+    "step1": "Prisijunkite su savo įmonės „Google“ paskyra. Taip žinome, kad tai tikrai jūsų įmonė.",
+    "step2": "Nusipirkite savo įmonės vietą: 10 000 CHF, vieną kartą. Ji priklauso įmonei, visam laikui — jei išeisite, ją perims jūsų įpėdinis.",
+    "step3": "Dovanokite. Skelbkite tiek dovanų, kiek norite, kada norite, su pačių pasirinkta galiojimo data."
+  },
+  "why": {
+    "title": "Kodėl 10 000 CHF, vieną kartą",
+    "body": "Tai ne reklamos kaina. Tai filtras. Tik vadovas, kuris tikrai nori dovanoti, sumokės, kad tai padarytų viešai, savo vardu. Būtent tai daro kiekvieną dovaną šioje svetainėje tikrą."
+  },
+  "feed": {
+    "title": "Sąrašas",
+    "body": "Dovanos rodomos tokia tvarka, kokia buvo padovanotos, sunumeruotos nuo #1. Įmonės rodomos prisijungimo tvarka. Daugiau nieko pirkti nėra.",
+    "empty": "Dovanų dar nėra. Pirmoji bus #1.",
+    "companies_title": "Įmonės su vieta",
+    "companies_empty": "Įmonių dar nėra.",
+    "given_by": "padovanojo",
+    "valid_until": "galioja iki",
+    "no_expiry": "be termino",
+    "seat": "Vieta"
+  },
+  "sponsors": {
+    "title": "Rėmėjai",
+    "rotabo": "Pagaminta Šveicarijoje · Prieinama visame pasaulyje"
+  },
+  "cta": {
+    "primary": "Padovanokite savo pirmąją dovaną. →"
+  },
+  "type": {
+    "world": "Dovana pasauliui",
+    "team": "Dovana komandai",
+    "equity": "Dalys komandai",
+    "mentoring": "Diena mentorystės"
+  },
+  "state": {
+    "active": "Aktyvi",
+    "ended": "Baigta",
+    "withdrawn": "Atšaukta"
+  },
+  "footer": {
+    "smallprint": "gift.ceo yra skelbimo platforma. Kiekvieną dovaną paskelbia ir pasirašo asmuo, pareiškęs, kad yra nurodytos įmonės generalinis direktorius, naudodamas tos įmonės „Google Workspace“ paskyrą. Vienkartinis mokestis už vietą negrąžinamas. gift.ceo netikrina ir negarantuoja aprašytų dovanų.",
+    "terms": "Sąlygos",
+    "privacy": "Privatumas"
+  },
+  "join": {
+    "title": "Užimkite savo įmonės vietą",
+    "signin_cta": "Prisijungti su „Google“",
+    "no_hd": "Prisijunkite su savo įmonės „Google Workspace“ paskyra (@jusuimone.com).",
+    "domain_mismatch": "Ši svetainė neatitinka jūsų „Google Workspace“ paskyros domeno.",
+    "company_name": "Įmonės pavadinimas",
+    "website": "Įmonės svetainė",
+    "country": "Šalis",
+    "logo": "Logotipas (nebūtina)",
+    "ceo_name": "Jūsų vardas, kaip jis turi būti rodomas",
+    "linkedin": "LinkedIn (nebūtina)",
+    "photo": "Nuotrauka (nebūtina)",
+    "declaration": "Esu šios įmonės generalinis direktorius (arba lygiavertis aukščiausio lygio vadovas) ir turiu teisę skelbti jos vardu.",
+    "terms_accept": "Perskaičiau Sąlygas ir su jomis sutinku.",
+    "submit": "Tęsti į apmokėjimą — 10 000 CHF",
+    "takeover_title": "Ši įmonė jau turi vietą",
+    "takeover_body": "Kažkas iš jūsų įmonės vietą jau nupirko. Galite ją perimti kaip esamas vadovas. Jau paskelbtos dovanos išsaugo vardą to, kuris jas padovanojo.",
+    "takeover_cta": "Perimti šią vietą"
+  },
+  "thanks": {
+    "title": "Jūsų vieta aktyvinama…",
+    "body": "Mokėjimas gautas. Šis puslapis pats tęs, kai tik vieta bus aktyvi.",
+    "waiting": "Laukiama patvirtinimo…"
+  },
+  "dashboard": {
+    "title": "Jūsų dovanos",
+    "give": "Padovanoti",
+    "no_gifts": "Dar nieko nepadovanojote.",
+    "edit": "Redaguoti",
+    "end_now": "Užbaigti šią dovaną dabar",
+    "profile": "Jūsų profilis",
+    "company": "Jūsų įmonė",
+    "save": "Išsaugoti",
+    "form_type": "Kokia dovana",
+    "form_title": "Pavadinimas",
+    "form_description": "Aprašymas",
+    "form_claim": "Kaip ją gauti",
+    "form_link": "Nuoroda (nebūtina)",
+    "form_valid": "Galioja iki",
+    "form_no_expiry": "Palikite tuščią, jei termino nėra.",
+    "publish": "Skelbti",
+    "cancel": "Atšaukti",
+    "seat_pending": "Jūsų vieta dar neaktyvi."
+  },
+  "company_page": {
+    "seat": "Vieta",
+    "current_ceo": "Esamas generalinis direktorius",
+    "history": "Visos dovanos",
+    "website": "Svetainė"
+  },
+  "errors": {
+    "generic": "Kažkas nepavyko. Bandykite dar kartą.",
+    "not_signed_in": "Pirmiausia prisijunkite.",
+    "not_found": "Nerasta."
+  }
+}

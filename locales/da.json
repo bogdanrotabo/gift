@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Her giver kun direktører",
+    "description": "En offentlig liste over gaver, som administrerende direktører giver personligt, i deres eget og deres virksomheds navn. Én plads pr. virksomhed, 10 000 CHF én gang, for altid."
+  },
+  "nav": {
+    "gifts": "Gaver",
+    "companies": "Virksomheder",
+    "join": "Vær med",
+    "dashboard": "Panel",
+    "signin": "Log ind",
+    "signout": "Log ud",
+    "language": "Sprog"
+  },
+  "header": {
+    "badge": "🇨🇭 Lavet i Schweiz · Tilgængeligt i hele verden"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Her giver kun direktører.",
+    "sub": "Én plads pr. virksomhed. 10 000 CHF, én gang, for altid. Derefter giver du, så meget du vil."
+  },
+  "intro": {
+    "body": "Hver gave på dette site gives personligt af en administrerende direktør, i hans eget og hans virksomheds navn. Et gratis værktøj til verden. En bonus til holdet. Andele til dem, der byggede virksomheden. En dag med mentorskab. Ingen pressemeddelelser, ingen bureauer — bare en direktør, der siger: det her giver vi."
+  },
+  "how": {
+    "title": "Sådan virker det",
+    "step1": "Log ind med din virksomheds Google-konto. Sådan ved vi, at det virkelig er din virksomhed.",
+    "step2": "Køb din virksomheds plads: 10 000 CHF, én gang. Den tilhører virksomheden, for altid — går du, overtager din efterfølger den.",
+    "step3": "Giv. Udgiv så mange gaver, du vil, når du vil, med en gyldighedsdato, du selv vælger."
+  },
+  "why": {
+    "title": "Hvorfor 10 000 CHF, én gang",
+    "body": "Det er ikke prisen på en annonce. Det er et filter. Kun en direktør, der virkelig vil give, betaler for at gøre det offentligt, i sit eget navn. Det er det, der gør hver gave på dette site ægte."
+  },
+  "feed": {
+    "title": "Listen",
+    "body": "Gaver vises i den rækkefølge, de blev givet, nummereret fra #1. Virksomheder vises i den rækkefølge, de kom med. Der er ikke andet at købe.",
+    "empty": "Ingen gaver endnu. Den første bliver #1.",
+    "companies_title": "Virksomheder med en plads",
+    "companies_empty": "Ingen virksomheder endnu.",
+    "given_by": "givet af",
+    "valid_until": "gyldig til",
+    "no_expiry": "uden udløb",
+    "seat": "Plads"
+  },
+  "sponsors": {
+    "title": "Sponsorer",
+    "rotabo": "Lavet i Schweiz · Tilgængeligt i hele verden"
+  },
+  "cta": {
+    "primary": "Giv din første gave. →"
+  },
+  "type": {
+    "world": "En gave til verden",
+    "team": "En gave til holdet",
+    "equity": "Andele til holdet",
+    "mentoring": "En dag med mentorskab"
+  },
+  "state": {
+    "active": "Aktiv",
+    "ended": "Afsluttet",
+    "withdrawn": "Trukket tilbage"
+  },
+  "footer": {
+    "smallprint": "gift.ceo er en udgivelsesplatform. Hver gave udgives og underskrives af den person, der har erklæret sig som administrerende direktør for den nævnte virksomhed, via virksomhedens Google Workspace-konto. Engangsgebyret for pladsen refunderes ikke. gift.ceo hverken kontrollerer eller garanterer de beskrevne gaver.",
+    "terms": "Vilkår",
+    "privacy": "Privatliv"
+  },
+  "join": {
+    "title": "Tag din virksomheds plads",
+    "signin_cta": "Log ind med Google",
+    "no_hd": "Log ind med din virksomheds Google Workspace-konto (@dinvirksomhed.com).",
+    "domain_mismatch": "Det website passer ikke til domænet for din Google Workspace-konto.",
+    "company_name": "Virksomhedens navn",
+    "website": "Virksomhedens website",
+    "country": "Land",
+    "logo": "Logo (valgfrit)",
+    "ceo_name": "Dit navn, som det skal vises",
+    "linkedin": "LinkedIn (valgfrit)",
+    "photo": "Foto (valgfrit)",
+    "declaration": "Jeg er administrerende direktør (eller tilsvarende øverste leder) for denne virksomhed og har ret til at udgive i dens navn.",
+    "terms_accept": "Jeg har læst og accepterer Vilkårene.",
+    "submit": "Fortsæt til betaling — 10 000 CHF",
+    "takeover_title": "Denne virksomhed har allerede en plads",
+    "takeover_body": "Nogen fra din virksomhed har allerede købt pladsen. Du kan overtage den som nuværende direktør. Gaver, der allerede er udgivet, beholder navnet på den, der gav dem.",
+    "takeover_cta": "Overtag denne plads"
+  },
+  "thanks": {
+    "title": "Din plads bliver aktiveret…",
+    "body": "Betalingen er modtaget. Denne side går videre af sig selv, så snart pladsen er aktiv.",
+    "waiting": "Venter på bekræftelsen…"
+  },
+  "dashboard": {
+    "title": "Dine gaver",
+    "give": "Giv en gave",
+    "no_gifts": "Du har ikke givet noget endnu.",
+    "edit": "Rediger",
+    "end_now": "Afslut denne gave nu",
+    "profile": "Din profil",
+    "company": "Din virksomhed",
+    "save": "Gem",
+    "form_type": "Hvilken slags gave",
+    "form_title": "Titel",
+    "form_description": "Beskrivelse",
+    "form_claim": "Sådan får man den",
+    "form_link": "Link (valgfrit)",
+    "form_valid": "Gyldig til",
+    "form_no_expiry": "Lad stå tomt for intet udløb.",
+    "publish": "Udgiv",
+    "cancel": "Annuller",
+    "seat_pending": "Din plads er ikke aktiv endnu."
+  },
+  "company_page": {
+    "seat": "Plads",
+    "current_ceo": "Nuværende direktør",
+    "history": "Alle gaver",
+    "website": "Website"
+  },
+  "errors": {
+    "generic": "Noget gik galt. Prøv igen.",
+    "not_signed_in": "Log ind først.",
+    "not_found": "Ikke fundet."
+  }
+}

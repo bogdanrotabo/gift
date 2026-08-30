@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Siin kingivad ainult tegevjuhid",
+    "description": "Avalik nimekiri kinkidest, mida tegevjuhid teevad isiklikult, oma ja oma ettevõtte nimel. Üks koht ettevõtte kohta, 10 000 CHF ühe korra, igaveseks."
+  },
+  "nav": {
+    "gifts": "Kingid",
+    "companies": "Ettevõtted",
+    "join": "Liitu",
+    "dashboard": "Töölaud",
+    "signin": "Logi sisse",
+    "signout": "Logi välja",
+    "language": "Keel"
+  },
+  "header": {
+    "badge": "🇨🇭 Valmistatud Šveitsis · Saadaval üle maailma"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Siin kingivad ainult tegevjuhid.",
+    "sub": "Üks koht ettevõtte kohta. 10 000 CHF, üks kord, igaveseks. Seejärel kingite nii palju, kui soovite."
+  },
+  "intro": {
+    "body": "Iga kingi sellel saidil teeb isiklikult tegevjuht, oma ja oma ettevõtte nimel. Tasuta tööriist maailmale. Preemia meeskonnale. Osalus neile, kes ettevõtte üles ehitasid. Üks päev mentorlust. Ei pressiteateid, ei agentuure — ainult tegevjuht, kes ütleb: seda me kingime."
+  },
+  "how": {
+    "title": "Kuidas see toimib",
+    "step1": "Logi sisse oma ettevõtte Google'i kontoga. Nii teame, et see on tõesti sinu ettevõte.",
+    "step2": "Osta oma ettevõtte koht: 10 000 CHF, üks kord. See kuulub ettevõttele, igaveseks — kui lahkud, võtab selle üle sinu järglane.",
+    "step3": "Kingi. Avalda nii palju kinke, kui soovid, millal soovid, enda valitud kehtivusajaga."
+  },
+  "why": {
+    "title": "Miks 10 000 CHF, üks kord",
+    "body": "See ei ole reklaami hind. See on filter. Ainult tegevjuht, kes tõesti tahab kinkida, maksab selle eest, et teha seda avalikult ja oma nime all. Just see teeb iga kingi sellel saidil päris."
+  },
+  "feed": {
+    "title": "Nimekiri",
+    "body": "Kingid ilmuvad selles järjekorras, nagu need on tehtud, nummerdatuna alates #1. Ettevõtted ilmuvad liitumise järjekorras. Muud osta ei ole.",
+    "empty": "Kinke veel ei ole. Esimene saab olema #1.",
+    "companies_title": "Kohaga ettevõtted",
+    "companies_empty": "Ettevõtteid veel ei ole.",
+    "given_by": "kinkis",
+    "valid_until": "kehtib kuni",
+    "no_expiry": "tähtajata",
+    "seat": "Koht"
+  },
+  "sponsors": {
+    "title": "Toetajad",
+    "rotabo": "Valmistatud Šveitsis · Saadaval üle maailma"
+  },
+  "cta": {
+    "primary": "Tee oma esimene kink. →"
+  },
+  "type": {
+    "world": "Kink maailmale",
+    "team": "Kink meeskonnale",
+    "equity": "Osalus meeskonnale",
+    "mentoring": "Üks päev mentorlust"
+  },
+  "state": {
+    "active": "Aktiivne",
+    "ended": "Lõppenud",
+    "withdrawn": "Tagasi võetud"
+  },
+  "footer": {
+    "smallprint": "gift.ceo on avaldamisplatvorm. Iga kingi avaldab ja allkirjastab isik, kes on kinnitanud, et on nimetatud ettevõtte tegevjuht, kasutades selle ettevõtte Google Workspace'i kontot. Ühekordne kohatasu ei kuulu tagastamisele. gift.ceo ei kontrolli ega taga kirjeldatud kinke.",
+    "terms": "Tingimused",
+    "privacy": "Privaatsus"
+  },
+  "join": {
+    "title": "Võta oma ettevõtte koht",
+    "signin_cta": "Logi sisse Google'iga",
+    "no_hd": "Logi sisse oma ettevõtte Google Workspace'i kontoga (@sinuettevote.com).",
+    "domain_mismatch": "See veebisait ei vasta sinu Google Workspace'i konto domeenile.",
+    "company_name": "Ettevõtte nimi",
+    "website": "Ettevõtte veebisait",
+    "country": "Riik",
+    "logo": "Logo (valikuline)",
+    "ceo_name": "Sinu nimi, nagu see peaks kuvatama",
+    "linkedin": "LinkedIn (valikuline)",
+    "photo": "Foto (valikuline)",
+    "declaration": "Olen selle ettevõtte tegevjuht (või samaväärne tippjuht) ja mul on õigus selle nimel avaldada.",
+    "terms_accept": "Olen Tingimused läbi lugenud ja nõustun nendega.",
+    "submit": "Edasi maksmisele — 10 000 CHF",
+    "takeover_title": "Sellel ettevõttel on juba koht",
+    "takeover_body": "Keegi sinu ettevõttest on koha juba ostnud. Sa võid selle praeguse tegevjuhina üle võtta. Juba avaldatud kingid säilitavad selle nime, kes need tegi.",
+    "takeover_cta": "Võta see koht üle"
+  },
+  "thanks": {
+    "title": "Sinu kohta aktiveeritakse…",
+    "body": "Makse on laekunud. See leht liigub ise edasi, niipea kui koht on aktiivne.",
+    "waiting": "Ootame kinnitust…"
+  },
+  "dashboard": {
+    "title": "Sinu kingid",
+    "give": "Tee kink",
+    "no_gifts": "Sa ei ole veel midagi kinkinud.",
+    "edit": "Muuda",
+    "end_now": "Lõpeta see kink kohe",
+    "profile": "Sinu profiil",
+    "company": "Sinu ettevõte",
+    "save": "Salvesta",
+    "form_type": "Millist sorti kink",
+    "form_title": "Pealkiri",
+    "form_description": "Kirjeldus",
+    "form_claim": "Kuidas seda saada",
+    "form_link": "Link (valikuline)",
+    "form_valid": "Kehtib kuni",
+    "form_no_expiry": "Jäta tühjaks, kui tähtaega ei ole.",
+    "publish": "Avalda",
+    "cancel": "Loobu",
+    "seat_pending": "Sinu koht ei ole veel aktiivne."
+  },
+  "company_page": {
+    "seat": "Koht",
+    "current_ceo": "Praegune tegevjuht",
+    "history": "Kõik kingid",
+    "website": "Veebisait"
+  },
+  "errors": {
+    "generic": "Midagi läks valesti. Proovi uuesti.",
+    "not_signed_in": "Logi kõigepealt sisse.",
+    "not_found": "Ei leitud."
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Aqui só os presidentes executivos dão",
+    "description": "Uma lista pública de ofertas feitas pessoalmente por presidentes executivos, em nome próprio e da sua empresa. Um lugar por empresa, 10 000 CHF uma só vez, para sempre."
+  },
+  "nav": {
+    "gifts": "Ofertas",
+    "companies": "Empresas",
+    "join": "Aderir",
+    "dashboard": "Painel",
+    "signin": "Entrar",
+    "signout": "Sair",
+    "language": "Idioma"
+  },
+  "header": {
+    "badge": "🇨🇭 Feito na Suíça · Disponível em todo o mundo"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Aqui só os presidentes executivos dão.",
+    "sub": "Um lugar por empresa. 10 000 CHF, uma só vez, para sempre. Depois, dê quanto quiser."
+  },
+  "intro": {
+    "body": "Cada oferta neste sítio é feita pessoalmente por um presidente executivo, em nome próprio e da sua empresa. Uma ferramenta gratuita para o mundo. Um prémio para a equipa. Participações para quem construiu a empresa. Um dia de mentoria. Sem comunicados, sem agências — apenas um presidente que diz: é isto que damos."
+  },
+  "how": {
+    "title": "Como funciona",
+    "step1": "Entre com a conta Google da sua empresa. É assim que sabemos que é mesmo a sua.",
+    "step2": "Compre o lugar da sua empresa: 10 000 CHF, uma só vez. Pertence à empresa, para sempre — se sair, quem lhe suceder assume-o.",
+    "step3": "Dê. Publique tantas ofertas quantas quiser, quando quiser, com a data de validade que escolher."
+  },
+  "why": {
+    "title": "Porquê 10 000 CHF, uma só vez",
+    "body": "Não é o preço de um anúncio. É um filtro. Só um presidente que queira mesmo dar paga para o fazer em público, em nome próprio. É isso que torna real cada oferta deste sítio."
+  },
+  "feed": {
+    "title": "A lista",
+    "body": "As ofertas aparecem pela ordem em que foram feitas, numeradas a partir do #1. As empresas aparecem pela ordem em que aderiram. Não há mais nada para comprar.",
+    "empty": "Ainda não há ofertas. A primeira será a #1.",
+    "companies_title": "Empresas com lugar",
+    "companies_empty": "Ainda não há empresas.",
+    "given_by": "oferecido por",
+    "valid_until": "válido até",
+    "no_expiry": "sem prazo",
+    "seat": "Lugar"
+  },
+  "sponsors": {
+    "title": "Patrocinadores",
+    "rotabo": "Feito na Suíça · Disponível em todo o mundo"
+  },
+  "cta": {
+    "primary": "Faça a sua primeira oferta. →"
+  },
+  "type": {
+    "world": "Uma oferta ao mundo",
+    "team": "Uma oferta à equipa",
+    "equity": "Participações para a equipa",
+    "mentoring": "Um dia de mentoria"
+  },
+  "state": {
+    "active": "Ativo",
+    "ended": "Terminado",
+    "withdrawn": "Retirado"
+  },
+  "footer": {
+    "smallprint": "gift.ceo é uma plataforma de publicação. Cada oferta é publicada e assinada pela pessoa que declarou ser o presidente executivo da empresa indicada, através da conta Google Workspace dessa empresa. A taxa única do lugar não é reembolsável. gift.ceo não verifica nem garante as ofertas descritas.",
+    "terms": "Termos",
+    "privacy": "Privacidade"
+  },
+  "join": {
+    "title": "Assuma o lugar da sua empresa",
+    "signin_cta": "Entrar com o Google",
+    "no_hd": "Entre com a conta Google Workspace da sua empresa (@suaempresa.com).",
+    "domain_mismatch": "Esse sítio não corresponde ao domínio da sua conta Google Workspace.",
+    "company_name": "Nome da empresa",
+    "website": "Sítio da empresa",
+    "country": "País",
+    "logo": "Logótipo (opcional)",
+    "ceo_name": "O seu nome, como deve aparecer",
+    "linkedin": "LinkedIn (opcional)",
+    "photo": "Fotografia (opcional)",
+    "declaration": "Sou o presidente executivo (ou o dirigente equivalente) desta empresa e estou autorizado a publicar em seu nome.",
+    "terms_accept": "Li e aceito os Termos.",
+    "submit": "Continuar para o pagamento — 10 000 CHF",
+    "takeover_title": "Esta empresa já tem um lugar",
+    "takeover_body": "Alguém da sua empresa já comprou o lugar. Pode assumi-lo como presidente executivo atual. As ofertas já publicadas mantêm o nome de quem as fez.",
+    "takeover_cta": "Assumir este lugar"
+  },
+  "thanks": {
+    "title": "O seu lugar está a ser ativado…",
+    "body": "Pagamento recebido. Esta página segue sozinha assim que o lugar estiver ativo.",
+    "waiting": "À espera da confirmação…"
+  },
+  "dashboard": {
+    "title": "As suas ofertas",
+    "give": "Fazer uma oferta",
+    "no_gifts": "Ainda não deu nada.",
+    "edit": "Editar",
+    "end_now": "Terminar esta oferta agora",
+    "profile": "O seu perfil",
+    "company": "A sua empresa",
+    "save": "Guardar",
+    "form_type": "Que tipo de oferta",
+    "form_title": "Título",
+    "form_description": "Descrição",
+    "form_claim": "Como obtê-la",
+    "form_link": "Ligação (opcional)",
+    "form_valid": "Válido até",
+    "form_no_expiry": "Deixe vazio para não ter prazo.",
+    "publish": "Publicar",
+    "cancel": "Cancelar",
+    "seat_pending": "O seu lugar ainda não está ativo."
+  },
+  "company_page": {
+    "seat": "Lugar",
+    "current_ceo": "Presidente executivo atual",
+    "history": "Todas as ofertas",
+    "website": "Sítio"
+  },
+  "errors": {
+    "generic": "Algo correu mal. Tente novamente.",
+    "not_signed_in": "Entre primeiro.",
+    "not_found": "Não encontrado."
+  }
+}

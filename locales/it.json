@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Qui donano solo gli amministratori delegati",
+    "description": "Un elenco pubblico di doni fatti personalmente da amministratori delegati, a proprio nome e a nome della loro azienda. Un posto per azienda, 10 000 CHF una volta sola, per sempre."
+  },
+  "nav": {
+    "gifts": "Doni",
+    "companies": "Aziende",
+    "join": "Partecipa",
+    "dashboard": "Pannello",
+    "signin": "Accedi",
+    "signout": "Esci",
+    "language": "Lingua"
+  },
+  "header": {
+    "badge": "🇨🇭 Fatto in Svizzera · Disponibile in tutto il mondo"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Qui donano solo gli amministratori delegati.",
+    "sub": "Un posto per azienda. 10 000 CHF, una volta sola, per sempre. Poi dona quanto vuoi."
+  },
+  "intro": {
+    "body": "Ogni dono su questo sito è fatto personalmente da un amministratore delegato, a proprio nome e a nome della sua azienda. Uno strumento gratuito per tutti. Un bonus per la squadra. Quote per chi ha costruito l'azienda. Una giornata di mentoring. Niente comunicati stampa, niente agenzie — solo un amministratore che dice: ecco cosa doniamo."
+  },
+  "how": {
+    "title": "Come funziona",
+    "step1": "Accedi con l'account Google della tua azienda. È così che sappiamo che è davvero la tua.",
+    "step2": "Compra il posto della tua azienda: 10 000 CHF, una volta sola. Appartiene all'azienda, per sempre — se te ne vai, lo prende chi ti succede.",
+    "step3": "Dona. Pubblica tutti i doni che vuoi, quando vuoi, con la data di validità che scegli."
+  },
+  "why": {
+    "title": "Perché 10 000 CHF, una volta sola",
+    "body": "Non è il prezzo di una pubblicità. È un filtro. Solo un amministratore che vuole davvero donare pagherà per farlo in pubblico, a proprio nome. È questo che rende reale ogni dono su questo sito."
+  },
+  "feed": {
+    "title": "L'elenco",
+    "body": "I doni compaiono nell'ordine in cui sono stati fatti, numerati dal #1. Le aziende compaiono nell'ordine in cui sono entrate. Non c'è nient'altro da comprare.",
+    "empty": "Ancora nessun dono. Il primo sarà il #1.",
+    "companies_title": "Aziende con un posto",
+    "companies_empty": "Ancora nessuna azienda.",
+    "given_by": "donato da",
+    "valid_until": "valido fino al",
+    "no_expiry": "senza scadenza",
+    "seat": "Posto"
+  },
+  "sponsors": {
+    "title": "Sponsor",
+    "rotabo": "Fatto in Svizzera · Disponibile in tutto il mondo"
+  },
+  "cta": {
+    "primary": "Fai il tuo primo dono. →"
+  },
+  "type": {
+    "world": "Un dono al mondo",
+    "team": "Un dono alla squadra",
+    "equity": "Quote per la squadra",
+    "mentoring": "Una giornata di mentoring"
+  },
+  "state": {
+    "active": "Attivo",
+    "ended": "Concluso",
+    "withdrawn": "Ritirato"
+  },
+  "footer": {
+    "smallprint": "gift.ceo è una piattaforma di pubblicazione. Ogni dono è pubblicato e firmato dalla persona che ha dichiarato di essere l'amministratore delegato dell'azienda indicata, tramite l'account Google Workspace di quell'azienda. La quota una tantum per il posto non è rimborsabile. gift.ceo non verifica né garantisce i doni descritti.",
+    "terms": "Termini",
+    "privacy": "Privacy"
+  },
+  "join": {
+    "title": "Prendi il posto della tua azienda",
+    "signin_cta": "Accedi con Google",
+    "no_hd": "Accedi con l'account Google Workspace della tua azienda (@tuaazienda.com).",
+    "domain_mismatch": "Quel sito non corrisponde al dominio del tuo account Google Workspace.",
+    "company_name": "Nome dell'azienda",
+    "website": "Sito dell'azienda",
+    "country": "Paese",
+    "logo": "Logo (facoltativo)",
+    "ceo_name": "Il tuo nome, come deve comparire",
+    "linkedin": "LinkedIn (facoltativo)",
+    "photo": "Foto (facoltativa)",
+    "declaration": "Sono l'amministratore delegato (o la figura apicale equivalente) di questa azienda e sono autorizzato a pubblicare a suo nome.",
+    "terms_accept": "Ho letto e accetto i Termini.",
+    "submit": "Vai al pagamento — 10 000 CHF",
+    "takeover_title": "Questa azienda ha già un posto",
+    "takeover_body": "Qualcuno della tua azienda ha già comprato il posto. Puoi prenderlo tu come amministratore in carica. I doni già pubblicati mantengono il nome di chi li ha fatti.",
+    "takeover_cta": "Prendi questo posto"
+  },
+  "thanks": {
+    "title": "Il tuo posto si sta attivando…",
+    "body": "Pagamento ricevuto. Questa pagina prosegue da sola appena il posto è attivo.",
+    "waiting": "In attesa di conferma…"
+  },
+  "dashboard": {
+    "title": "I tuoi doni",
+    "give": "Fai un dono",
+    "no_gifts": "Non hai ancora donato nulla.",
+    "edit": "Modifica",
+    "end_now": "Concludi ora questo dono",
+    "profile": "Il tuo profilo",
+    "company": "La tua azienda",
+    "save": "Salva",
+    "form_type": "Che tipo di dono",
+    "form_title": "Titolo",
+    "form_description": "Descrizione",
+    "form_claim": "Come ottenerlo",
+    "form_link": "Link (facoltativo)",
+    "form_valid": "Valido fino al",
+    "form_no_expiry": "Lascia vuoto per nessuna scadenza.",
+    "publish": "Pubblica",
+    "cancel": "Annulla",
+    "seat_pending": "Il tuo posto non è ancora attivo."
+  },
+  "company_page": {
+    "seat": "Posto",
+    "current_ceo": "Amministratore in carica",
+    "history": "Tutti i doni",
+    "website": "Sito web"
+  },
+  "errors": {
+    "generic": "Qualcosa è andato storto. Riprova.",
+    "not_signed_in": "Accedi prima.",
+    "not_found": "Non trovato."
+  }
+}

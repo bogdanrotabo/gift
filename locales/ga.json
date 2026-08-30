@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Ní bhronnann anseo ach príomhfheidhmeannaigh",
+    "description": "Liosta poiblí de bhronntanais a thugann príomhfheidhmeannaigh go pearsanta, faoina n-ainm féin agus faoi ainm a gcuideachta. Suíochán amháin an chuideachta, 10 000 CHF uair amháin, go deo."
+  },
+  "nav": {
+    "gifts": "Bronntanais",
+    "companies": "Cuideachtaí",
+    "join": "Bí páirteach",
+    "dashboard": "Painéal",
+    "signin": "Logáil isteach",
+    "signout": "Logáil amach",
+    "language": "Teanga"
+  },
+  "header": {
+    "badge": "🇨🇭 Déanta san Eilvéis · Ar fáil ar fud an domhain"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Ní bhronnann anseo ach príomhfheidhmeannaigh.",
+    "sub": "Suíochán amháin an chuideachta. 10 000 CHF, uair amháin, go deo. Ansin bronn an oiread agus is mian leat."
+  },
+  "intro": {
+    "body": "Tugann príomhfheidhmeannach go pearsanta gach bronntanas ar an suíomh seo, faoina ainm féin agus faoi ainm a chuideachta. Uirlis saor in aisce don domhan. Bónas don fhoireann. Scaireanna dóibh siúd a thóg an chuideachta. Lá meantóireachta. Gan preasráitis, gan gníomhaireachtaí — díreach príomhfheidhmeannach a deir: seo a bhronnaimid."
+  },
+  "how": {
+    "title": "Conas a oibríonn sé",
+    "step1": "Logáil isteach le cuntas Google do chuideachta. Sin mar a bhíonn a fhios againn gurb í do chuideachta féin í.",
+    "step2": "Ceannaigh suíochán do chuideachta: 10 000 CHF, uair amháin. Is leis an gcuideachta é, go deo — má imíonn tú, glacann do chomharba leis.",
+    "step3": "Bronn. Foilsigh an oiread bronntanas agus is mian leat, cibé uair is mian leat, le dáta bailíochta a roghnaíonn tú féin."
+  },
+  "why": {
+    "title": "Cén fáth 10 000 CHF, uair amháin",
+    "body": "Ní praghas fógra é seo. Scagaire atá ann. Ní íocfaidh ach príomhfheidhmeannach a bhfuil fonn bronnta air é a dhéanamh go poiblí, faoina ainm féin. Sin an rud a fhágann go bhfuil gach bronntanas ar an suíomh seo fíor."
+  },
+  "feed": {
+    "title": "An liosta",
+    "body": "Taispeántar na bronntanais san ord inar tugadh iad, uimhrithe ó #1. Taispeántar na cuideachtaí san ord inar tháinig siad isteach. Níl aon rud eile le ceannach.",
+    "empty": "Gan bronntanais fós. Is é an chéad cheann #1.",
+    "companies_title": "Cuideachtaí a bhfuil suíochán acu",
+    "companies_empty": "Gan cuideachtaí fós.",
+    "given_by": "bronnta ag",
+    "valid_until": "bailí go dtí",
+    "no_expiry": "gan dáta deiridh",
+    "seat": "Suíochán"
+  },
+  "sponsors": {
+    "title": "Urraitheoirí",
+    "rotabo": "Déanta san Eilvéis · Ar fáil ar fud an domhain"
+  },
+  "cta": {
+    "primary": "Bronn do chéad bhronntanas. →"
+  },
+  "type": {
+    "world": "Bronntanas don domhan",
+    "team": "Bronntanas don fhoireann",
+    "equity": "Scaireanna don fhoireann",
+    "mentoring": "Lá meantóireachta"
+  },
+  "state": {
+    "active": "Gníomhach",
+    "ended": "Críochnaithe",
+    "withdrawn": "Tarraingthe siar"
+  },
+  "footer": {
+    "smallprint": "Ardán foilsitheoireachta is ea gift.ceo. Foilsíonn agus sínítear gach bronntanas ag an duine a dhearbhaigh gurb é príomhfheidhmeannach na cuideachta ainmnithe é, trí chuntas Google Workspace na cuideachta sin. Ní aisíoctar an táille aonuaire don suíochán. Ní dhéanann gift.ceo na bronntanais a thuairiscítear a fhíorú ná a ráthú.",
+    "terms": "Téarmaí",
+    "privacy": "Príobháideachas"
+  },
+  "join": {
+    "title": "Glac suíochán do chuideachta",
+    "signin_cta": "Logáil isteach le Google",
+    "no_hd": "Logáil isteach le cuntas Google Workspace do chuideachta (@dochuideachta.com).",
+    "domain_mismatch": "Ní thagann an suíomh sin leis an bhfearann atá ar do chuntas Google Workspace.",
+    "company_name": "Ainm na cuideachta",
+    "website": "Suíomh na cuideachta",
+    "country": "Tír",
+    "logo": "Lógó (roghnach)",
+    "ceo_name": "D'ainm, mar ba cheart dó a bheith le feiceáil",
+    "linkedin": "LinkedIn (roghnach)",
+    "photo": "Grianghraf (roghnach)",
+    "declaration": "Is mise príomhfheidhmeannach (nó an t-ardfheidhmeannach comhionann) na cuideachta seo agus tá údarás agam foilsiú thar a ceann.",
+    "terms_accept": "Léigh mé na Téarmaí agus glacaim leo.",
+    "submit": "Ar aghaidh chuig an íocaíocht — 10 000 CHF",
+    "takeover_title": "Tá suíochán ag an gcuideachta seo cheana",
+    "takeover_body": "Cheannaigh duine éigin ó do chuideachta an suíochán cheana. Is féidir leat é a ghlacadh mar phríomhfheidhmeannach reatha. Coinníonn na bronntanais atá foilsithe cheana ainm an duine a thug iad.",
+    "takeover_cta": "Glac an suíochán seo"
+  },
+  "thanks": {
+    "title": "Tá do shuíochán á ghníomhachtú…",
+    "body": "Fuarthas an íocaíocht. Leanfaidh an leathanach seo air féin chomh luath is a bheidh an suíochán gníomhach.",
+    "waiting": "Ag fanacht le deimhniú…"
+  },
+  "dashboard": {
+    "title": "Do chuid bronntanas",
+    "give": "Bronn bronntanas",
+    "no_gifts": "Níor bhronn tú aon rud fós.",
+    "edit": "Cuir in eagar",
+    "end_now": "Cuir deireadh leis an mbronntanas seo anois",
+    "profile": "Do phróifíl",
+    "company": "Do chuideachta",
+    "save": "Sábháil",
+    "form_type": "Cén sórt bronntanais",
+    "form_title": "Teideal",
+    "form_description": "Cur síos",
+    "form_claim": "Conas é a fháil",
+    "form_link": "Nasc (roghnach)",
+    "form_valid": "Bailí go dtí",
+    "form_no_expiry": "Fág folamh mura bhfuil dáta deiridh ann.",
+    "publish": "Foilsigh",
+    "cancel": "Cealaigh",
+    "seat_pending": "Níl do shuíochán gníomhach fós."
+  },
+  "company_page": {
+    "seat": "Suíochán",
+    "current_ceo": "Príomhfheidhmeannach reatha",
+    "history": "Na bronntanais uile",
+    "website": "Suíomh gréasáin"
+  },
+  "errors": {
+    "generic": "Chuaigh rud éigin amú. Bain triail eile as.",
+    "not_signed_in": "Logáil isteach ar dtús.",
+    "not_found": "Níor aimsíodh é."
+  }
+}

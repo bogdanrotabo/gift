@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Ovdje daruju samo direktori",
+    "description": "Javni popis darova koje glavni direktori daju osobno, pod svojim imenom i imenom svoje tvrtke. Jedno mjesto po tvrtki, 10 000 CHF jednom, zauvijek."
+  },
+  "nav": {
+    "gifts": "Darovi",
+    "companies": "Tvrtke",
+    "join": "Pridruži se",
+    "dashboard": "Ploča",
+    "signin": "Prijava",
+    "signout": "Odjava",
+    "language": "Jezik"
+  },
+  "header": {
+    "badge": "🇨🇭 Napravljeno u Švicarskoj · Dostupno u cijelom svijetu"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Ovdje daruju samo direktori.",
+    "sub": "Jedno mjesto po tvrtki. 10 000 CHF, jednom, zauvijek. Zatim darujete koliko želite."
+  },
+  "intro": {
+    "body": "Svaki dar na ovoj stranici daje osobno glavni direktor, pod svojim imenom i imenom svoje tvrtke. Besplatan alat za svijet. Nagrada za tim. Udjeli za ljude koji su izgradili tvrtku. Dan mentorstva. Bez priopćenja za medije, bez agencija — samo direktor koji kaže: ovo darujemo."
+  },
+  "how": {
+    "title": "Kako funkcionira",
+    "step1": "Prijavite se Google računom svoje tvrtke. Tako znamo da je doista vaša.",
+    "step2": "Kupite mjesto svoje tvrtke: 10 000 CHF, jednom. Pripada tvrtki, zauvijek — ako odete, preuzima ga vaš nasljednik.",
+    "step3": "Darujte. Objavite koliko god darova želite, kad god želite, s datumom valjanosti koji sami birate."
+  },
+  "why": {
+    "title": "Zašto 10 000 CHF, jednom",
+    "body": "Ovo nije cijena oglasa. Ovo je filtar. Samo direktor koji doista želi darovati platit će da to učini javno, pod svojim imenom. Upravo to čini svaki dar na ovoj stranici stvarnim."
+  },
+  "feed": {
+    "title": "Popis",
+    "body": "Darovi se pojavljuju redoslijedom kojim su dani, numerirani od #1. Tvrtke se pojavljuju redoslijedom kojim su se pridružile. Ništa se drugo ne kupuje.",
+    "empty": "Još nema darova. Prvi će biti #1.",
+    "companies_title": "Tvrtke s mjestom",
+    "companies_empty": "Još nema tvrtki.",
+    "given_by": "darovao",
+    "valid_until": "vrijedi do",
+    "no_expiry": "bez roka",
+    "seat": "Mjesto"
+  },
+  "sponsors": {
+    "title": "Sponzori",
+    "rotabo": "Napravljeno u Švicarskoj · Dostupno u cijelom svijetu"
+  },
+  "cta": {
+    "primary": "Darujte svoj prvi dar. →"
+  },
+  "type": {
+    "world": "Dar svijetu",
+    "team": "Dar timu",
+    "equity": "Udjeli za tim",
+    "mentoring": "Dan mentorstva"
+  },
+  "state": {
+    "active": "Aktivno",
+    "ended": "Završeno",
+    "withdrawn": "Povučeno"
+  },
+  "footer": {
+    "smallprint": "gift.ceo je platforma za objavljivanje. Svaki dar objavljuje i potpisuje osoba koja je izjavila da je glavni direktor navedene tvrtke, putem Google Workspace računa te tvrtke. Jednokratna naknada za mjesto ne vraća se. gift.ceo ne provjerava niti jamči opisane darove.",
+    "terms": "Uvjeti",
+    "privacy": "Privatnost"
+  },
+  "join": {
+    "title": "Zauzmite mjesto svoje tvrtke",
+    "signin_cta": "Prijava putem Googlea",
+    "no_hd": "Prijavite se Google Workspace računom svoje tvrtke (@vasatvrtka.com).",
+    "domain_mismatch": "Ta stranica ne odgovara domeni vašeg Google Workspace računa.",
+    "company_name": "Naziv tvrtke",
+    "website": "Stranica tvrtke",
+    "country": "Država",
+    "logo": "Logotip (neobavezno)",
+    "ceo_name": "Vaše ime, kako se treba prikazati",
+    "linkedin": "LinkedIn (neobavezno)",
+    "photo": "Fotografija (neobavezno)",
+    "declaration": "Ja sam glavni direktor (ili odgovarajući najviši rukovoditelj) ove tvrtke i ovlašten sam objavljivati u njezino ime.",
+    "terms_accept": "Pročitao sam i prihvaćam Uvjete.",
+    "submit": "Nastavi na plaćanje — 10 000 CHF",
+    "takeover_title": "Ova tvrtka već ima mjesto",
+    "takeover_body": "Netko iz vaše tvrtke već je kupio mjesto. Možete ga preuzeti kao aktualni direktor. Već objavljeni darovi zadržavaju ime onoga tko ih je dao.",
+    "takeover_cta": "Preuzmi ovo mjesto"
+  },
+  "thanks": {
+    "title": "Vaše se mjesto aktivira…",
+    "body": "Plaćanje je primljeno. Ova stranica nastavlja sama čim mjesto postane aktivno.",
+    "waiting": "Čeka se potvrda…"
+  },
+  "dashboard": {
+    "title": "Vaši darovi",
+    "give": "Darujte",
+    "no_gifts": "Još niste ništa darovali.",
+    "edit": "Uredi",
+    "end_now": "Završi ovaj dar sada",
+    "profile": "Vaš profil",
+    "company": "Vaša tvrtka",
+    "save": "Spremi",
+    "form_type": "Kakva vrsta dara",
+    "form_title": "Naslov",
+    "form_description": "Opis",
+    "form_claim": "Kako ga preuzeti",
+    "form_link": "Poveznica (neobavezno)",
+    "form_valid": "Vrijedi do",
+    "form_no_expiry": "Ostavite prazno ako nema roka.",
+    "publish": "Objavi",
+    "cancel": "Odustani",
+    "seat_pending": "Vaše mjesto još nije aktivno."
+  },
+  "company_page": {
+    "seat": "Mjesto",
+    "current_ceo": "Aktualni direktor",
+    "history": "Svi darovi",
+    "website": "Stranica"
+  },
+  "errors": {
+    "generic": "Nešto je pošlo po zlu. Pokušajte ponovno.",
+    "not_signed_in": "Najprije se prijavite.",
+    "not_found": "Nije pronađeno."
+  }
+}

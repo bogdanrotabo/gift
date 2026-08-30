@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Tady dávají jen ředitelé",
+    "description": "Veřejný seznam darů, které osobně dávají generální ředitelé pod svým jménem a jménem své firmy. Jedno místo na firmu, 10 000 CHF jednou, navždy."
+  },
+  "nav": {
+    "gifts": "Dary",
+    "companies": "Firmy",
+    "join": "Přidat se",
+    "dashboard": "Panel",
+    "signin": "Přihlásit se",
+    "signout": "Odhlásit se",
+    "language": "Jazyk"
+  },
+  "header": {
+    "badge": "🇨🇭 Vyrobeno ve Švýcarsku · Dostupné po celém světě"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Tady dávají jen ředitelé.",
+    "sub": "Jedno místo na firmu. 10 000 CHF, jednou, navždy. Potom dáváte, kolik chcete."
+  },
+  "intro": {
+    "body": "Každý dar na tomto webu dává osobně generální ředitel, pod svým jménem a jménem své firmy. Nástroj zdarma pro celý svět. Odměna pro tým. Podíly pro lidi, kteří firmu vybudovali. Den mentoringu. Žádné tiskové zprávy, žádné agentury — jen ředitel, který říká: tohle dáváme."
+  },
+  "how": {
+    "title": "Jak to funguje",
+    "step1": "Přihlaste se firemním účtem Google. Tak víme, že je to opravdu vaše firma.",
+    "step2": "Kupte místo pro svou firmu: 10 000 CHF, jednou. Patří firmě, navždy — když odejdete, převezme ho váš nástupce.",
+    "step3": "Dávejte. Zveřejněte tolik darů, kolik chcete, kdykoli chcete, s datem platnosti, které si zvolíte."
+  },
+  "why": {
+    "title": "Proč 10 000 CHF, jednou",
+    "body": "Není to cena reklamy. Je to filtr. Jen ředitel, který opravdu chce dávat, zaplatí za to, aby to udělal veřejně a pod svým jménem. Právě to dělá každý dar na tomto webu skutečným."
+  },
+  "feed": {
+    "title": "Seznam",
+    "body": "Dary se objevují v pořadí, v jakém byly dány, číslované od #1. Firmy se objevují v pořadí, v jakém se přidaly. Nic dalšího se tu kupovat nedá.",
+    "empty": "Zatím žádné dary. První bude #1.",
+    "companies_title": "Firmy s místem",
+    "companies_empty": "Zatím žádné firmy.",
+    "given_by": "dal",
+    "valid_until": "platí do",
+    "no_expiry": "bez omezení",
+    "seat": "Místo"
+  },
+  "sponsors": {
+    "title": "Sponzoři",
+    "rotabo": "Vyrobeno ve Švýcarsku · Dostupné po celém světě"
+  },
+  "cta": {
+    "primary": "Dejte svůj první dar. →"
+  },
+  "type": {
+    "world": "Dar světu",
+    "team": "Dar týmu",
+    "equity": "Podíly pro tým",
+    "mentoring": "Den mentoringu"
+  },
+  "state": {
+    "active": "Aktivní",
+    "ended": "Ukončeno",
+    "withdrawn": "Staženo"
+  },
+  "footer": {
+    "smallprint": "gift.ceo je publikační platforma. Každý dar zveřejňuje a podepisuje osoba, která prohlásila, že je generálním ředitelem uvedené firmy, prostřednictvím účtu Google Workspace této firmy. Jednorázový poplatek za místo se nevrací. gift.ceo popsané dary neověřuje ani nezaručuje.",
+    "terms": "Podmínky",
+    "privacy": "Soukromí"
+  },
+  "join": {
+    "title": "Zaberte místo své firmy",
+    "signin_cta": "Přihlásit se přes Google",
+    "no_hd": "Přihlaste se účtem Google Workspace své firmy (@vasefirma.com).",
+    "domain_mismatch": "Tento web neodpovídá doméně vašeho účtu Google Workspace.",
+    "company_name": "Název firmy",
+    "website": "Web firmy",
+    "country": "Země",
+    "logo": "Logo (nepovinné)",
+    "ceo_name": "Vaše jméno, jak se má zobrazit",
+    "linkedin": "LinkedIn (nepovinné)",
+    "photo": "Fotografie (nepovinná)",
+    "declaration": "Jsem generální ředitel (nebo odpovídající nejvyšší vedoucí) této firmy a mám oprávnění publikovat jejím jménem.",
+    "terms_accept": "Přečetl jsem si Podmínky a souhlasím s nimi.",
+    "submit": "Pokračovat k platbě — 10 000 CHF",
+    "takeover_title": "Tato firma už místo má",
+    "takeover_body": "Někdo z vaší firmy už místo koupil. Můžete ho převzít jako současný ředitel. Již zveřejněné dary si ponechají jméno toho, kdo je dal.",
+    "takeover_cta": "Převzít toto místo"
+  },
+  "thanks": {
+    "title": "Vaše místo se aktivuje…",
+    "body": "Platba přijata. Tato stránka pokračuje sama, jakmile bude místo aktivní.",
+    "waiting": "Čeká se na potvrzení…"
+  },
+  "dashboard": {
+    "title": "Vaše dary",
+    "give": "Dát dar",
+    "no_gifts": "Zatím jste nic nedali.",
+    "edit": "Upravit",
+    "end_now": "Ukončit tento dar hned",
+    "profile": "Váš profil",
+    "company": "Vaše firma",
+    "save": "Uložit",
+    "form_type": "Jaký druh daru",
+    "form_title": "Název",
+    "form_description": "Popis",
+    "form_claim": "Jak ho získat",
+    "form_link": "Odkaz (nepovinný)",
+    "form_valid": "Platí do",
+    "form_no_expiry": "Nechte prázdné, pokud nemá vypršet.",
+    "publish": "Zveřejnit",
+    "cancel": "Zrušit",
+    "seat_pending": "Vaše místo ještě není aktivní."
+  },
+  "company_page": {
+    "seat": "Místo",
+    "current_ceo": "Současný ředitel",
+    "history": "Všechny dary",
+    "website": "Web"
+  },
+  "errors": {
+    "generic": "Něco se pokazilo. Zkuste to znovu.",
+    "not_signed_in": "Nejprve se přihlaste.",
+    "not_found": "Nenalezeno."
+  }
+}

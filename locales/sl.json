@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Tu darujejo samo direktorji",
+    "description": "Javni seznam daril, ki jih glavni direktorji dajejo osebno, v svojem imenu in v imenu svojega podjetja. Eno mesto na podjetje, 10 000 CHF enkrat, za vedno."
+  },
+  "nav": {
+    "gifts": "Darila",
+    "companies": "Podjetja",
+    "join": "Pridruži se",
+    "dashboard": "Nadzorna plošča",
+    "signin": "Prijava",
+    "signout": "Odjava",
+    "language": "Jezik"
+  },
+  "header": {
+    "badge": "🇨🇭 Narejeno v Švici · Na voljo po vsem svetu"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Tu darujejo samo direktorji.",
+    "sub": "Eno mesto na podjetje. 10 000 CHF, enkrat, za vedno. Nato darujete, kolikor želite."
+  },
+  "intro": {
+    "body": "Vsako darilo na tem mestu da osebno glavni direktor, v svojem imenu in v imenu svojega podjetja. Brezplačno orodje za svet. Nagrada za ekipo. Deleži za ljudi, ki so zgradili podjetje. Dan mentorstva. Brez sporočil za javnost, brez agencij — le direktor, ki reče: to darujemo."
+  },
+  "how": {
+    "title": "Kako deluje",
+    "step1": "Prijavite se z Google računom svojega podjetja. Tako vemo, da je res vaše.",
+    "step2": "Kupite mesto svojega podjetja: 10 000 CHF, enkrat. Pripada podjetju, za vedno — če odidete, ga prevzame vaš naslednik.",
+    "step3": "Darujte. Objavite toliko daril, kolikor želite, kadar želite, z datumom veljavnosti, ki ga izberete sami."
+  },
+  "why": {
+    "title": "Zakaj 10 000 CHF, enkrat",
+    "body": "To ni cena oglasa. To je filter. Le direktor, ki resnično želi darovati, bo plačal, da to stori javno, v svojem imenu. Prav to naredi vsako darilo na tem mestu resnično."
+  },
+  "feed": {
+    "title": "Seznam",
+    "body": "Darila se prikazujejo po vrstnem redu, v katerem so bila dana, oštevilčena od #1. Podjetja se prikazujejo po vrstnem redu vključitve. Ničesar drugega ni za kupiti.",
+    "empty": "Še ni daril. Prvo bo #1.",
+    "companies_title": "Podjetja z mestom",
+    "companies_empty": "Še ni podjetij.",
+    "given_by": "daroval",
+    "valid_until": "velja do",
+    "no_expiry": "brez roka",
+    "seat": "Mesto"
+  },
+  "sponsors": {
+    "title": "Sponzorji",
+    "rotabo": "Narejeno v Švici · Na voljo po vsem svetu"
+  },
+  "cta": {
+    "primary": "Darujte svoje prvo darilo. →"
+  },
+  "type": {
+    "world": "Darilo svetu",
+    "team": "Darilo ekipi",
+    "equity": "Deleži za ekipo",
+    "mentoring": "Dan mentorstva"
+  },
+  "state": {
+    "active": "Aktivno",
+    "ended": "Končano",
+    "withdrawn": "Umaknjeno"
+  },
+  "footer": {
+    "smallprint": "gift.ceo je platforma za objavljanje. Vsako darilo objavi in podpiše oseba, ki je izjavila, da je glavni direktor navedenega podjetja, prek Google Workspace računa tega podjetja. Enkratni znesek za mesto se ne vrača. gift.ceo opisanih daril ne preverja in zanje ne jamči.",
+    "terms": "Pogoji",
+    "privacy": "Zasebnost"
+  },
+  "join": {
+    "title": "Zavzemite mesto svojega podjetja",
+    "signin_cta": "Prijava z Googlom",
+    "no_hd": "Prijavite se z Google Workspace računom svojega podjetja (@vasepodjetje.com).",
+    "domain_mismatch": "To spletno mesto se ne ujema z domeno vašega Google Workspace računa.",
+    "company_name": "Ime podjetja",
+    "website": "Spletno mesto podjetja",
+    "country": "Država",
+    "logo": "Logotip (neobvezno)",
+    "ceo_name": "Vaše ime, kot naj se prikaže",
+    "linkedin": "LinkedIn (neobvezno)",
+    "photo": "Fotografija (neobvezno)",
+    "declaration": "Sem glavni direktor (ali enakovreden najvišji vodstveni delavec) tega podjetja in sem pooblaščen za objavljanje v njegovem imenu.",
+    "terms_accept": "Prebral sem Pogoje in jih sprejemam.",
+    "submit": "Naprej na plačilo — 10 000 CHF",
+    "takeover_title": "To podjetje že ima mesto",
+    "takeover_body": "Nekdo iz vašega podjetja je mesto že kupil. Prevzamete ga lahko kot trenutni direktor. Že objavljena darila obdržijo ime tistega, ki jih je dal.",
+    "takeover_cta": "Prevzemi to mesto"
+  },
+  "thanks": {
+    "title": "Vaše mesto se aktivira…",
+    "body": "Plačilo je prejeto. Ta stran nadaljuje sama, takoj ko bo mesto aktivno.",
+    "waiting": "Čakamo na potrditev…"
+  },
+  "dashboard": {
+    "title": "Vaša darila",
+    "give": "Darujte",
+    "no_gifts": "Ničesar še niste darovali.",
+    "edit": "Uredi",
+    "end_now": "Končaj to darilo zdaj",
+    "profile": "Vaš profil",
+    "company": "Vaše podjetje",
+    "save": "Shrani",
+    "form_type": "Kakšna vrsta darila",
+    "form_title": "Naslov",
+    "form_description": "Opis",
+    "form_claim": "Kako ga prevzeti",
+    "form_link": "Povezava (neobvezno)",
+    "form_valid": "Velja do",
+    "form_no_expiry": "Pustite prazno, če ni roka.",
+    "publish": "Objavi",
+    "cancel": "Prekliči",
+    "seat_pending": "Vaše mesto še ni aktivno."
+  },
+  "company_page": {
+    "seat": "Mesto",
+    "current_ceo": "Trenutni direktor",
+    "history": "Vsa darila",
+    "website": "Spletno mesto"
+  },
+  "errors": {
+    "generic": "Nekaj je šlo narobe. Poskusite znova.",
+    "not_signed_in": "Najprej se prijavite.",
+    "not_found": "Ni najdeno."
+  }
+}

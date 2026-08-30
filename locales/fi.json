@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Täällä lahjoittavat vain toimitusjohtajat",
+    "description": "Julkinen luettelo lahjoista, jotka toimitusjohtajat antavat henkilökohtaisesti omalla ja yrityksensä nimellä. Yksi paikka yritystä kohti, 10 000 CHF kerran, ikuisesti."
+  },
+  "nav": {
+    "gifts": "Lahjat",
+    "companies": "Yritykset",
+    "join": "Liity",
+    "dashboard": "Paneeli",
+    "signin": "Kirjaudu sisään",
+    "signout": "Kirjaudu ulos",
+    "language": "Kieli"
+  },
+  "header": {
+    "badge": "🇨🇭 Tehty Sveitsissä · Saatavilla maailmanlaajuisesti"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Täällä lahjoittavat vain toimitusjohtajat.",
+    "sub": "Yksi paikka yritystä kohti. 10 000 CHF, kerran, ikuisesti. Sen jälkeen lahjoitat niin paljon kuin haluat."
+  },
+  "intro": {
+    "body": "Jokaisen tällä sivustolla olevan lahjan antaa henkilökohtaisesti toimitusjohtaja, omalla ja yrityksensä nimellä. Ilmainen työkalu maailmalle. Bonus tiimille. Osuuksia niille, jotka rakensivat yrityksen. Päivä mentorointia. Ei tiedotteita, ei toimistoja — vain toimitusjohtaja, joka sanoo: tämän me annamme."
+  },
+  "how": {
+    "title": "Näin se toimii",
+    "step1": "Kirjaudu sisään yrityksesi Google-tilillä. Näin tiedämme, että kyseessä on todella sinun yrityksesi.",
+    "step2": "Osta yrityksesi paikka: 10 000 CHF, kerran. Se kuuluu yritykselle, ikuisesti — jos lähdet, seuraajasi ottaa sen.",
+    "step3": "Anna. Julkaise niin monta lahjaa kuin haluat, milloin haluat, valitsemallasi voimassaolopäivällä."
+  },
+  "why": {
+    "title": "Miksi 10 000 CHF, kerran",
+    "body": "Tämä ei ole mainoksen hinta. Tämä on suodatin. Vain toimitusjohtaja, joka todella haluaa antaa, maksaa tehdäkseen sen julkisesti omalla nimellään. Juuri se tekee jokaisesta tämän sivuston lahjasta aidon."
+  },
+  "feed": {
+    "title": "Luettelo",
+    "body": "Lahjat näkyvät siinä järjestyksessä kuin ne on annettu, numeroituna alkaen #1. Yritykset näkyvät liittymisjärjestyksessä. Muuta ostettavaa ei ole.",
+    "empty": "Ei vielä lahjoja. Ensimmäinen on #1.",
+    "companies_title": "Yritykset, joilla on paikka",
+    "companies_empty": "Ei vielä yrityksiä.",
+    "given_by": "antanut",
+    "valid_until": "voimassa asti",
+    "no_expiry": "ei päättymispäivää",
+    "seat": "Paikka"
+  },
+  "sponsors": {
+    "title": "Sponsorit",
+    "rotabo": "Tehty Sveitsissä · Saatavilla maailmanlaajuisesti"
+  },
+  "cta": {
+    "primary": "Anna ensimmäinen lahjasi. →"
+  },
+  "type": {
+    "world": "Lahja maailmalle",
+    "team": "Lahja tiimille",
+    "equity": "Osuuksia tiimille",
+    "mentoring": "Päivä mentorointia"
+  },
+  "state": {
+    "active": "Voimassa",
+    "ended": "Päättynyt",
+    "withdrawn": "Peruttu"
+  },
+  "footer": {
+    "smallprint": "gift.ceo on julkaisualusta. Jokaisen lahjan julkaisee ja allekirjoittaa henkilö, joka on ilmoittanut olevansa mainitun yrityksen toimitusjohtaja, kyseisen yrityksen Google Workspace -tilillä. Paikan kertamaksua ei palauteta. gift.ceo ei tarkista eikä takaa kuvattuja lahjoja.",
+    "terms": "Ehdot",
+    "privacy": "Tietosuoja"
+  },
+  "join": {
+    "title": "Ota yrityksesi paikka",
+    "signin_cta": "Kirjaudu Googlella",
+    "no_hd": "Kirjaudu sisään yrityksesi Google Workspace -tilillä (@yrityksesi.com).",
+    "domain_mismatch": "Tuo sivusto ei vastaa Google Workspace -tilisi verkkotunnusta.",
+    "company_name": "Yrityksen nimi",
+    "website": "Yrityksen verkkosivusto",
+    "country": "Maa",
+    "logo": "Logo (valinnainen)",
+    "ceo_name": "Nimesi sellaisena kuin sen tulee näkyä",
+    "linkedin": "LinkedIn (valinnainen)",
+    "photo": "Valokuva (valinnainen)",
+    "declaration": "Olen tämän yrityksen toimitusjohtaja (tai vastaava ylin johtaja) ja minulla on oikeus julkaista sen nimissä.",
+    "terms_accept": "Olen lukenut Ehdot ja hyväksyn ne.",
+    "submit": "Jatka maksuun — 10 000 CHF",
+    "takeover_title": "Tällä yrityksellä on jo paikka",
+    "takeover_body": "Joku yrityksestäsi on jo ostanut paikan. Voit ottaa sen istuvana toimitusjohtajana. Jo julkaistut lahjat säilyttävät antajansa nimen.",
+    "takeover_cta": "Ota tämä paikka"
+  },
+  "thanks": {
+    "title": "Paikkaasi aktivoidaan…",
+    "body": "Maksu vastaanotettu. Tämä sivu jatkaa itsestään heti kun paikka on aktiivinen.",
+    "waiting": "Odotetaan vahvistusta…"
+  },
+  "dashboard": {
+    "title": "Lahjasi",
+    "give": "Anna lahja",
+    "no_gifts": "Et ole vielä antanut mitään.",
+    "edit": "Muokkaa",
+    "end_now": "Päätä tämä lahja nyt",
+    "profile": "Profiilisi",
+    "company": "Yrityksesi",
+    "save": "Tallenna",
+    "form_type": "Millainen lahja",
+    "form_title": "Otsikko",
+    "form_description": "Kuvaus",
+    "form_claim": "Miten sen saa",
+    "form_link": "Linkki (valinnainen)",
+    "form_valid": "Voimassa asti",
+    "form_no_expiry": "Jätä tyhjäksi, jos ei päättymispäivää.",
+    "publish": "Julkaise",
+    "cancel": "Peruuta",
+    "seat_pending": "Paikkasi ei ole vielä aktiivinen."
+  },
+  "company_page": {
+    "seat": "Paikka",
+    "current_ceo": "Istuva toimitusjohtaja",
+    "history": "Kaikki lahjat",
+    "website": "Verkkosivusto"
+  },
+  "errors": {
+    "generic": "Jokin meni pieleen. Yritä uudelleen.",
+    "not_signed_in": "Kirjaudu ensin sisään.",
+    "not_found": "Ei löytynyt."
+  }
+}

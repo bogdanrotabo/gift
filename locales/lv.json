@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Šeit dāvina tikai vadītāji",
+    "description": "Publisks saraksts ar dāvanām, ko izpilddirektori dāvina personīgi, savā un sava uzņēmuma vārdā. Viena vieta uz uzņēmumu, 10 000 CHF vienu reizi, uz visiem laikiem."
+  },
+  "nav": {
+    "gifts": "Dāvanas",
+    "companies": "Uzņēmumi",
+    "join": "Pievienoties",
+    "dashboard": "Panelis",
+    "signin": "Pieteikties",
+    "signout": "Atteikties",
+    "language": "Valoda"
+  },
+  "header": {
+    "badge": "🇨🇭 Ražots Šveicē · Pieejams visā pasaulē"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Šeit dāvina tikai vadītāji.",
+    "sub": "Viena vieta uz uzņēmumu. 10 000 CHF, vienu reizi, uz visiem laikiem. Pēc tam dāvinat, cik vēlaties."
+  },
+  "intro": {
+    "body": "Katru dāvanu šajā vietnē personīgi dāvina izpilddirektors, savā un sava uzņēmuma vārdā. Bezmaksas rīks pasaulei. Prēmija komandai. Daļas tiem, kas uzbūvēja uzņēmumu. Viena mentoringa diena. Nekādu paziņojumu presei, nekādu aģentūru — tikai vadītājs, kurš saka: lūk, ko mēs dāvinām."
+  },
+  "how": {
+    "title": "Kā tas darbojas",
+    "step1": "Piesakieties ar sava uzņēmuma Google kontu. Tā mēs zinām, ka tas tiešām ir jūsu uzņēmums.",
+    "step2": "Nopērciet sava uzņēmuma vietu: 10 000 CHF, vienu reizi. Tā pieder uzņēmumam, uz visiem laikiem — ja aizejat, to pārņem jūsu pēctecis.",
+    "step3": "Dāviniet. Publicējiet tik daudz dāvanu, cik vēlaties, kad vēlaties, ar pašu izvēlētu derīguma datumu."
+  },
+  "why": {
+    "title": "Kāpēc 10 000 CHF, vienu reizi",
+    "body": "Tā nav reklāmas cena. Tas ir filtrs. Tikai vadītājs, kurš tiešām grib dāvināt, samaksās, lai to darītu publiski, savā vārdā. Tieši tas padara katru dāvanu šajā vietnē īstu."
+  },
+  "feed": {
+    "title": "Saraksts",
+    "body": "Dāvanas parādās tādā secībā, kādā tās dāvinātas, numurētas no #1. Uzņēmumi parādās pievienošanās secībā. Nekas cits nav pērkams.",
+    "empty": "Pagaidām dāvanu nav. Pirmā būs #1.",
+    "companies_title": "Uzņēmumi ar vietu",
+    "companies_empty": "Pagaidām uzņēmumu nav.",
+    "given_by": "dāvināja",
+    "valid_until": "derīgs līdz",
+    "no_expiry": "bez termiņa",
+    "seat": "Vieta"
+  },
+  "sponsors": {
+    "title": "Sponsori",
+    "rotabo": "Ražots Šveicē · Pieejams visā pasaulē"
+  },
+  "cta": {
+    "primary": "Uzdāviniet savu pirmo dāvanu. →"
+  },
+  "type": {
+    "world": "Dāvana pasaulei",
+    "team": "Dāvana komandai",
+    "equity": "Daļas komandai",
+    "mentoring": "Viena mentoringa diena"
+  },
+  "state": {
+    "active": "Aktīva",
+    "ended": "Beigusies",
+    "withdrawn": "Atsaukta"
+  },
+  "footer": {
+    "smallprint": "gift.ceo ir publicēšanas platforma. Katru dāvanu publicē un paraksta persona, kas paziņojusi, ka ir norādītā uzņēmuma izpilddirektors, izmantojot šī uzņēmuma Google Workspace kontu. Vienreizējā maksa par vietu netiek atmaksāta. gift.ceo nepārbauda un negarantē aprakstītās dāvanas.",
+    "terms": "Noteikumi",
+    "privacy": "Privātums"
+  },
+  "join": {
+    "title": "Ieņemiet sava uzņēmuma vietu",
+    "signin_cta": "Pieteikties ar Google",
+    "no_hd": "Piesakieties ar sava uzņēmuma Google Workspace kontu (@jusuuznemums.com).",
+    "domain_mismatch": "Šī vietne neatbilst jūsu Google Workspace konta domēnam.",
+    "company_name": "Uzņēmuma nosaukums",
+    "website": "Uzņēmuma vietne",
+    "country": "Valsts",
+    "logo": "Logotips (nav obligāts)",
+    "ceo_name": "Jūsu vārds, kā tam jāparādās",
+    "linkedin": "LinkedIn (nav obligāts)",
+    "photo": "Fotogrāfija (nav obligāta)",
+    "declaration": "Esmu šī uzņēmuma izpilddirektors (vai līdzvērtīgs augstākā līmeņa vadītājs) un man ir tiesības publicēt tā vārdā.",
+    "terms_accept": "Esmu izlasījis Noteikumus un tiem piekrītu.",
+    "submit": "Turpināt uz maksājumu — 10 000 CHF",
+    "takeover_title": "Šim uzņēmumam jau ir vieta",
+    "takeover_body": "Kāds no jūsu uzņēmuma jau ir nopircis vietu. Jūs varat to pārņemt kā pašreizējais vadītājs. Jau publicētās dāvanas saglabā tā vārdu, kurš tās uzdāvināja.",
+    "takeover_cta": "Pārņemt šo vietu"
+  },
+  "thanks": {
+    "title": "Jūsu vieta tiek aktivizēta…",
+    "body": "Maksājums saņemts. Šī lapa turpinās pati, tiklīdz vieta būs aktīva.",
+    "waiting": "Gaidām apstiprinājumu…"
+  },
+  "dashboard": {
+    "title": "Jūsu dāvanas",
+    "give": "Uzdāvināt",
+    "no_gifts": "Jūs vēl neko neesat uzdāvinājis.",
+    "edit": "Rediģēt",
+    "end_now": "Beigt šo dāvanu tagad",
+    "profile": "Jūsu profils",
+    "company": "Jūsu uzņēmums",
+    "save": "Saglabāt",
+    "form_type": "Kāda veida dāvana",
+    "form_title": "Nosaukums",
+    "form_description": "Apraksts",
+    "form_claim": "Kā to saņemt",
+    "form_link": "Saite (nav obligāta)",
+    "form_valid": "Derīgs līdz",
+    "form_no_expiry": "Atstājiet tukšu, ja termiņa nav.",
+    "publish": "Publicēt",
+    "cancel": "Atcelt",
+    "seat_pending": "Jūsu vieta vēl nav aktīva."
+  },
+  "company_page": {
+    "seat": "Vieta",
+    "current_ceo": "Pašreizējais izpilddirektors",
+    "history": "Visas dāvanas",
+    "website": "Vietne"
+  },
+  "errors": {
+    "generic": "Kaut kas nogāja greizi. Mēģiniet vēlreiz.",
+    "not_signed_in": "Vispirms piesakieties.",
+    "not_found": "Nav atrasts."
+  }
+}

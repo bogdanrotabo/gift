@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Tutaj dają tylko prezesi",
+    "description": "Publiczna lista darów przekazywanych osobiście przez prezesów, pod własnym nazwiskiem i nazwą firmy. Jedno miejsce na firmę, 10 000 CHF raz, na zawsze."
+  },
+  "nav": {
+    "gifts": "Dary",
+    "companies": "Firmy",
+    "join": "Dołącz",
+    "dashboard": "Panel",
+    "signin": "Zaloguj się",
+    "signout": "Wyloguj się",
+    "language": "Język"
+  },
+  "header": {
+    "badge": "🇨🇭 Zrobione w Szwajcarii · Dostępne na całym świecie"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Tutaj dają tylko prezesi.",
+    "sub": "Jedno miejsce na firmę. 10 000 CHF, raz, na zawsze. Potem dajesz, ile chcesz."
+  },
+  "intro": {
+    "body": "Każdy dar na tej stronie przekazuje osobiście prezes, pod własnym nazwiskiem i nazwą swojej firmy. Darmowe narzędzie dla świata. Premia dla zespołu. Udziały dla ludzi, którzy zbudowali firmę. Dzień mentoringu. Żadnych komunikatów prasowych, żadnych agencji — po prostu prezes, który mówi: oto, co dajemy."
+  },
+  "how": {
+    "title": "Jak to działa",
+    "step1": "Zaloguj się kontem Google swojej firmy. Tak wiemy, że to naprawdę twoja firma.",
+    "step2": "Kup miejsce dla swojej firmy: 10 000 CHF, raz. Należy do firmy, na zawsze — jeśli odejdziesz, przejmie je twój następca.",
+    "step3": "Dawaj. Publikuj tyle darów, ile chcesz, kiedy chcesz, z wybraną przez siebie datą ważności."
+  },
+  "why": {
+    "title": "Dlaczego 10 000 CHF, raz",
+    "body": "To nie jest cena reklamy. To filtr. Tylko prezes, który naprawdę chce dawać, zapłaci, żeby zrobić to publicznie, pod własnym nazwiskiem. To właśnie sprawia, że każdy dar na tej stronie jest prawdziwy."
+  },
+  "feed": {
+    "title": "Lista",
+    "body": "Dary pojawiają się w kolejności, w jakiej zostały przekazane, numerowane od #1. Firmy pojawiają się w kolejności dołączenia. Nie ma tu nic więcej do kupienia.",
+    "empty": "Jeszcze nie ma darów. Pierwszy będzie #1.",
+    "companies_title": "Firmy z miejscem",
+    "companies_empty": "Jeszcze nie ma firm.",
+    "given_by": "przekazał",
+    "valid_until": "ważne do",
+    "no_expiry": "bez terminu",
+    "seat": "Miejsce"
+  },
+  "sponsors": {
+    "title": "Sponsorzy",
+    "rotabo": "Zrobione w Szwajcarii · Dostępne na całym świecie"
+  },
+  "cta": {
+    "primary": "Przekaż swój pierwszy dar. →"
+  },
+  "type": {
+    "world": "Dar dla świata",
+    "team": "Dar dla zespołu",
+    "equity": "Udziały dla zespołu",
+    "mentoring": "Dzień mentoringu"
+  },
+  "state": {
+    "active": "Aktywny",
+    "ended": "Zakończony",
+    "withdrawn": "Wycofany"
+  },
+  "footer": {
+    "smallprint": "gift.ceo jest platformą publikacyjną. Każdy dar publikuje i podpisuje osoba, która oświadczyła, że jest prezesem wskazanej firmy, korzystając z konta Google Workspace tej firmy. Jednorazowa opłata za miejsce nie podlega zwrotowi. gift.ceo nie weryfikuje ani nie gwarantuje opisanych darów.",
+    "terms": "Regulamin",
+    "privacy": "Prywatność"
+  },
+  "join": {
+    "title": "Zajmij miejsce swojej firmy",
+    "signin_cta": "Zaloguj się przez Google",
+    "no_hd": "Zaloguj się kontem Google Workspace swojej firmy (@twojafirma.com).",
+    "domain_mismatch": "Ta strona nie zgadza się z domeną twojego konta Google Workspace.",
+    "company_name": "Nazwa firmy",
+    "website": "Strona firmy",
+    "country": "Kraj",
+    "logo": "Logo (opcjonalnie)",
+    "ceo_name": "Twoje imię i nazwisko, tak jak ma się pojawić",
+    "linkedin": "LinkedIn (opcjonalnie)",
+    "photo": "Zdjęcie (opcjonalnie)",
+    "declaration": "Jestem prezesem (lub równorzędnym najwyższym kierownikiem) tej firmy i mam prawo publikować w jej imieniu.",
+    "terms_accept": "Przeczytałem i akceptuję Regulamin.",
+    "submit": "Przejdź do płatności — 10 000 CHF",
+    "takeover_title": "Ta firma ma już miejsce",
+    "takeover_body": "Ktoś z twojej firmy już kupił miejsce. Możesz je przejąć jako obecny prezes. Już opublikowane dary zachowują nazwisko tego, kto je przekazał.",
+    "takeover_cta": "Przejmij to miejsce"
+  },
+  "thanks": {
+    "title": "Twoje miejsce jest aktywowane…",
+    "body": "Płatność otrzymana. Ta strona przejdzie dalej sama, gdy miejsce będzie aktywne.",
+    "waiting": "Czekamy na potwierdzenie…"
+  },
+  "dashboard": {
+    "title": "Twoje dary",
+    "give": "Przekaż dar",
+    "no_gifts": "Jeszcze nic nie przekazałeś.",
+    "edit": "Edytuj",
+    "end_now": "Zakończ ten dar teraz",
+    "profile": "Twój profil",
+    "company": "Twoja firma",
+    "save": "Zapisz",
+    "form_type": "Jaki rodzaj daru",
+    "form_title": "Tytuł",
+    "form_description": "Opis",
+    "form_claim": "Jak go odebrać",
+    "form_link": "Link (opcjonalnie)",
+    "form_valid": "Ważne do",
+    "form_no_expiry": "Zostaw puste, aby nie było terminu.",
+    "publish": "Opublikuj",
+    "cancel": "Anuluj",
+    "seat_pending": "Twoje miejsce nie jest jeszcze aktywne."
+  },
+  "company_page": {
+    "seat": "Miejsce",
+    "current_ceo": "Obecny prezes",
+    "history": "Wszystkie dary",
+    "website": "Strona"
+  },
+  "errors": {
+    "generic": "Coś poszło nie tak. Spróbuj ponownie.",
+    "not_signed_in": "Najpierw się zaloguj.",
+    "not_found": "Nie znaleziono."
+  }
+}

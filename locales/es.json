@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Aquí solo dan los directores ejecutivos",
+    "description": "Una lista pública de regalos hechos personalmente por directores ejecutivos, con su propio nombre y el de su empresa. Una plaza por empresa, 10 000 CHF una sola vez, para siempre."
+  },
+  "nav": {
+    "gifts": "Regalos",
+    "companies": "Empresas",
+    "join": "Únete",
+    "dashboard": "Panel",
+    "signin": "Iniciar sesión",
+    "signout": "Cerrar sesión",
+    "language": "Idioma"
+  },
+  "header": {
+    "badge": "🇨🇭 Hecho en Suiza · Disponible en todo el mundo"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Aquí solo dan los directores ejecutivos.",
+    "sub": "Una plaza por empresa. 10 000 CHF, una sola vez, para siempre. Después, da todo lo que quieras."
+  },
+  "intro": {
+    "body": "Cada regalo de este sitio lo hace personalmente un director ejecutivo, con su propio nombre y el de su empresa. Una herramienta gratuita para todo el mundo. Una prima para el equipo. Participaciones para quienes construyeron la empresa. Un día de mentoría. Sin notas de prensa, sin agencias — solo un director que dice: esto es lo que damos."
+  },
+  "how": {
+    "title": "Cómo funciona",
+    "step1": "Inicia sesión con la cuenta de Google de tu empresa. Así sabemos que es realmente tu empresa.",
+    "step2": "Compra la plaza de tu empresa: 10 000 CHF, una sola vez. Pertenece a la empresa, para siempre — si te vas, la toma quien te suceda.",
+    "step3": "Da. Publica tantos regalos como quieras, cuando quieras, con la fecha de validez que elijas."
+  },
+  "why": {
+    "title": "Por qué 10 000 CHF, una sola vez",
+    "body": "No es el precio de un anuncio. Es un filtro. Solo un director que de verdad quiere dar pagará por hacerlo en público y con su propio nombre. Eso es lo que hace que cada regalo de este sitio sea real."
+  },
+  "feed": {
+    "title": "La lista",
+    "body": "Los regalos aparecen en el orden en que se hicieron, numerados desde el #1. Las empresas aparecen en el orden en que se sumaron. No hay nada más que comprar.",
+    "empty": "Todavía no hay regalos. El primero será el #1.",
+    "companies_title": "Empresas con plaza",
+    "companies_empty": "Todavía no hay empresas.",
+    "given_by": "dado por",
+    "valid_until": "válido hasta",
+    "no_expiry": "sin caducidad",
+    "seat": "Plaza"
+  },
+  "sponsors": {
+    "title": "Patrocinadores",
+    "rotabo": "Hecho en Suiza · Disponible en todo el mundo"
+  },
+  "cta": {
+    "primary": "Haz tu primer regalo. →"
+  },
+  "type": {
+    "world": "Un regalo al mundo",
+    "team": "Un regalo al equipo",
+    "equity": "Participaciones para el equipo",
+    "mentoring": "Un día de mentoría"
+  },
+  "state": {
+    "active": "Activo",
+    "ended": "Finalizado",
+    "withdrawn": "Retirado"
+  },
+  "footer": {
+    "smallprint": "gift.ceo es una plataforma de publicación. Cada regalo lo publica y lo firma la persona que ha declarado ser el director ejecutivo de la empresa nombrada, usando la cuenta de Google Workspace de esa empresa. La tarifa única de la plaza no es reembolsable. gift.ceo no verifica ni garantiza los regalos descritos.",
+    "terms": "Términos",
+    "privacy": "Privacidad"
+  },
+  "join": {
+    "title": "Toma la plaza de tu empresa",
+    "signin_cta": "Iniciar sesión con Google",
+    "no_hd": "Inicia sesión con la cuenta de Google Workspace de tu empresa (@tuempresa.com).",
+    "domain_mismatch": "Ese sitio web no coincide con el dominio de tu cuenta de Google Workspace.",
+    "company_name": "Nombre de la empresa",
+    "website": "Sitio web de la empresa",
+    "country": "País",
+    "logo": "Logotipo (opcional)",
+    "ceo_name": "Tu nombre, tal como debe aparecer",
+    "linkedin": "LinkedIn (opcional)",
+    "photo": "Foto (opcional)",
+    "declaration": "Soy el director ejecutivo (o el máximo directivo equivalente) de esta empresa y estoy autorizado a publicar en su nombre.",
+    "terms_accept": "He leído y acepto los Términos.",
+    "submit": "Continuar al pago — 10 000 CHF",
+    "takeover_title": "Esta empresa ya tiene una plaza",
+    "takeover_body": "Alguien de tu empresa ya compró la plaza. Puedes tomarla como director ejecutivo actual. Los regalos ya publicados conservan el nombre de quien los hizo.",
+    "takeover_cta": "Tomar esta plaza"
+  },
+  "thanks": {
+    "title": "Tu plaza se está activando…",
+    "body": "Pago recibido. Esta página seguirá sola en cuanto la plaza esté activa.",
+    "waiting": "Esperando la confirmación…"
+  },
+  "dashboard": {
+    "title": "Tus regalos",
+    "give": "Hacer un regalo",
+    "no_gifts": "Todavía no has dado nada.",
+    "edit": "Editar",
+    "end_now": "Finalizar este regalo ahora",
+    "profile": "Tu perfil",
+    "company": "Tu empresa",
+    "save": "Guardar",
+    "form_type": "Qué tipo de regalo",
+    "form_title": "Título",
+    "form_description": "Descripción",
+    "form_claim": "Cómo obtenerlo",
+    "form_link": "Enlace (opcional)",
+    "form_valid": "Válido hasta",
+    "form_no_expiry": "Déjalo vacío para que no caduque.",
+    "publish": "Publicar",
+    "cancel": "Cancelar",
+    "seat_pending": "Tu plaza todavía no está activa."
+  },
+  "company_page": {
+    "seat": "Plaza",
+    "current_ceo": "Director ejecutivo actual",
+    "history": "Todos los regalos",
+    "website": "Sitio web"
+  },
+  "errors": {
+    "generic": "Algo salió mal. Inténtalo de nuevo.",
+    "not_signed_in": "Inicia sesión primero.",
+    "not_found": "No encontrado."
+  }
+}

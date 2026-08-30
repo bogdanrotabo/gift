@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Här ger bara vd:ar",
+    "description": "En offentlig lista över gåvor som vd:ar ger personligen, i sitt eget och sitt företags namn. En plats per företag, 10 000 CHF en gång, för alltid."
+  },
+  "nav": {
+    "gifts": "Gåvor",
+    "companies": "Företag",
+    "join": "Var med",
+    "dashboard": "Panel",
+    "signin": "Logga in",
+    "signout": "Logga ut",
+    "language": "Språk"
+  },
+  "header": {
+    "badge": "🇨🇭 Gjort i Schweiz · Tillgängligt i hela världen"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Här ger bara vd:ar.",
+    "sub": "En plats per företag. 10 000 CHF, en gång, för alltid. Sedan ger du så mycket du vill."
+  },
+  "intro": {
+    "body": "Varje gåva på den här sidan ges personligen av en vd, i sitt eget och sitt företags namn. Ett gratis verktyg till världen. En bonus till teamet. Andelar till dem som byggde företaget. En dag av mentorskap. Inga pressmeddelanden, inga byråer — bara en vd som säger: det här ger vi."
+  },
+  "how": {
+    "title": "Så fungerar det",
+    "step1": "Logga in med företagets Google-konto. Så vet vi att det verkligen är ditt företag.",
+    "step2": "Köp företagets plats: 10 000 CHF, en gång. Den tillhör företaget, för alltid — slutar du, tar din efterträdare över den.",
+    "step3": "Ge. Publicera så många gåvor du vill, när du vill, med ett giltighetsdatum du väljer själv."
+  },
+  "why": {
+    "title": "Varför 10 000 CHF, en gång",
+    "body": "Det är inte priset på en annons. Det är ett filter. Bara en vd som verkligen vill ge betalar för att göra det offentligt, i sitt eget namn. Det är det som gör varje gåva på den här sidan verklig."
+  },
+  "feed": {
+    "title": "Listan",
+    "body": "Gåvor visas i den ordning de gavs, numrerade från #1. Företag visas i den ordning de kom med. Det finns inget annat att köpa.",
+    "empty": "Inga gåvor ännu. Den första blir #1.",
+    "companies_title": "Företag med en plats",
+    "companies_empty": "Inga företag ännu.",
+    "given_by": "given av",
+    "valid_until": "gäller till",
+    "no_expiry": "utan slutdatum",
+    "seat": "Plats"
+  },
+  "sponsors": {
+    "title": "Sponsorer",
+    "rotabo": "Gjort i Schweiz · Tillgängligt i hela världen"
+  },
+  "cta": {
+    "primary": "Ge din första gåva. →"
+  },
+  "type": {
+    "world": "En gåva till världen",
+    "team": "En gåva till teamet",
+    "equity": "Andelar till teamet",
+    "mentoring": "En dag av mentorskap"
+  },
+  "state": {
+    "active": "Aktiv",
+    "ended": "Avslutad",
+    "withdrawn": "Återkallad"
+  },
+  "footer": {
+    "smallprint": "gift.ceo är en publiceringsplattform. Varje gåva publiceras och signeras av den person som uppgett sig vara vd för det angivna företaget, via det företagets Google Workspace-konto. Engångsavgiften för platsen återbetalas inte. gift.ceo varken kontrollerar eller garanterar de beskrivna gåvorna.",
+    "terms": "Villkor",
+    "privacy": "Integritet"
+  },
+  "join": {
+    "title": "Ta ditt företags plats",
+    "signin_cta": "Logga in med Google",
+    "no_hd": "Logga in med företagets Google Workspace-konto (@dittforetag.com).",
+    "domain_mismatch": "Den webbplatsen stämmer inte med domänen för ditt Google Workspace-konto.",
+    "company_name": "Företagets namn",
+    "website": "Företagets webbplats",
+    "country": "Land",
+    "logo": "Logotyp (valfritt)",
+    "ceo_name": "Ditt namn, så som det ska visas",
+    "linkedin": "LinkedIn (valfritt)",
+    "photo": "Foto (valfritt)",
+    "declaration": "Jag är vd (eller motsvarande högsta chef) för det här företaget och har rätt att publicera i dess namn.",
+    "terms_accept": "Jag har läst och godkänner Villkoren.",
+    "submit": "Fortsätt till betalning — 10 000 CHF",
+    "takeover_title": "Det här företaget har redan en plats",
+    "takeover_body": "Någon på ditt företag har redan köpt platsen. Du kan ta över den som sittande vd. Gåvor som redan publicerats behåller namnet på den som gav dem.",
+    "takeover_cta": "Ta över den här platsen"
+  },
+  "thanks": {
+    "title": "Din plats aktiveras…",
+    "body": "Betalningen är mottagen. Sidan går vidare av sig själv så snart platsen är aktiv.",
+    "waiting": "Väntar på bekräftelse…"
+  },
+  "dashboard": {
+    "title": "Dina gåvor",
+    "give": "Ge en gåva",
+    "no_gifts": "Du har inte gett något ännu.",
+    "edit": "Redigera",
+    "end_now": "Avsluta den här gåvan nu",
+    "profile": "Din profil",
+    "company": "Ditt företag",
+    "save": "Spara",
+    "form_type": "Vilken sorts gåva",
+    "form_title": "Titel",
+    "form_description": "Beskrivning",
+    "form_claim": "Så hämtar man den",
+    "form_link": "Länk (valfritt)",
+    "form_valid": "Gäller till",
+    "form_no_expiry": "Lämna tomt för inget slutdatum.",
+    "publish": "Publicera",
+    "cancel": "Avbryt",
+    "seat_pending": "Din plats är inte aktiv ännu."
+  },
+  "company_page": {
+    "seat": "Plats",
+    "current_ceo": "Sittande vd",
+    "history": "Alla gåvor",
+    "website": "Webbplats"
+  },
+  "errors": {
+    "generic": "Något gick fel. Försök igen.",
+    "not_signed_in": "Logga in först.",
+    "not_found": "Hittades inte."
+  }
+}

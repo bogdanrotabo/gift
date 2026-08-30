@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Ici, seuls les PDG donnent",
+    "description": "Une liste publique de dons faits personnellement par des PDG, sous leur propre nom et celui de leur entreprise. Une place par entreprise, 10 000 CHF une seule fois, pour toujours."
+  },
+  "nav": {
+    "gifts": "Dons",
+    "companies": "Entreprises",
+    "join": "Rejoindre",
+    "dashboard": "Tableau de bord",
+    "signin": "Se connecter",
+    "signout": "Se déconnecter",
+    "language": "Langue"
+  },
+  "header": {
+    "badge": "🇨🇭 Fait en Suisse · Disponible dans le monde entier"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Ici, seuls les PDG donnent.",
+    "sub": "Une place par entreprise. 10 000 CHF, une seule fois, pour toujours. Ensuite, donnez autant que vous voulez."
+  },
+  "intro": {
+    "body": "Chaque don sur ce site est fait personnellement par un PDG, sous son propre nom et celui de son entreprise. Un outil gratuit pour le monde entier. Une prime pour l'équipe. Des parts pour ceux qui ont bâti l'entreprise. Une journée de mentorat. Pas de communiqués, pas d'agences — juste un PDG qui dit : voilà ce que nous donnons."
+  },
+  "how": {
+    "title": "Comment ça marche",
+    "step1": "Connectez-vous avec le compte Google de votre entreprise. C'est ainsi que nous savons qu'il s'agit bien de la vôtre.",
+    "step2": "Achetez la place de votre entreprise : 10 000 CHF, une seule fois. Elle appartient à l'entreprise, pour toujours — si vous partez, votre successeur la reprend.",
+    "step3": "Donnez. Publiez autant de dons que vous voulez, quand vous voulez, avec la date de validité de votre choix."
+  },
+  "why": {
+    "title": "Pourquoi 10 000 CHF, une seule fois",
+    "body": "Ce n'est pas le prix d'une publicité. C'est un filtre. Seul un PDG qui veut vraiment donner paiera pour le faire publiquement, sous son propre nom. C'est ce qui rend chaque don de ce site réel."
+  },
+  "feed": {
+    "title": "La liste",
+    "body": "Les dons apparaissent dans l'ordre où ils ont été faits, numérotés à partir de #1. Les entreprises apparaissent dans l'ordre de leur arrivée. Il n'y a rien d'autre à acheter.",
+    "empty": "Aucun don pour l'instant. Le premier sera le #1.",
+    "companies_title": "Entreprises ayant une place",
+    "companies_empty": "Aucune entreprise pour l'instant.",
+    "given_by": "donné par",
+    "valid_until": "valable jusqu'au",
+    "no_expiry": "sans échéance",
+    "seat": "Place"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "rotabo": "Fait en Suisse · Disponible dans le monde entier"
+  },
+  "cta": {
+    "primary": "Faites votre premier don. →"
+  },
+  "type": {
+    "world": "Un don au monde",
+    "team": "Un don à l'équipe",
+    "equity": "Des parts pour l'équipe",
+    "mentoring": "Une journée de mentorat"
+  },
+  "state": {
+    "active": "Actif",
+    "ended": "Terminé",
+    "withdrawn": "Retiré"
+  },
+  "footer": {
+    "smallprint": "gift.ceo est une plateforme de publication. Chaque don est publié et signé par la personne qui a déclaré être le PDG de l'entreprise nommée, au moyen du compte Google Workspace de cette entreprise. Les frais uniques de place ne sont pas remboursables. gift.ceo ne vérifie ni ne garantit les dons décrits.",
+    "terms": "Conditions",
+    "privacy": "Confidentialité"
+  },
+  "join": {
+    "title": "Prenez la place de votre entreprise",
+    "signin_cta": "Se connecter avec Google",
+    "no_hd": "Connectez-vous avec le compte Google Workspace de votre entreprise (@votreentreprise.com).",
+    "domain_mismatch": "Ce site ne correspond pas au domaine de votre compte Google Workspace.",
+    "company_name": "Nom de l'entreprise",
+    "website": "Site de l'entreprise",
+    "country": "Pays",
+    "logo": "Logo (facultatif)",
+    "ceo_name": "Votre nom, tel qu'il doit apparaître",
+    "linkedin": "LinkedIn (facultatif)",
+    "photo": "Photo (facultatif)",
+    "declaration": "Je suis le PDG (ou le dirigeant équivalent) de cette entreprise et je suis autorisé à publier en son nom.",
+    "terms_accept": "J'ai lu et j'accepte les Conditions.",
+    "submit": "Continuer vers le paiement — 10 000 CHF",
+    "takeover_title": "Cette entreprise a déjà une place",
+    "takeover_body": "Quelqu'un de votre entreprise a déjà acheté la place. Vous pouvez la reprendre en tant que PDG en fonction. Les dons déjà publiés conservent le nom de celui qui les a faits.",
+    "takeover_cta": "Reprendre cette place"
+  },
+  "thanks": {
+    "title": "Votre place est en cours d'activation…",
+    "body": "Paiement reçu. Cette page continuera d'elle-même dès que la place sera active.",
+    "waiting": "En attente de confirmation…"
+  },
+  "dashboard": {
+    "title": "Vos dons",
+    "give": "Faire un don",
+    "no_gifts": "Vous n'avez encore rien donné.",
+    "edit": "Modifier",
+    "end_now": "Mettre fin à ce don maintenant",
+    "profile": "Votre profil",
+    "company": "Votre entreprise",
+    "save": "Enregistrer",
+    "form_type": "Quel type de don",
+    "form_title": "Titre",
+    "form_description": "Description",
+    "form_claim": "Comment en bénéficier",
+    "form_link": "Lien (facultatif)",
+    "form_valid": "Valable jusqu'au",
+    "form_no_expiry": "Laissez vide pour aucune échéance.",
+    "publish": "Publier",
+    "cancel": "Annuler",
+    "seat_pending": "Votre place n'est pas encore active."
+  },
+  "company_page": {
+    "seat": "Place",
+    "current_ceo": "PDG en fonction",
+    "history": "Tous les dons",
+    "website": "Site web"
+  },
+  "errors": {
+    "generic": "Une erreur est survenue. Veuillez réessayer.",
+    "not_signed_in": "Veuillez d'abord vous connecter.",
+    "not_found": "Introuvable."
+  }
+}

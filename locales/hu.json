@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Itt csak vezérigazgatók adnak",
+    "description": "Nyilvános lista azokról az ajándékokról, amelyeket vezérigazgatók személyesen adnak, a saját és a cégük nevében. Egy hely cégenként, egyszer 10 000 CHF, örökre."
+  },
+  "nav": {
+    "gifts": "Ajándékok",
+    "companies": "Cégek",
+    "join": "Csatlakozz",
+    "dashboard": "Vezérlőpult",
+    "signin": "Bejelentkezés",
+    "signout": "Kijelentkezés",
+    "language": "Nyelv"
+  },
+  "header": {
+    "badge": "🇨🇭 Svájcban készült · Világszerte elérhető"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Itt csak vezérigazgatók adnak.",
+    "sub": "Egy hely cégenként. 10 000 CHF, egyszer, örökre. Utána annyit adsz, amennyit akarsz."
+  },
+  "intro": {
+    "body": "Ezen az oldalon minden ajándékot személyesen egy vezérigazgató ad, a saját és a cége nevében. Ingyenes eszköz a világnak. Jutalom a csapatnak. Részesedés azoknak, akik felépítették a céget. Egy nap mentorálás. Se sajtóközlemény, se ügynökség — csak egy vezérigazgató, aki azt mondja: ezt adjuk."
+  },
+  "how": {
+    "title": "Így működik",
+    "step1": "Jelentkezz be a céged Google-fiókjával. Így tudjuk, hogy valóban a te céged.",
+    "step2": "Vedd meg a céged helyét: 10 000 CHF, egyszer. A cégé, örökre — ha távozol, az utódod veszi át.",
+    "step3": "Adj. Annyi ajándékot teszel közzé, amennyit akarsz, amikor akarsz, az általad választott érvényességi dátummal."
+  },
+  "why": {
+    "title": "Miért 10 000 CHF, egyszer",
+    "body": "Ez nem egy hirdetés ára. Ez egy szűrő. Csak az a vezérigazgató fizet azért, hogy nyilvánosan, a saját nevében adjon, aki tényleg adni akar. Éppen ettől valódi minden ajándék ezen az oldalon."
+  },
+  "feed": {
+    "title": "A lista",
+    "body": "Az ajándékok abban a sorrendben jelennek meg, ahogy adták őket, #1-től számozva. A cégek a csatlakozás sorrendjében jelennek meg. Semmi mást nem lehet megvenni.",
+    "empty": "Még nincs ajándék. Az első lesz a #1.",
+    "companies_title": "Cégek hellyel",
+    "companies_empty": "Még nincs cég.",
+    "given_by": "adta",
+    "valid_until": "érvényes eddig",
+    "no_expiry": "határidő nélkül",
+    "seat": "Hely"
+  },
+  "sponsors": {
+    "title": "Támogatók",
+    "rotabo": "Svájcban készült · Világszerte elérhető"
+  },
+  "cta": {
+    "primary": "Add az első ajándékodat. →"
+  },
+  "type": {
+    "world": "Ajándék a világnak",
+    "team": "Ajándék a csapatnak",
+    "equity": "Részesedés a csapatnak",
+    "mentoring": "Egy nap mentorálás"
+  },
+  "state": {
+    "active": "Aktív",
+    "ended": "Lezárult",
+    "withdrawn": "Visszavonva"
+  },
+  "footer": {
+    "smallprint": "A gift.ceo közzétételi felület. Minden ajándékot az a személy tesz közzé és ír alá, aki a megnevezett cég vezérigazgatójának vallotta magát, az adott cég Google Workspace-fiókjával. A hely egyszeri díja nem téríthető vissza. A gift.ceo nem ellenőrzi és nem szavatolja a leírt ajándékokat.",
+    "terms": "Feltételek",
+    "privacy": "Adatvédelem"
+  },
+  "join": {
+    "title": "Foglald el a céged helyét",
+    "signin_cta": "Bejelentkezés Google-fiókkal",
+    "no_hd": "Jelentkezz be a céged Google Workspace-fiókjával (@ceged.com).",
+    "domain_mismatch": "Ez a webhely nem egyezik a Google Workspace-fiókod domainjével.",
+    "company_name": "A cég neve",
+    "website": "A cég webhelye",
+    "country": "Ország",
+    "logo": "Logó (nem kötelező)",
+    "ceo_name": "A neved, ahogyan meg kell jelennie",
+    "linkedin": "LinkedIn (nem kötelező)",
+    "photo": "Fénykép (nem kötelező)",
+    "declaration": "Én vagyok ennek a cégnek a vezérigazgatója (vagy azzal egyenértékű legfelsőbb vezetője), és jogosult vagyok a nevében közzétenni.",
+    "terms_accept": "Elolvastam és elfogadom a Feltételeket.",
+    "submit": "Tovább a fizetéshez — 10 000 CHF",
+    "takeover_title": "Ennek a cégnek már van helye",
+    "takeover_body": "Valaki a cégedtől már megvette a helyet. Hivatalban lévő vezérigazgatóként átveheted. A már közzétett ajándékok megtartják annak a nevét, aki adta őket.",
+    "takeover_cta": "Átveszem ezt a helyet"
+  },
+  "thanks": {
+    "title": "A helyed aktiválás alatt áll…",
+    "body": "A fizetés megérkezett. Ez az oldal magától továbblép, amint a hely aktív lesz.",
+    "waiting": "Várunk a megerősítésre…"
+  },
+  "dashboard": {
+    "title": "Az ajándékaid",
+    "give": "Ajándék adása",
+    "no_gifts": "Még nem adtál semmit.",
+    "edit": "Szerkesztés",
+    "end_now": "Ajándék lezárása most",
+    "profile": "A profilod",
+    "company": "A céged",
+    "save": "Mentés",
+    "form_type": "Milyen ajándék",
+    "form_title": "Cím",
+    "form_description": "Leírás",
+    "form_claim": "Hogyan lehet igényelni",
+    "form_link": "Link (nem kötelező)",
+    "form_valid": "Érvényes eddig",
+    "form_no_expiry": "Hagyd üresen, ha nincs határidő.",
+    "publish": "Közzététel",
+    "cancel": "Mégse",
+    "seat_pending": "A helyed még nem aktív."
+  },
+  "company_page": {
+    "seat": "Hely",
+    "current_ceo": "Hivatalban lévő vezérigazgató",
+    "history": "Minden ajándék",
+    "website": "Webhely"
+  },
+  "errors": {
+    "generic": "Valami hiba történt. Próbáld újra.",
+    "not_signed_in": "Előbb jelentkezz be.",
+    "not_found": "Nem található."
+  }
+}

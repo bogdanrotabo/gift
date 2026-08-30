@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Hier geven alleen CEO's",
+    "description": "Een openbare lijst van giften die CEO's persoonlijk doen, onder hun eigen naam en die van hun bedrijf. Eén plaats per bedrijf, eenmalig 10 000 CHF, voor altijd."
+  },
+  "nav": {
+    "gifts": "Giften",
+    "companies": "Bedrijven",
+    "join": "Meedoen",
+    "dashboard": "Overzicht",
+    "signin": "Inloggen",
+    "signout": "Uitloggen",
+    "language": "Taal"
+  },
+  "header": {
+    "badge": "🇨🇭 Gemaakt in Zwitserland · Wereldwijd beschikbaar"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Hier geven alleen CEO's.",
+    "sub": "Eén plaats per bedrijf. 10 000 CHF, eenmalig, voor altijd. Daarna geeft u zo veel u wilt."
+  },
+  "intro": {
+    "body": "Elke gift op deze site komt persoonlijk van een CEO, onder zijn eigen naam en die van zijn bedrijf. Een gratis hulpmiddel voor de wereld. Een bonus voor het team. Aandelen voor de mensen die het bedrijf hebben opgebouwd. Een dag mentorschap. Geen persberichten, geen bureaus — alleen een CEO die zegt: dit is wat wij geven."
+  },
+  "how": {
+    "title": "Hoe het werkt",
+    "step1": "Log in met het Google-account van uw bedrijf. Zo weten wij dat het echt uw bedrijf is.",
+    "step2": "Koop de plaats van uw bedrijf: 10 000 CHF, eenmalig. Ze hoort bij het bedrijf, voor altijd — vertrekt u, dan neemt uw opvolger ze over.",
+    "step3": "Geef. Publiceer zo veel giften als u wilt, wanneer u wilt, met een geldigheidsdatum die u zelf kiest."
+  },
+  "why": {
+    "title": "Waarom eenmalig 10 000 CHF",
+    "body": "Dit is geen advertentieprijs. Dit is een filter. Alleen een CEO die echt wil geven, betaalt om dat in het openbaar te doen, onder zijn eigen naam. Dat is wat elke gift op deze site echt maakt."
+  },
+  "feed": {
+    "title": "De lijst",
+    "body": "Giften verschijnen in de volgorde waarin ze zijn gedaan, genummerd vanaf #1. Bedrijven verschijnen in de volgorde waarin ze zijn toegetreden. Er valt verder niets te kopen.",
+    "empty": "Nog geen giften. De eerste wordt #1.",
+    "companies_title": "Bedrijven met een plaats",
+    "companies_empty": "Nog geen bedrijven.",
+    "given_by": "gegeven door",
+    "valid_until": "geldig tot",
+    "no_expiry": "zonder einddatum",
+    "seat": "Plaats"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "rotabo": "Gemaakt in Zwitserland · Wereldwijd beschikbaar"
+  },
+  "cta": {
+    "primary": "Geef uw eerste gift. →"
+  },
+  "type": {
+    "world": "Een gift aan de wereld",
+    "team": "Een gift aan het team",
+    "equity": "Aandelen voor het team",
+    "mentoring": "Een dag mentorschap"
+  },
+  "state": {
+    "active": "Actief",
+    "ended": "Beëindigd",
+    "withdrawn": "Ingetrokken"
+  },
+  "footer": {
+    "smallprint": "gift.ceo is een publicatieplatform. Elke gift wordt gepubliceerd en ondertekend door de persoon die heeft verklaard CEO te zijn van het genoemde bedrijf, via het Google Workspace-account van dat bedrijf. De eenmalige vergoeding voor de plaats wordt niet terugbetaald. gift.ceo controleert de beschreven giften niet en staat er niet voor in.",
+    "terms": "Voorwaarden",
+    "privacy": "Privacy"
+  },
+  "join": {
+    "title": "Neem de plaats van uw bedrijf",
+    "signin_cta": "Inloggen met Google",
+    "no_hd": "Log in met het Google Workspace-account van uw bedrijf (@uwbedrijf.com).",
+    "domain_mismatch": "Die website komt niet overeen met het domein van uw Google Workspace-account.",
+    "company_name": "Naam van het bedrijf",
+    "website": "Website van het bedrijf",
+    "country": "Land",
+    "logo": "Logo (optioneel)",
+    "ceo_name": "Uw naam, zoals die moet verschijnen",
+    "linkedin": "LinkedIn (optioneel)",
+    "photo": "Foto (optioneel)",
+    "declaration": "Ik ben de CEO (of gelijkwaardige hoogste bestuurder) van dit bedrijf en bevoegd om namens het bedrijf te publiceren.",
+    "terms_accept": "Ik heb de Voorwaarden gelezen en aanvaard ze.",
+    "submit": "Verder naar de betaling — 10 000 CHF",
+    "takeover_title": "Dit bedrijf heeft al een plaats",
+    "takeover_body": "Iemand van uw bedrijf heeft de plaats al gekocht. U kunt ze overnemen als huidige CEO. Reeds gepubliceerde giften behouden de naam van wie ze heeft gedaan.",
+    "takeover_cta": "Deze plaats overnemen"
+  },
+  "thanks": {
+    "title": "Uw plaats wordt geactiveerd…",
+    "body": "Betaling ontvangen. Deze pagina gaat vanzelf verder zodra de plaats actief is.",
+    "waiting": "Wachten op de bevestiging…"
+  },
+  "dashboard": {
+    "title": "Uw giften",
+    "give": "Een gift doen",
+    "no_gifts": "U hebt nog niets gegeven.",
+    "edit": "Bewerken",
+    "end_now": "Deze gift nu beëindigen",
+    "profile": "Uw profiel",
+    "company": "Uw bedrijf",
+    "save": "Opslaan",
+    "form_type": "Wat voor gift",
+    "form_title": "Titel",
+    "form_description": "Beschrijving",
+    "form_claim": "Hoe ze op te vragen",
+    "form_link": "Link (optioneel)",
+    "form_valid": "Geldig tot",
+    "form_no_expiry": "Laat leeg voor geen einddatum.",
+    "publish": "Publiceren",
+    "cancel": "Annuleren",
+    "seat_pending": "Uw plaats is nog niet actief."
+  },
+  "company_page": {
+    "seat": "Plaats",
+    "current_ceo": "Huidige CEO",
+    "history": "Alle giften",
+    "website": "Website"
+  },
+  "errors": {
+    "generic": "Er ging iets mis. Probeer het opnieuw.",
+    "not_signed_in": "Log eerst in.",
+    "not_found": "Niet gevonden."
+  }
+}

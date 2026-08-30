@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Hawn jagħtu biss il-kapijiet eżekuttivi",
+    "description": "Lista pubblika ta' rigali li l-kapijiet eżekuttivi jagħtu personalment, f'isimhom u f'isem il-kumpanija tagħhom. Post wieħed għal kull kumpanija, 10 000 CHF darba, għal dejjem."
+  },
+  "nav": {
+    "gifts": "Rigali",
+    "companies": "Kumpaniji",
+    "join": "Ingħaqad",
+    "dashboard": "Pannell",
+    "signin": "Idħol",
+    "signout": "Oħroġ",
+    "language": "Lingwa"
+  },
+  "header": {
+    "badge": "🇨🇭 Magħmul fl-Isvizzera · Disponibbli mad-dinja kollha"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Hawn jagħtu biss il-kapijiet eżekuttivi.",
+    "sub": "Post wieħed għal kull kumpanija. 10 000 CHF, darba, għal dejjem. Wara tagħti kemm trid."
+  },
+  "intro": {
+    "body": "Kull rigal fuq dan is-sit jingħata personalment minn kap eżekuttiv, f'ismu u f'isem il-kumpanija tiegħu. Għodda b'xejn għad-dinja. Bonus għat-tim. Ishma għal min bena l-kumpanija. Ġurnata ta' mentoring. L-ebda stqarrija għall-istampa, l-ebda aġenzija — biss kap li jgħid: dan hu li nagħtu."
+  },
+  "how": {
+    "title": "Kif jaħdem",
+    "step1": "Idħol bil-kont Google tal-kumpanija tiegħek. Hekk inkunu nafu li tabilħaqq hija tiegħek.",
+    "step2": "Ixtri l-post tal-kumpanija tiegħek: 10 000 CHF, darba. Huwa tal-kumpanija, għal dejjem — jekk titlaq, jieħdu min jiġi warajk.",
+    "step3": "Agħti. Ippubblika kemm rigali trid, meta trid, b'data ta' validità li tagħżel int."
+  },
+  "why": {
+    "title": "Għaliex 10 000 CHF, darba",
+    "body": "Dan mhuwiex il-prezz ta' reklam. Dan huwa filtru. Biss kap li tassew irid jagħti jħallas biex jagħmel dan fil-pubbliku, f'ismu stess. Dan hu li jagħmel kull rigal fuq dan is-sit reali."
+  },
+  "feed": {
+    "title": "Il-lista",
+    "body": "Ir-rigali jidhru fl-ordni li fih ingħataw, innumerati minn #1. Il-kumpaniji jidhru fl-ordni li fih ingħaqdu. M'hemm xejn aktar x'tixtri.",
+    "empty": "Għad m'hemmx rigali. L-ewwel wieħed ikun #1.",
+    "companies_title": "Kumpaniji b'post",
+    "companies_empty": "Għad m'hemmx kumpaniji.",
+    "given_by": "mogħti minn",
+    "valid_until": "validu sa",
+    "no_expiry": "bla skadenza",
+    "seat": "Post"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "rotabo": "Magħmul fl-Isvizzera · Disponibbli mad-dinja kollha"
+  },
+  "cta": {
+    "primary": "Agħti l-ewwel rigal tiegħek. →"
+  },
+  "type": {
+    "world": "Rigal lid-dinja",
+    "team": "Rigal lit-tim",
+    "equity": "Ishma għat-tim",
+    "mentoring": "Ġurnata ta' mentoring"
+  },
+  "state": {
+    "active": "Attiv",
+    "ended": "Mitmum",
+    "withdrawn": "Irtirat"
+  },
+  "footer": {
+    "smallprint": "gift.ceo hija pjattaforma ta' pubblikazzjoni. Kull rigal jiġi ppubblikat u ffirmat mill-persuna li ddikjarat li hija l-kap eżekuttiv tal-kumpanija msemmija, permezz tal-kont Google Workspace ta' dik il-kumpanija. Il-ħlas ta' darba għall-post ma jingħatax lura. gift.ceo ma tivverifikax u ma tiggarantixxix ir-rigali deskritti.",
+    "terms": "Termini",
+    "privacy": "Privatezza"
+  },
+  "join": {
+    "title": "Ħu l-post tal-kumpanija tiegħek",
+    "signin_cta": "Idħol b'Google",
+    "no_hd": "Idħol bil-kont Google Workspace tal-kumpanija tiegħek (@ilkumpanijatieghek.com).",
+    "domain_mismatch": "Dak is-sit ma jaqbilx mad-dominju tal-kont Google Workspace tiegħek.",
+    "company_name": "Isem il-kumpanija",
+    "website": "Sit tal-kumpanija",
+    "country": "Pajjiż",
+    "logo": "Logo (fakultattiv)",
+    "ceo_name": "Ismek, kif għandu jidher",
+    "linkedin": "LinkedIn (fakultattiv)",
+    "photo": "Ritratt (fakultattiv)",
+    "declaration": "Jien il-kap eżekuttiv (jew l-ogħla uffiċjal ekwivalenti) ta' din il-kumpanija u għandi l-awtorità nippubblika f'isimha.",
+    "terms_accept": "Qrajt it-Termini u naċċettahom.",
+    "submit": "Kompli għall-ħlas — 10 000 CHF",
+    "takeover_title": "Din il-kumpanija diġà għandha post",
+    "takeover_body": "Xi ħadd mill-kumpanija tiegħek diġà xtara l-post. Tista' tieħdu bħala l-kap eżekuttiv attwali. Ir-rigali diġà ppubblikati jżommu isem min tahom.",
+    "takeover_cta": "Ħu dan il-post"
+  },
+  "thanks": {
+    "title": "Il-post tiegħek qed jiġi attivat…",
+    "body": "Il-ħlas wasal. Din il-paġna tkompli waħedha malli l-post ikun attiv.",
+    "waiting": "Qed nistennew il-konferma…"
+  },
+  "dashboard": {
+    "title": "Ir-rigali tiegħek",
+    "give": "Agħti rigal",
+    "no_gifts": "Għadek ma tajt xejn.",
+    "edit": "Editja",
+    "end_now": "Temm dan ir-rigal issa",
+    "profile": "Il-profil tiegħek",
+    "company": "Il-kumpanija tiegħek",
+    "save": "Issejvja",
+    "form_type": "Liema tip ta' rigal",
+    "form_title": "Titlu",
+    "form_description": "Deskrizzjoni",
+    "form_claim": "Kif tiksbu",
+    "form_link": "Link (fakultattiv)",
+    "form_valid": "Validu sa",
+    "form_no_expiry": "Ħalli vojt jekk m'hemmx skadenza.",
+    "publish": "Ippubblika",
+    "cancel": "Ikkanċella",
+    "seat_pending": "Il-post tiegħek għadu mhux attiv."
+  },
+  "company_page": {
+    "seat": "Post",
+    "current_ceo": "Kap eżekuttiv attwali",
+    "history": "Ir-rigali kollha",
+    "website": "Sit"
+  },
+  "errors": {
+    "generic": "Xi ħaġa marret ħażin. Erġa' pprova.",
+    "not_signed_in": "Idħol l-ewwel.",
+    "not_found": "Ma nstabx."
+  }
+}

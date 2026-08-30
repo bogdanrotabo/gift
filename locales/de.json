@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "gift.ceo — Hier schenken nur CEOs",
+    "description": "Eine öffentliche Liste von Geschenken, die CEOs persönlich unter ihrem eigenen Namen und dem ihres Unternehmens machen. Ein Platz pro Unternehmen, einmalig 10 000 CHF, für immer."
+  },
+  "nav": {
+    "gifts": "Geschenke",
+    "companies": "Unternehmen",
+    "join": "Mitmachen",
+    "dashboard": "Übersicht",
+    "signin": "Anmelden",
+    "signout": "Abmelden",
+    "language": "Sprache"
+  },
+  "header": {
+    "badge": "🇨🇭 Aus der Schweiz · Weltweit verfügbar"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Hier schenken nur CEOs.",
+    "sub": "Ein Platz pro Unternehmen. Einmalig 10 000 CHF, für immer. Danach schenken Sie, so viel Sie wollen."
+  },
+  "intro": {
+    "body": "Jedes Geschenk auf dieser Seite stammt persönlich von einem CEO, unter seinem eigenen Namen und dem seines Unternehmens. Ein kostenloses Werkzeug für alle. Ein Bonus für das Team. Anteile für die Menschen, die das Unternehmen aufgebaut haben. Ein Tag Mentoring. Keine Pressemitteilungen, keine Agenturen — nur ein CEO, der sagt: das schenken wir."
+  },
+  "how": {
+    "title": "So funktioniert es",
+    "step1": "Melden Sie sich mit dem Google-Konto Ihres Unternehmens an. So wissen wir, dass es wirklich Ihr Unternehmen ist.",
+    "step2": "Kaufen Sie den Platz Ihres Unternehmens: einmalig 10 000 CHF. Er gehört dem Unternehmen, für immer — gehen Sie, übernimmt ihn Ihre Nachfolge.",
+    "step3": "Schenken Sie. Veröffentlichen Sie so viele Geschenke, wie Sie möchten, wann Sie möchten, mit einem Gültigkeitsdatum Ihrer Wahl."
+  },
+  "why": {
+    "title": "Warum einmalig 10 000 CHF",
+    "body": "Das ist kein Anzeigenpreis. Das ist ein Filter. Nur ein CEO, der wirklich schenken will, zahlt dafür, es öffentlich und unter seinem eigenen Namen zu tun. Genau das macht jedes Geschenk auf dieser Seite echt."
+  },
+  "feed": {
+    "title": "Die Liste",
+    "body": "Geschenke erscheinen in der Reihenfolge, in der sie gemacht wurden, nummeriert ab #1. Unternehmen erscheinen in der Reihenfolge ihres Beitritts. Es gibt sonst nichts zu kaufen.",
+    "empty": "Noch keine Geschenke. Das erste wird #1 sein.",
+    "companies_title": "Unternehmen mit einem Platz",
+    "companies_empty": "Noch keine Unternehmen.",
+    "given_by": "geschenkt von",
+    "valid_until": "gültig bis",
+    "no_expiry": "ohne Ablaufdatum",
+    "seat": "Platz"
+  },
+  "sponsors": {
+    "title": "Sponsoren",
+    "rotabo": "Aus der Schweiz · Weltweit verfügbar"
+  },
+  "cta": {
+    "primary": "Machen Sie Ihr erstes Geschenk. →"
+  },
+  "type": {
+    "world": "Ein Geschenk an die Welt",
+    "team": "Ein Geschenk an das Team",
+    "equity": "Anteile für das Team",
+    "mentoring": "Ein Tag Mentoring"
+  },
+  "state": {
+    "active": "Aktiv",
+    "ended": "Beendet",
+    "withdrawn": "Zurückgezogen"
+  },
+  "footer": {
+    "smallprint": "gift.ceo ist eine Veröffentlichungsplattform. Jedes Geschenk wird von der Person veröffentlicht und unterzeichnet, die erklärt hat, CEO des genannten Unternehmens zu sein, über das Google-Workspace-Konto dieses Unternehmens. Die einmalige Gebühr für den Platz wird nicht erstattet. gift.ceo prüft die beschriebenen Geschenke nicht und garantiert sie nicht.",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutz"
+  },
+  "join": {
+    "title": "Den Platz Ihres Unternehmens sichern",
+    "signin_cta": "Mit Google anmelden",
+    "no_hd": "Melden Sie sich mit dem Google-Workspace-Konto Ihres Unternehmens an (@ihrunternehmen.com).",
+    "domain_mismatch": "Diese Website passt nicht zur Domain Ihres Google-Workspace-Kontos.",
+    "company_name": "Name des Unternehmens",
+    "website": "Website des Unternehmens",
+    "country": "Land",
+    "logo": "Logo (optional)",
+    "ceo_name": "Ihr Name, so wie er erscheinen soll",
+    "linkedin": "LinkedIn (optional)",
+    "photo": "Foto (optional)",
+    "declaration": "Ich bin der CEO (oder die entsprechende oberste Führungskraft) dieses Unternehmens und befugt, in seinem Namen zu veröffentlichen.",
+    "terms_accept": "Ich habe die Nutzungsbedingungen gelesen und akzeptiere sie.",
+    "submit": "Weiter zur Zahlung — 10 000 CHF",
+    "takeover_title": "Dieses Unternehmen hat bereits einen Platz",
+    "takeover_body": "Jemand aus Ihrem Unternehmen hat den Platz bereits gekauft. Sie können ihn als amtierender CEO übernehmen. Bereits veröffentlichte Geschenke behalten den Namen derjenigen, die sie gemacht haben.",
+    "takeover_cta": "Diesen Platz übernehmen"
+  },
+  "thanks": {
+    "title": "Ihr Platz wird aktiviert …",
+    "body": "Zahlung erhalten. Diese Seite geht von selbst weiter, sobald der Platz aktiv ist.",
+    "waiting": "Warten auf die Bestätigung …"
+  },
+  "dashboard": {
+    "title": "Ihre Geschenke",
+    "give": "Ein Geschenk machen",
+    "no_gifts": "Sie haben noch nichts geschenkt.",
+    "edit": "Bearbeiten",
+    "end_now": "Dieses Geschenk jetzt beenden",
+    "profile": "Ihr Profil",
+    "company": "Ihr Unternehmen",
+    "save": "Speichern",
+    "form_type": "Welche Art von Geschenk",
+    "form_title": "Titel",
+    "form_description": "Beschreibung",
+    "form_claim": "Wie man es einlöst",
+    "form_link": "Link (optional)",
+    "form_valid": "Gültig bis",
+    "form_no_expiry": "Leer lassen für kein Ablaufdatum.",
+    "publish": "Veröffentlichen",
+    "cancel": "Abbrechen",
+    "seat_pending": "Ihr Platz ist noch nicht aktiv."
+  },
+  "company_page": {
+    "seat": "Platz",
+    "current_ceo": "Amtierender CEO",
+    "history": "Alle Geschenke",
+    "website": "Website"
+  },
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "not_signed_in": "Bitte melden Sie sich zuerst an.",
+    "not_found": "Nicht gefunden."
+  }
+}
