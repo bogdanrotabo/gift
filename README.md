@@ -15,7 +15,7 @@ Everything dynamic comes from Supabase over its REST API.
 |---|---|
 | Pages | GitHub Pages, `main` branch, root |
 | Database, auth, storage | Supabase project `gcfurwexhxqxuveojoih` (eu-central-1) |
-| Payments | Stripe Checkout, driven by an Edge Function |
+| Payments | Stripe Payment Link, 10,000 CHF (rotabo.app account) |
 | DNS | Porkbun — four A records to GitHub, `CNAME www` |
 
 ```
@@ -57,32 +57,34 @@ Because of the last one, a browser cannot set `seat_status`, `seat_number`,
 Personal Gmail accounts carry no `hd` claim, so they can never take a seat.
 That is deliberate, not an oversight.
 
+## Google sign-in — done, and where it lives
+
+Configured on 30 August 2026 and **in production**, so any Google Workspace
+account in the world can sign in. Written down because none of it is visible
+from the code:
+
+| | |
+|---|---|
+| Google Cloud project | `gift-ceo` (`electric-nomad-507111-m5`) |
+| Owner account | bogdan.tanase.ch@gmail.com |
+| Developer contact | gift.ceo.support@gmail.com |
+| OAuth client | *gift.ceo web*, `628322664029-cmsgm4fcj6g5spua88rbdn1q9q6cgu7m.apps.googleusercontent.com` |
+| Redirect URI | `https://gcfurwexhxqxuveojoih.supabase.co/auth/v1/callback` |
+| JS origin | `https://gift.ceo` |
+| Supabase site URL | `https://gift.ceo`, allow-list `https://gift.ceo/**` |
+
+The app asks only for `openid email profile`. Google treats those as
+non-sensitive, which is why it could be published without a verification
+review — **do not upload a logo to the branding page**, and keep the
+authorised domains under ten: either would push the app into verification and
+take sign-in down until it passed.
+
+`gift.ceo.support@gmail.com` is a plain Gmail account, so it is fine as a
+contact address and can never take a seat here: no Workspace, no `hd` claim.
+
 ## What still needs a human
 
-### 1. Google sign-in
-
-The OAuth consent screen lives in Google Cloud project `gift-ceo`
-(`electric-nomad-507111-m5`). Its last setup step is a checkbox accepting
-Google's *API Services User Data Policy* — a legal agreement, so the account
-holder ticks it, not an assistant.
-
-Then, under **Client → Create client**:
-
-* Type: *Web application*
-* Authorised JavaScript origin: `https://gift.ceo`
-* Authorised redirect URI:
-  `https://gcfurwexhxqxuveojoih.supabase.co/auth/v1/callback`
-
-Copy the client ID and secret into Supabase → *Authentication → Sign In /
-Providers → Google*, and set the site URL to `https://gift.ceo` with
-`https://gift.ceo/**` as a redirect allow-list entry.
-
-The app only asks for `openid email profile`, which Google treats as
-non-sensitive: **Publish app** makes it available to every Workspace account
-without a verification review. Until it is published it works only for
-accounts added to the test-user list.
-
-### 2. Stripe
+### Stripe
 
 Payment goes through a **Payment Link**, not the Stripe API, so no secret key
 is used or stored anywhere in this project. `claim-seat` appends
