@@ -44,6 +44,10 @@
     "no_expiry": "no expiry",
     "seat": "Seat"
   },
+  "sponsors": {
+    "title": "Sponsors",
+    "rotabo": "Swiss made · Available worldwide"
+  },
   "cta": {
     "primary": "Give your first gift. →"
   },

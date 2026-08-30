@@ -1,22 +1,29 @@
 // claim-seat — turns a signed-in Workspace account into a company seat.
 //
-// Two things happen here that must not happen in the browser: the Stripe
-// session (which needs the secret key) and the handover of a seat from one
-// chief executive to the next (which needs to demote the previous one, and
-// the guard trigger refuses that to anyone but the service role).
+// One thing here genuinely cannot happen in the browser: the handover of a
+// seat from one chief executive to the next, which has to demote the sitting
+// one, and the guard trigger refuses that to anyone but the service role.
 //
 // Everything else is deliberately done with the *caller's* token rather than
 // the service role, so the database triggers still get to say no. A bug in
 // this file cannot mint a seat for a domain Google did not vouch for.
+//
+// No Stripe secret is used or stored: payment goes through a public Payment
+// Link, and the seat is only ever activated by the webhook.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_KEY  = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const ANON_KEY     = Deno.env.get("SUPABASE_ANON_KEY")!;
-const STRIPE_KEY   = Deno.env.get("STRIPE_SECRET_KEY") ?? "";
 const SITE_URL     = Deno.env.get("SITE_URL") ?? "https://gift.ceo";
-const PRICE_RAPPEN = 1_000_000; // 10,000.00 CHF
+
+// A Stripe Payment Link priced at 10,000 CHF, rather than a Checkout session
+// minted through the API. It means no secret key has to live anywhere near
+// this function: the link is public by design, and the only thing we add to it
+// is the company id, which comes back on the webhook as client_reference_id.
+const PAYMENT_LINK = Deno.env.get("STRIPE_PAYMENT_LINK") ??
+  "https://buy.stripe.com/4gMbIUbNcbZbf5490o0co08";
 
 const CORS = {
   "Access-Control-Allow-Origin": SITE_URL,
@@ -52,19 +59,14 @@ function hdOf(user: Record<string, any>): string | null {
   return raw ? String(raw).toLowerCase() : null;
 }
 
-async function stripeSession(params: Record<string, string>) {
-  const body = new URLSearchParams(params);
-  const res = await fetch("https://api.stripe.com/v1/checkout/sessions", {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${STRIPE_KEY}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body,
-  });
-  const out = await res.json();
-  if (!res.ok) throw new Error(out?.error?.message ?? "Stripe rejected the request.");
-  return out as { id: string; url: string };
+// client_reference_id is the whole trick: Stripe echoes it back on the
+// checkout.session.completed event, so the webhook knows which seat was paid
+// for without either side holding a secret.
+function checkoutUrl(companyId: string, email: string): string {
+  const u = new URL(PAYMENT_LINK);
+  u.searchParams.set("client_reference_id", companyId);
+  if (email) u.searchParams.set("prefilled_email", email);
+  return u.href;
 }
 
 Deno.serve(async (req) => {
@@ -186,36 +188,7 @@ Deno.serve(async (req) => {
     if (error) return json({ error: error.message }, 400);
   }
 
-  if (!STRIPE_KEY) {
-    // Said plainly rather than as a 500: the seat and the CEO row are already
-    // saved, so the only thing missing is the key, and whoever is deploying
-    // needs to hear exactly that.
-    return json({ error: "Payments are not configured yet (STRIPE_SECRET_KEY is not set)." }, 503);
-  }
-
-  let session;
-  try {
-    session = await stripeSession({
-      "mode": "payment",
-      "client_reference_id": companyId,
-      "customer_email": user.email ?? "",
-      "success_url": `${SITE_URL}/thank-you.html`,
-      "cancel_url": `${SITE_URL}/join.html`,
-      "metadata[company_id]": companyId,
-      "metadata[domain]": domain,
-      "line_items[0][quantity]": "1",
-      "line_items[0][price_data][currency]": "chf",
-      "line_items[0][price_data][unit_amount]": String(PRICE_RAPPEN),
-      "line_items[0][price_data][product_data][name]": `gift.ceo — seat for ${name}`,
-      "line_items[0][price_data][product_data][description]":
-        "One seat, one company, once. Non-refundable.",
-    });
-  } catch (e) {
-    return json({ error: (e as Error).message }, 502);
-  }
-
-  await admin.from("companies")
-    .update({ stripe_session_id: session.id }).eq("id", companyId);
-
-  return json({ checkout_url: session.url });
+  // The session id is not known until Stripe creates one, so it is written by
+  // the webhook rather than guessed here.
+  return json({ checkout_url: checkoutUrl(companyId, user.email ?? "") });
 });

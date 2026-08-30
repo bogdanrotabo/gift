@@ -65,8 +65,13 @@ a{color:var(--ink);text-underline-offset:3px;text-decoration-color:var(--line);}
 a:hover{text-decoration-color:var(--accent);}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
 
-.wrap{max-width:940px;margin:0 auto;padding:0 22px;}
+.wrap{max-width:940px;margin:0 auto;padding:0 26px;}
 .narrow{max-width:660px;}
+
+/* A long domain or an unbroken word must wrap rather than push the page
+   sideways; on a phone that is the difference between a readable column and
+   one that runs off the screen. */
+body{overflow-wrap:break-word;}
 
 /* ------------------------------------------------------------- masthead */
 
@@ -309,12 +314,45 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
   height:86px;margin-bottom:14px;
 }
 
+/* --------------------------------------------------------------- sponsors */
+
+.sponsors{
+  border-top:1px solid var(--line-soft);
+  padding:44px 0 0;text-align:center;
+}
+.sponsors h2{margin-bottom:18px;}
+.sponsor{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--line);border-radius:999px;
+  padding:10px 20px;text-decoration:none;color:var(--ink);
+  font-weight:600;font-size:.95rem;letter-spacing:-.01em;
+}
+.sponsor:hover{border-color:var(--accent);}
+.sponsor .dot{color:var(--accent);}
+.sponsor small{display:block;font-weight:400;color:var(--dim);font-size:.82rem;letter-spacing:0;}
+
+/* On a phone the text sat almost against the glass. The column gets more air
+   than the desktop rule gives it, and the cards keep their own padding on top
+   of that, so nothing reads off the edge. */
 @media (max-width:560px){
   .hero{padding:52px 0 4px;}
   .section{padding:48px 0;}
-  .gift{grid-template-columns:1fr;gap:0;padding:19px 20px;}
+  .gift{grid-template-columns:1fr;gap:0;padding:20px 18px;}
   .gift .num{grid-row:auto;padding:0 0 6px;}
   .masthead nav{gap:14px;font-size:.86rem;}
-  .why{padding:26px 22px;}
-  .card{padding:24px 20px;}
+  .why{padding:26px 20px;}
+  .card{padding:24px 18px;}
+  .hero h1{font-size:clamp(2.1rem,11vw,3rem);}
+  .lede{font-size:1.02rem;}
+}
+
+/* Very narrow phones keep most of the margin — the type comes down instead of
+   the air, because 26px of nothing either side is what makes a line readable
+   in the hand. */
+@media (max-width:380px){
+  .wrap{padding:0 22px;}
+  .masthead nav{gap:11px;font-size:.82rem;}
+  .langpick{padding:4px 22px 4px 9px;font-size:.8rem;}
+  .gift{padding:18px 16px;}
+  .card{padding:22px 16px;}
 }
