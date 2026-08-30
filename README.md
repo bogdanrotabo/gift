@@ -104,7 +104,21 @@ seat*. Both are fixed by creating a Payment Link of its own, named for what it
 is, and setting `STRIPE_PAYMENT_LINK` in the function's secrets — the code
 reads that first and only falls back to the link above.
 
-The one secret needed is the webhook signature key. In Stripe →
+**Done on 30 August 2026.** The endpoint `gift-ceo-seats`
+(`we_1UA9z12eIfG2oegbnALMQGA6`) is live on the rotabo Stripe account and its
+signing secret is installed as `STRIPE_WEBHOOK_SECRET`. A first endpoint was
+created and then disabled after its secret leaked into a chat transcript;
+replacing it was cheaper than rotating, because revoking a secret needs
+two-factor re-authentication and creating an endpoint does not.
+
+Check it any time with a plain GET — it answers whether a secret is set
+without saying what it is:
+
+```bash
+curl https://gcfurwexhxqxuveojoih.supabase.co/functions/v1/stripe-webhook
+```
+
+If the secret ever has to be replaced again, in Stripe →
 *Developers → Webhooks*, add:
 
 ```

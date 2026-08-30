@@ -68,6 +68,16 @@ async function patchCompany(id: string, patch: Record<string, unknown>) {
 }
 
 Deno.serve(async (req) => {
+  // A plain GET is how a person checks the function is alive. It says whether
+  // a signing secret is configured, and nothing else: knowing one exists is
+  // not knowing what it is, and without this the only symptom of a missing
+  // secret is every delivery silently failing.
+  if (req.method === "GET") {
+    return new Response(
+      JSON.stringify({ ok: true, signing_secret_configured: SIGNING_SECRET.length > 0 }),
+      { headers: { "Content-Type": "application/json" } },
+    );
+  }
   if (req.method !== "POST") return new Response("POST only", { status: 405 });
 
   const raw = await req.text();
