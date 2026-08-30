@@ -36,6 +36,39 @@
       <p style="margin:0;color:var(--dim);font-size:.92rem" id="coMeta"></p>
     </div>
 
+    <details class="card" style="margin-bottom:26px">
+      <summary style="cursor:pointer;font-weight:600;font-size:.95rem" data-i18n="dashboard.company">Your company</summary>
+      <form id="profileForm" style="margin-top:22px">
+        <div class="field">
+          <label for="pName" data-i18n="join.company_name">Company name</label>
+          <input id="pName" type="text" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="pLogo" data-i18n="join.logo">Logo (optional)</label>
+          <input id="pLogo" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
+          <p class="hint" id="pLogoNow"></p>
+        </div>
+        <hr style="border:0;border-top:1px solid var(--line-soft);margin:26px 0">
+        <p style="margin:0 0 16px;font-weight:600;font-size:.95rem" data-i18n="dashboard.profile">Your profile</p>
+        <div class="field">
+          <label for="pCeo" data-i18n="join.ceo_name">Your name, as it should appear</label>
+          <input id="pCeo" type="text" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="pLinkedin" data-i18n="join.linkedin">LinkedIn (optional)</label>
+          <input id="pLinkedin" type="url">
+        </div>
+        <div class="field">
+          <label for="pPhoto" data-i18n="join.photo">Photo (optional)</label>
+          <input id="pPhoto" type="file" accept="image/png,image/jpeg,image/webp">
+          <p class="hint" id="pPhotoNow"></p>
+        </div>
+        <p style="margin:20px 0 0">
+          <button class="btn" type="submit" id="psubmit" data-i18n="dashboard.save">Save</button>
+        </p>
+      </form>
+    </details>
+
     <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
       <h2 style="margin:0;font:700 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)" data-i18n="dashboard.title">Your gifts</h2>
       <button class="btn btn--sm" id="btnNew" style="margin-left:auto" data-i18n="dashboard.give">Give a gift</button>
@@ -104,7 +137,7 @@ async function load() {
   // even before the seat goes live, which is what makes the pending state
   // visible instead of looking like a missing company.
   const { data: rows, error } = await sb.from("ceos")
-    .select("id,display_name,company_id,is_current,companies(id,name,website,country,slug,seat_status,seat_number)")
+    .select("id,display_name,linkedin_url,photo_url,company_id,is_current,companies(id,name,website,country,slug,logo_url,seat_status,seat_number)")
     .eq("user_id", user.id).eq("is_current", true).limit(1);
 
   if (error) { fail(error.message); return; }
@@ -126,9 +159,57 @@ async function load() {
   document.getElementById("coName").textContent = company.name;
   document.getElementById("coMeta").textContent =
     `${t("feed.seat")} #${company.seat_number} · ${ceo.display_name}`;
+
+  document.getElementById("pName").value = company.name || "";
+  document.getElementById("pCeo").value = ceo.display_name || "";
+  document.getElementById("pLinkedin").value = ceo.linkedin_url || "";
+  document.getElementById("pLogoNow").textContent = company.logo_url || "";
+  document.getElementById("pPhotoNow").textContent = ceo.photo_url || "";
+
   show("live");
   await loadGifts();
 }
+
+// Uploads land under a folder named after the signed-in user, which is the
+// only folder storage lets them write to. The name carries a timestamp so a
+// replacement never has to wait for a CDN cache to forget the old one.
+async function upload(file, kind) {
+  const ext = (file.name.split(".").pop() || "png").toLowerCase().slice(0, 5);
+  const path = `${user.id}/${kind}-${Date.now()}.${ext}`;
+  const { error } = await sb.storage.from("logos-photos")
+    .upload(path, file, { cacheControl: "31536000", upsert: false });
+  if (error) throw error;
+  return sb.storage.from("logos-photos").getPublicUrl(path).data.publicUrl;
+}
+
+document.getElementById("profileForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  err.textContent = "";
+  const btn = document.getElementById("psubmit");
+  btn.disabled = true;
+  try {
+    const logoFile  = document.getElementById("pLogo").files[0];
+    const photoFile = document.getElementById("pPhoto").files[0];
+
+    const coPatch  = { name: document.getElementById("pName").value.trim() };
+    const ceoPatch = {
+      display_name: document.getElementById("pCeo").value.trim(),
+      linkedin_url: document.getElementById("pLinkedin").value.trim() || null
+    };
+    if (logoFile)  coPatch.logo_url  = await upload(logoFile, "logo");
+    if (photoFile) ceoPatch.photo_url = await upload(photoFile, "photo");
+
+    const a = await sb.from("companies").update(coPatch).eq("id", company.id);
+    if (a.error) throw a.error;
+    const b = await sb.from("ceos").update(ceoPatch).eq("id", ceo.id);
+    if (b.error) throw b.error;
+
+    await load();
+  } catch (e2) {
+    fail(e2.message || t("errors.generic"));
+  }
+  btn.disabled = false;
+});
 
 async function loadGifts() {
   const mine = document.getElementById("mine");
