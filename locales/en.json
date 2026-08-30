@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "gift.ceo — Only CEOs give here",
+    "description": "A public list of gifts given personally by CEOs, under their own name and their company's name. One seat per company, 10,000 CHF once, forever."
+  },
+  "nav": {
+    "gifts": "Gifts",
+    "companies": "Companies",
+    "join": "Join",
+    "dashboard": "Dashboard",
+    "signin": "Sign in",
+    "signout": "Sign out",
+    "language": "Language"
+  },
+  "header": {
+    "badge": "🇨🇭 Swiss made · Available worldwide"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Only CEOs give here.",
+    "sub": "One seat per company. 10,000 CHF, once, forever. Then give as much as you like."
+  },
+  "intro": {
+    "body": "Every gift on this site is given personally by a CEO, under their own name and their company's name. A free tool for the world. A bonus for the team. Equity for the people who built the company. A day of mentoring. No press releases, no agencies — just a CEO saying: here is what we give."
+  },
+  "how": {
+    "title": "How it works",
+    "step1": "Sign in with your company's Google account. That's how we know it's really your company.",
+    "step2": "Buy your company's seat: 10,000 CHF, once. It belongs to the company, forever — if you move on, your successor takes it over.",
+    "step3": "Give. Publish as many gifts as you like, whenever you like, with a validity date you choose."
+  },
+  "why": {
+    "title": "Why 10,000 CHF, once",
+    "body": "It's not the price of an ad. It's a filter. Only a CEO who truly wants to give will pay to do it publicly, under their own name. That's what makes every gift on this site real."
+  },
+  "feed": {
+    "title": "The feed",
+    "body": "Gifts appear in the order they were given, numbered from #1. Companies appear in the order they joined. There is nothing else to buy.",
+    "empty": "No gifts yet. The first one will be #1.",
+    "companies_title": "Companies with a seat",
+    "companies_empty": "No companies yet.",
+    "given_by": "given by",
+    "valid_until": "valid until",
+    "no_expiry": "no expiry",
+    "seat": "Seat"
+  },
+  "cta": {
+    "primary": "Give your first gift. →"
+  },
+  "type": {
+    "world": "A gift to the world",
+    "team": "A gift to the team",
+    "equity": "Equity for the team",
+    "mentoring": "A day of mentoring"
+  },
+  "state": {
+    "active": "Active",
+    "ended": "Ended",
+    "withdrawn": "Withdrawn"
+  },
+  "footer": {
+    "smallprint": "gift.ceo is a publishing platform. Each gift is published and signed by the person who declared themselves CEO of the company named, using that company's Google Workspace account. The one-time seat fee is non-refundable. gift.ceo does not verify or guarantee the gifts described.",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "join": {
+    "title": "Take your company's seat",
+    "signin_cta": "Sign in with Google",
+    "no_hd": "Sign in with your company Google Workspace account (@yourcompany.com).",
+    "domain_mismatch": "That website does not match your Google Workspace domain.",
+    "company_name": "Company name",
+    "website": "Company website",
+    "country": "Country",
+    "logo": "Logo (optional)",
+    "ceo_name": "Your name, as it should appear",
+    "linkedin": "LinkedIn (optional)",
+    "photo": "Photo (optional)",
+    "declaration": "I am the CEO (or equivalent top executive) of this company and authorized to publish on its behalf.",
+    "terms_accept": "I have read and accept the Terms.",
+    "submit": "Continue to payment — 10,000 CHF",
+    "takeover_title": "This company already has a seat",
+    "takeover_body": "Someone at your company already bought the seat. You can take it over as the current CEO. The gifts already published keep the name of whoever gave them.",
+    "takeover_cta": "Take over this seat"
+  },
+  "thanks": {
+    "title": "Your seat is being activated…",
+    "body": "Payment received. This page will move on by itself as soon as the seat is live.",
+    "waiting": "Waiting for confirmation…"
+  },
+  "dashboard": {
+    "title": "Your gifts",
+    "give": "Give a gift",
+    "no_gifts": "You have not given anything yet.",
+    "edit": "Edit",
+    "end_now": "End this gift now",
+    "profile": "Your profile",
+    "company": "Your company",
+    "save": "Save",
+    "form_type": "What kind of gift",
+    "form_title": "Title",
+    "form_description": "Description",
+    "form_claim": "How to claim it",
+    "form_link": "Link (optional)",
+    "form_valid": "Valid until",
+    "form_no_expiry": "No expiry",
+    "publish": "Publish",
+    "cancel": "Cancel",
+    "seat_pending": "Your seat is not active yet."
+  },
+  "company_page": {
+    "seat": "Seat",
+    "current_ceo": "Current CEO",
+    "history": "All gifts",
+    "website": "Website"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "not_signed_in": "Please sign in first.",
+    "not_found": "Not found."
+  }
+}

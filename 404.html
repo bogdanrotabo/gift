@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found — gift.ceo</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+
+<!-- GitHub Pages has no rewrite rules, so the pretty forms /c/<slug> and
+     /gift/<n> land here. This page forwards them to the real pages, which
+     answer 200 and are the ones in the sitemap; the pretty URL stays a
+     convenience for anyone typing or sharing it by hand. The redirect runs
+     before anything paints so the 404 body is never seen. -->
+<script>
+(function () {
+  var p = decodeURIComponent(location.pathname).replace(/\/+$/, "");
+  var m;
+  if ((m = p.match(/^\/c\/([A-Za-z0-9._-]{1,120})$/))) {
+    location.replace("/c.html?s=" + encodeURIComponent(m[1]) + location.search.replace(/^\?/, "&"));
+    return;
+  }
+  if ((m = p.match(/^\/gift\/(\d{1,9})$/))) {
+    location.replace("/gift.html?n=" + m[1] + location.search.replace(/^\?/, "&"));
+  }
+})();
+</script>
+</head>
+<body>
+
+<header class="masthead" data-chrome></header>
+
+<main class="wrap narrow" style="padding-top:80px;padding-bottom:70px;text-align:center">
+  <p style="font:700 3.4rem/1 var(--mono);color:var(--accent);margin:0">404</p>
+  <p style="margin:14px 0 26px;color:var(--dim)" data-i18n="errors.not_found">Not found.</p>
+  <a class="btn btn--ghost" href="/" data-i18n="nav.gifts">Gifts</a>
+</main>
+
+<footer class="foot" data-footer></footer>
+
+<script type="module">
+import { boot } from "/assets/app.js";
+await boot();
+</script>
+
+</body>
+</html>

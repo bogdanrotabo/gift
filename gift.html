@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A gift — gift.ceo</title>
+<meta name="description" content="A gift given personally by a CEO, under their own name.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="masthead" data-chrome></header>
+
+<main class="wrap narrow" style="padding-top:48px;padding-bottom:40px">
+
+  <div class="error" id="err"></div>
+
+  <article class="card" id="card" hidden>
+    <p style="margin:0 0 4px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+      <span style="font:700 1rem/1 var(--mono);color:var(--accent)" id="num"></span>
+      <span class="pill" id="state"></span>
+      <span style="font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)" id="kind"></span>
+    </p>
+
+    <h1 style="margin:12px 0 16px;font:700 1.75rem/1.2 var(--sans);letter-spacing:-.03em" id="title"></h1>
+    <p style="white-space:pre-wrap;color:var(--dim)" id="desc"></p>
+
+    <div id="claimWrap" hidden>
+      <h2 style="margin:28px 0 6px;font:600 .95rem/1.3 var(--sans)" data-i18n="dashboard.form_claim">How to claim it</h2>
+      <p style="white-space:pre-wrap;color:var(--dim)" id="claim"></p>
+    </div>
+
+    <p id="linkWrap" hidden style="margin-top:22px"><a class="btn btn--ghost btn--sm" id="link" rel="nofollow noopener"></a></p>
+
+    <div class="by" style="margin-top:26px;padding-top:16px;border-top:1px solid var(--line-soft);font-size:.9rem;color:var(--dim)">
+      <p style="margin:0 0 4px" id="by"></p>
+      <p style="margin:0" id="dates"></p>
+    </div>
+
+    <p style="margin:24px 0 0"><a id="coLink" style="font-size:.9rem"></a></p>
+  </article>
+
+</main>
+
+<footer class="foot" data-footer></footer>
+
+<script type="module">
+import { boot, sb, t, param, safeUrl, fmtDate } from "/assets/app.js";
+
+const err = document.getElementById("err");
+const n = param("n");
+
+async function load() {
+  err.textContent = "";
+  if (!n || !/^\d+$/.test(n)) { err.textContent = t("errors.not_found"); return; }
+
+  const { data: g } = await sb.from("live_gifts")
+    .select("*").eq("gift_number", Number(n)).maybeSingle();
+
+  if (!g) { err.textContent = t("errors.not_found"); return; }
+
+  document.title = `#${g.gift_number} ${g.title} — gift.ceo`;
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) { link = document.createElement("link"); link.rel = "canonical"; document.head.appendChild(link); }
+  link.href = `https://gift.ceo/gift.html?n=${g.gift_number}`;
+
+  document.getElementById("num").textContent = `#${g.gift_number}`;
+  const st = document.getElementById("state");
+  st.textContent = t("state." + g.state, g.state);
+  st.className = `pill pill--${g.state}`;
+  document.getElementById("kind").textContent = t("type." + g.type, g.type);
+  document.getElementById("title").textContent = g.title;
+  document.getElementById("desc").textContent = g.description;
+
+  if (g.how_to_claim) {
+    document.getElementById("claim").textContent = g.how_to_claim;
+    document.getElementById("claimWrap").hidden = false;
+  }
+
+  const url = safeUrl(g.link);
+  if (url) {
+    const a = document.getElementById("link");
+    a.href = url;
+    a.textContent = new URL(url).hostname;
+    document.getElementById("linkWrap").hidden = false;
+  }
+
+  document.getElementById("by").textContent =
+    `${t("feed.given_by")} ${g.ceo_name} — ${g.company_name}`;
+  document.getElementById("dates").textContent = g.valid_until
+    ? `${t("feed.valid_until")} ${fmtDate(g.valid_until)}`
+    : t("feed.no_expiry");
+
+  const co = document.getElementById("coLink");
+  co.href = `/c.html?s=${encodeURIComponent(g.company_slug)}`;
+  co.textContent = `${g.company_name} →`;
+
+  document.getElementById("card").hidden = false;
+}
+
+await boot();
+await load();
+document.addEventListener("i18n:applied", load);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your gifts — gift.ceo</title>
+<meta name="description" content="Publish and manage the gifts you give.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://gift.ceo/dashboard.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="masthead" data-chrome></header>
+
+<main class="wrap" style="padding-top:48px;padding-bottom:40px;max-width:760px">
+
+  <div class="error" id="err"></div>
+
+  <section id="needSignIn" hidden class="card">
+    <p data-i18n="errors.not_signed_in">Please sign in first.</p>
+    <p><a class="btn" href="/join.html" data-i18n="join.signin_cta">Sign in with Google</a></p>
+  </section>
+
+  <section id="pending" hidden class="card">
+    <h1 style="margin:0 0 10px;font:700 1.4rem/1.25 var(--sans)" data-i18n="dashboard.seat_pending">Your seat is not active yet.</h1>
+    <p id="pendingWho" style="color:var(--dim)"></p>
+    <p><a class="btn btn--gold" href="/join.html" data-i18n="join.submit">Continue to payment</a></p>
+  </section>
+
+  <section id="live" hidden>
+
+    <div class="card" style="margin-bottom:26px">
+      <h1 style="margin:0 0 6px;font:700 1.5rem/1.2 var(--sans);letter-spacing:-.025em" id="coName"></h1>
+      <p style="margin:0;color:var(--dim);font-size:.92rem" id="coMeta"></p>
+    </div>
+
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+      <h2 style="margin:0;font:700 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)" data-i18n="dashboard.title">Your gifts</h2>
+      <button class="btn btn--sm" id="btnNew" style="margin-left:auto" data-i18n="dashboard.give">Give a gift</button>
+    </div>
+
+    <form class="card" id="giftForm" hidden style="margin-bottom:22px">
+      <div class="field">
+        <label for="gtype" data-i18n="dashboard.form_type">What kind of gift</label>
+        <select id="gtype" required>
+          <option value="world"     data-i18n="type.world"></option>
+          <option value="team"      data-i18n="type.team"></option>
+          <option value="equity"    data-i18n="type.equity"></option>
+          <option value="mentoring" data-i18n="type.mentoring"></option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="gtitle" data-i18n="dashboard.form_title">Title</label>
+        <input id="gtitle" type="text" maxlength="120" required>
+      </div>
+      <div class="field">
+        <label for="gdesc" data-i18n="dashboard.form_description">Description</label>
+        <textarea id="gdesc" maxlength="3000" required></textarea>
+      </div>
+      <div class="field">
+        <label for="gclaim" data-i18n="dashboard.form_claim">How to claim it</label>
+        <textarea id="gclaim" maxlength="1000" style="min-height:80px"></textarea>
+      </div>
+      <div class="field">
+        <label for="glink" data-i18n="dashboard.form_link">Link (optional)</label>
+        <input id="glink" type="url">
+      </div>
+      <div class="field">
+        <label for="gvalid" data-i18n="dashboard.form_valid">Valid until</label>
+        <input id="gvalid" type="date">
+        <p class="hint" data-i18n="dashboard.form_no_expiry">Leave empty for no expiry.</p>
+      </div>
+      <p style="margin:22px 0 0;display:flex;gap:10px">
+        <button class="btn btn--gold" type="submit" id="gsubmit" data-i18n="dashboard.publish">Publish</button>
+        <button class="btn btn--ghost" type="button" id="gcancel" data-i18n="dashboard.cancel">Cancel</button>
+      </p>
+    </form>
+
+    <div class="feed" id="mine"></div>
+  </section>
+
+</main>
+
+<footer class="foot" data-footer></footer>
+
+<script type="module">
+import { boot, sb, t, giftCard, applyTranslations, esc, fmtDate } from "/assets/app.js";
+
+const err = document.getElementById("err");
+const show = id => document.getElementById(id).hidden = false;
+const hideAll = () => ["needSignIn", "pending", "live"].forEach(i => document.getElementById(i).hidden = true);
+const fail = m => { err.textContent = m; };
+
+let user = null, ceo = null, company = null, editing = null;
+
+async function load() {
+  err.textContent = "";
+  hideAll();
+  if (!user) { show("needSignIn"); return; }
+
+  // ceos is readable by its owner, and companies_read_own lets the row through
+  // even before the seat goes live, which is what makes the pending state
+  // visible instead of looking like a missing company.
+  const { data: rows, error } = await sb.from("ceos")
+    .select("id,display_name,company_id,is_current,companies(id,name,website,country,slug,seat_status,seat_number)")
+    .eq("user_id", user.id).eq("is_current", true).limit(1);
+
+  if (error) { fail(error.message); return; }
+  if (!rows || !rows.length) {
+    show("needSignIn");
+    document.querySelector("#needSignIn p").textContent = t("join.title");
+    return;
+  }
+
+  ceo = rows[0];
+  company = ceo.companies;
+
+  if (!company || company.seat_status !== "active") {
+    document.getElementById("pendingWho").textContent = company ? company.name : "";
+    show("pending");
+    return;
+  }
+
+  document.getElementById("coName").textContent = company.name;
+  document.getElementById("coMeta").textContent =
+    `${t("feed.seat")} #${company.seat_number} · ${ceo.display_name}`;
+  show("live");
+  await loadGifts();
+}
+
+async function loadGifts() {
+  const mine = document.getElementById("mine");
+  const { data } = await sb.from("live_gifts")
+    .select("*").eq("company_slug", company.slug)
+    .order("gift_number", { ascending: false });
+
+  mine.innerHTML = "";
+  const rows = data || [];
+  if (!rows.length) {
+    mine.appendChild(Object.assign(document.createElement("div"),
+      { className: "empty", textContent: t("dashboard.no_gifts") }));
+    return;
+  }
+  for (const g of rows) {
+    const card = giftCard(g, { link: false });
+    const bar = document.createElement("div");
+    bar.style.cssText = "display:flex;gap:9px;margin-top:14px";
+    const edit = document.createElement("button");
+    edit.className = "btn btn--ghost btn--sm";
+    edit.textContent = t("dashboard.edit");
+    edit.addEventListener("click", () => openForm(g));
+    bar.appendChild(edit);
+    if (g.state === "active") {
+      const end = document.createElement("button");
+      end.className = "btn btn--ghost btn--sm";
+      end.textContent = t("dashboard.end_now");
+      end.addEventListener("click", () => endGift(g));
+      bar.appendChild(end);
+    }
+    card.appendChild(bar);
+    mine.appendChild(card);
+  }
+}
+
+function openForm(g) {
+  editing = g || null;
+  const f = document.getElementById("giftForm");
+  document.getElementById("gtype").value  = g ? g.type : "world";
+  document.getElementById("gtitle").value = g ? g.title : "";
+  document.getElementById("gdesc").value  = g ? g.description : "";
+  document.getElementById("gclaim").value = g ? (g.how_to_claim || "") : "";
+  document.getElementById("glink").value  = g ? (g.link || "") : "";
+  document.getElementById("gvalid").value = g && g.valid_until ? g.valid_until : "";
+  f.hidden = false;
+  f.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+document.getElementById("btnNew").addEventListener("click", () => openForm(null));
+document.getElementById("gcancel").addEventListener("click", () => {
+  document.getElementById("giftForm").hidden = true; editing = null;
+});
+
+document.getElementById("giftForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  err.textContent = "";
+  const btn = document.getElementById("gsubmit");
+  btn.disabled = true;
+
+  const payload = {
+    type:         document.getElementById("gtype").value,
+    title:        document.getElementById("gtitle").value.trim(),
+    description:  document.getElementById("gdesc").value.trim(),
+    how_to_claim: document.getElementById("gclaim").value.trim() || null,
+    link:         document.getElementById("glink").value.trim() || null,
+    valid_until:  document.getElementById("gvalid").value || null
+  };
+
+  let res;
+  if (editing) {
+    res = await sb.from("gifts").update(payload).eq("id", editing.id);
+  } else {
+    res = await sb.from("gifts").insert({
+      ...payload,
+      id: crypto.randomUUID(),
+      company_id: company.id,
+      ceo_id: ceo.id
+    });
+  }
+
+  btn.disabled = false;
+  if (res.error) { fail(res.error.message); return; }
+  document.getElementById("giftForm").hidden = true;
+  editing = null;
+  await loadGifts();
+});
+
+// Ending is an update, never a delete: the record of what was given stays.
+// The date goes to yesterday rather than today — the view calls a gift ended
+// only once its date has passed, so "today" would leave it live until midnight.
+async function endGift(g) {
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  const { error } = await sb.from("gifts")
+    .update({ valid_until: yesterday }).eq("id", g.id);
+  if (error) { fail(error.message); return; }
+  await loadGifts();
+}
+
+user = await boot();
+await load();
+document.addEventListener("i18n:applied", () => { applyTranslations(document); load(); });
+sb.auth.onAuthStateChange(async (_e, s) => { user = s ? s.user : null; await load(); });
+</script>
+
+</body>
+</html>

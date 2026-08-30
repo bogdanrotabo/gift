@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company — gift.ceo</title>
+<meta name="description" content="A company with a seat on gift.ceo, and every gift its CEO has given.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="masthead" data-chrome></header>
+
+<main class="wrap" style="padding-top:48px;padding-bottom:40px;max-width:820px">
+
+  <div class="error" id="err"></div>
+
+  <section id="head" class="card" style="margin-bottom:30px" hidden>
+    <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+      <span id="logo"></span>
+      <div style="flex:1;min-width:200px">
+        <p style="margin:0;font:.76rem/1 var(--mono);color:var(--accent);letter-spacing:.08em" id="seat"></p>
+        <h1 style="margin:6px 0 4px;font:700 1.7rem/1.15 var(--sans);letter-spacing:-.03em" id="name"></h1>
+        <p style="margin:0;color:var(--dim);font-size:.93rem" id="meta"></p>
+      </div>
+    </div>
+  </section>
+
+  <section hidden id="giftsWrap">
+    <h2 style="margin:0 0 20px;font:700 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)" data-i18n="company_page.history">All gifts</h2>
+    <div class="feed" id="feed"></div>
+  </section>
+
+</main>
+
+<footer class="foot" data-footer></footer>
+
+<script type="module">
+import { boot, sb, t, giftCard, param, safeUrl } from "/assets/app.js";
+
+const err = document.getElementById("err");
+const slug = param("s");
+
+async function load() {
+  err.textContent = "";
+  if (!slug) { err.textContent = t("errors.not_found"); return; }
+
+  const { data: co } = await sb.from("live_companies")
+    .select("*").eq("slug", slug).maybeSingle();
+
+  if (!co) { err.textContent = t("errors.not_found"); return; }
+
+  document.title = `${co.name} — gift.ceo`;
+  const canonical = `https://gift.ceo/c.html?s=${encodeURIComponent(slug)}`;
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) { link = document.createElement("link"); link.rel = "canonical"; document.head.appendChild(link); }
+  link.href = canonical;
+
+  document.getElementById("seat").textContent = `${t("feed.seat")} #${co.seat_number}`;
+  document.getElementById("name").textContent = co.name;
+
+  const site = safeUrl(co.website);
+  const bits = [];
+  if (co.ceo_name) bits.push(`${t("company_page.current_ceo")}: ${co.ceo_name}`);
+  const meta = document.getElementById("meta");
+  meta.textContent = bits.join(" · ");
+  if (site) {
+    meta.appendChild(document.createTextNode(bits.length ? " · " : ""));
+    const a = document.createElement("a");
+    a.href = site; a.rel = "nofollow noopener"; a.textContent = t("company_page.website");
+    meta.appendChild(a);
+  }
+
+  const badge = document.getElementById("logo");
+  if (co.logo_url) {
+    const img = document.createElement("img");
+    img.src = co.logo_url; img.alt = "";
+    img.style.cssText = "width:56px;height:56px;border-radius:11px;object-fit:contain;background:var(--bg)";
+    badge.replaceWith(img);
+  } else {
+    badge.className = "initial";
+    badge.style.cssText = "width:56px;height:56px;border-radius:11px;background:var(--bg);display:grid;place-items:center;font:700 1.4rem/1 var(--sans);color:var(--faint)";
+    badge.textContent = (co.name || "?").trim().charAt(0).toUpperCase();
+  }
+  document.getElementById("head").hidden = false;
+
+  const { data: gifts } = await sb.from("live_gifts")
+    .select("*").eq("company_slug", slug).order("gift_number", { ascending: false });
+
+  const feed = document.getElementById("feed");
+  feed.innerHTML = "";
+  const rows = gifts || [];
+  if (!rows.length) {
+    feed.appendChild(Object.assign(document.createElement("div"),
+      { className: "empty", textContent: t("feed.empty") }));
+  } else {
+    for (const g of rows) feed.appendChild(giftCard(g));
+  }
+  document.getElementById("giftsWrap").hidden = false;
+}
+
+await boot();
+await load();
+document.addEventListener("i18n:applied", load);
+</script>
+
+</body>
+</html>

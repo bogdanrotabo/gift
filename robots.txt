@@ -1,0 +1,9 @@
+# gift.ceo
+# Everything is allowed through: the pages that must not be indexed say so
+# themselves with a noindex meta tag, and a crawler has to be able to fetch
+# them to read it.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gift.ceo/sitemap.xml

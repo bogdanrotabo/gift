@@ -3,69 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gift.ceo</title>
-<meta name="description" content="gift.ceo — a site is being built here.">
-<meta name="robots" content="noindex">
+<title>gift.ceo — Only CEOs give here</title>
+<meta name="description" content="A public list of gifts given personally by CEOs, under their own name and their company's name. One seat per company, 10,000 CHF once, forever.">
 <link rel="canonical" href="https://gift.ceo/">
-
-<!-- Deliberately plain. Nothing here claims to be a product yet: no brand, no
-     promises, no sign-up. It exists so the domain answers with something of
-     its own instead of a 404, and so GitHub has a page to issue the
-     certificate against. Replace the whole file once the site has a purpose. -->
-
-<style>
-  :root{
-    --bg:#faf9f7; --card:#ffffff; --ink:#1c1b19; --dim:#6b6864;
-    --line:#e6e3de; --accent:#b8860b;
-  }
-  :root:not([data-theme="light"]) { }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#141311; --card:#1c1b19; --ink:#f2f0ec; --dim:#9b968e;
-      --line:#2c2a27; --accent:#d4a017;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#141311; --card:#1c1b19; --ink:#f2f0ec; --dim:#9b968e;
-    --line:#2c2a27; --accent:#d4a017;
-  }
-
-  *{box-sizing:border-box;}
-  body{
-    margin:0; min-height:100vh; background:var(--bg); color:var(--ink);
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    display:flex; align-items:center; justify-content:center; padding:24px;
-  }
-  .card{
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
-    max-width:460px; width:100%; padding:40px 36px; text-align:center;
-  }
-  h1{
-    margin:0 0 6px; font-size:2rem; letter-spacing:-.02em; font-weight:800;
-  }
-  h1 .dot{color:var(--accent);}
-  p{margin:0; color:var(--dim); font-size:.96rem;}
-  .rule{
-    width:32px; height:3px; background:var(--accent); border-radius:2px;
-    margin:18px auto;
-  }
-  footer{
-    margin-top:26px; padding-top:18px; border-top:1px solid var(--line);
-    font-size:.82rem; color:var(--dim);
-  }
-  footer a{color:var(--dim);}
-</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="gift.ceo">
+<meta property="og:url" content="https://gift.ceo/">
+<meta property="og:title" content="gift.ceo — Only CEOs give here">
+<meta property="og:description" content="A public list of gifts given personally by CEOs, under their own name and their company's name.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="alternate" hreflang="en" href="https://gift.ceo/?lang=en">
+<link rel="alternate" hreflang="ro" href="https://gift.ceo/?lang=ro">
+<link rel="alternate" hreflang="x-default" href="https://gift.ceo/">
 </head>
 <body>
 
-  <main class="card">
+<header class="masthead" data-chrome></header>
+
+<main>
+
+  <section class="hero wrap">
+    <span class="badge" data-i18n="header.badge">Swiss made &middot; Available worldwide</span>
     <h1>gift<span class="dot">.</span>ceo</h1>
-    <div class="rule"></div>
-    <p>A site is being built here.</p>
-    <footer>
-      Registered 2026. Nothing to sign up for yet.
-    </footer>
-  </main>
+    <p class="tagline" data-i18n="hero.tagline">Only CEOs give here.</p>
+    <p class="hero-sub" data-i18n="hero.sub">One seat per company. 10,000 CHF, once, forever. Then give as much as you like.</p>
+    <div class="hero-actions">
+      <a class="btn" href="/join.html" data-i18n="cta.primary">Give your first gift. &rarr;</a>
+      <a class="btn btn--ghost" href="#gifts" data-i18n="nav.gifts">Gifts</a>
+    </div>
+    <p class="lede" data-i18n="intro.body">Every gift on this site is given personally by a CEO, under their own name and their company's name.</p>
+  </section>
+
+  <section class="section wrap">
+    <h2 data-i18n="how.title">How it works</h2>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><p data-i18n="how.step1"></p></div>
+      <div class="step"><span class="n">02</span><p data-i18n="how.step2"></p></div>
+      <div class="step"><span class="n">03</span><p data-i18n="how.step3"></p></div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="why">
+      <h3 data-i18n="why.title">Why 10,000 CHF, once</h3>
+      <p data-i18n="why.body"></p>
+    </div>
+  </section>
+
+  <section class="section wrap" id="gifts">
+    <h2><span data-i18n="feed.title">The feed</span> <span class="count" id="giftCount"></span></h2>
+    <p class="hero-sub" style="margin:0 0 26px;text-align:left;max-width:44em" data-i18n="feed.body"></p>
+    <div class="feed" id="feed">
+      <div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="companies">
+    <h2><span data-i18n="feed.companies_title">Companies with a seat</span> <span class="count" id="coCount"></span></h2>
+    <div class="companies" id="companies"></div>
+  </section>
+
+  <section class="section wrap" style="text-align:center">
+    <a class="btn btn--gold" href="/join.html" data-i18n="cta.primary">Give your first gift. &rarr;</a>
+  </section>
+
+</main>
+
+<footer class="foot" data-footer></footer>
+
+<script type="module">
+import { boot, sb, giftCard, companyCard, t } from "/assets/app.js";
+
+const feed = document.getElementById("feed");
+const companies = document.getElementById("companies");
+
+// Both lists are read straight from the two public views, so what a visitor
+// sees is exactly what the database is willing to show anonymously.
+async function load() {
+  const [gifts, cos] = await Promise.all([
+    sb.from("live_gifts").select("*").order("gift_number", { ascending: false }).limit(100),
+    sb.from("live_companies").select("*").order("seat_number", { ascending: true }).limit(200)
+  ]);
+
+  feed.innerHTML = "";
+  const rows = (gifts.data || []);
+  document.getElementById("giftCount").textContent = rows.length ? rows.length : "";
+  if (!rows.length) {
+    feed.appendChild(Object.assign(document.createElement("div"),
+      { className: "empty", textContent: t("feed.empty") }));
+  } else {
+    for (const g of rows) feed.appendChild(giftCard(g));
+  }
+
+  const list = (cos.data || []);
+  companies.innerHTML = "";
+  document.getElementById("coCount").textContent = list.length ? list.length : "";
+  if (!list.length) {
+    companies.appendChild(Object.assign(document.createElement("div"),
+      { className: "empty", textContent: t("feed.companies_empty") }));
+  } else {
+    for (const c of list) companies.appendChild(companyCard(c));
+  }
+}
+
+await boot();
+await load();
+// A language change rewrites the static copy; the cards are built in JS, so
+// they have to be rebuilt to follow it.
+document.addEventListener("i18n:applied", load);
+</script>
 
 </body>
 </html>

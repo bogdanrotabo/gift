@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "gift.ceo — Aici dăruiesc doar directorii",
+    "description": "O listă publică de daruri făcute personal de directori generali, sub numele lor și al firmei lor. Un loc per firmă, 10.000 CHF o singură dată, pentru totdeauna."
+  },
+  "nav": {
+    "gifts": "Daruri",
+    "companies": "Firme",
+    "join": "Înscrie-te",
+    "dashboard": "Panou",
+    "signin": "Intră în cont",
+    "signout": "Ieși din cont",
+    "language": "Limba"
+  },
+  "header": {
+    "badge": "🇨🇭 Făcut în Elveția · Disponibil în toată lumea"
+  },
+  "hero": {
+    "wordmark": "gift.ceo",
+    "tagline": "Aici dăruiesc doar directorii.",
+    "sub": "Un loc per firmă. 10.000 CHF, o singură dată, pentru totdeauna. Apoi dăruiești cât vrei."
+  },
+  "intro": {
+    "body": "Fiecare dar de pe acest sit e făcut personal de un director general, sub numele lui și al firmei lui. O unealtă gratuită pentru toată lumea. Un bonus pentru echipă. Acțiuni pentru oamenii care au construit firma. O zi de mentorat. Fără comunicate de presă, fără agenții — doar un director care spune: uite ce dăruim."
+  },
+  "how": {
+    "title": "Cum funcționează",
+    "step1": "Intri cu contul Google al firmei tale. Așa știm că e într-adevăr firma ta.",
+    "step2": "Cumperi locul firmei: 10.000 CHF, o singură dată. E al firmei, pentru totdeauna — dacă pleci, îl preia succesorul tău.",
+    "step3": "Dăruiește. Publici câte daruri vrei, când vrei, cu o dată de valabilitate aleasă de tine."
+  },
+  "why": {
+    "title": "De ce 10.000 CHF, o singură dată",
+    "body": "Nu e prețul unei reclame. E un filtru. Doar un director care chiar vrea să dăruiască va plăti ca s-o facă public, sub numele lui. Asta face ca fiecare dar de pe sit să fie real."
+  },
+  "feed": {
+    "title": "Lista",
+    "body": "Darurile apar în ordinea în care au fost făcute, numerotate de la #1. Firmele apar în ordinea în care s-au înscris. Nu mai e nimic altceva de cumpărat.",
+    "empty": "Niciun dar încă. Primul va fi #1.",
+    "companies_title": "Firme cu loc",
+    "companies_empty": "Nicio firmă încă.",
+    "given_by": "dăruit de",
+    "valid_until": "valabil până la",
+    "no_expiry": "fără termen",
+    "seat": "Locul"
+  },
+  "cta": {
+    "primary": "Fă primul tău dar. →"
+  },
+  "type": {
+    "world": "Un dar pentru toată lumea",
+    "team": "Un dar pentru echipă",
+    "equity": "Acțiuni pentru echipă",
+    "mentoring": "O zi de mentorat"
+  },
+  "state": {
+    "active": "Activ",
+    "ended": "Încheiat",
+    "withdrawn": "Retras"
+  },
+  "footer": {
+    "smallprint": "gift.ceo este o platformă de publicare. Fiecare dar este publicat și semnat de persoana care a declarat că este directorul general al firmei numite, folosind contul Google Workspace al acelei firme. Taxa unică pentru loc nu se restituie. gift.ceo nu verifică și nu garantează darurile descrise.",
+    "terms": "Termeni",
+    "privacy": "Confidențialitate"
+  },
+  "join": {
+    "title": "Ia locul firmei tale",
+    "signin_cta": "Intră cu Google",
+    "no_hd": "Intră cu contul Google Workspace al firmei tale (@firmata.com).",
+    "domain_mismatch": "Adresa sitului nu se potrivește cu domeniul contului tău Google Workspace.",
+    "company_name": "Numele firmei",
+    "website": "Situl firmei",
+    "country": "Țara",
+    "logo": "Siglă (opțional)",
+    "ceo_name": "Numele tău, așa cum vrei să apară",
+    "linkedin": "LinkedIn (opțional)",
+    "photo": "Fotografie (opțional)",
+    "declaration": "Sunt directorul general (sau echivalent) al acestei firme și sunt autorizat să public în numele ei.",
+    "terms_accept": "Am citit și accept Termenii.",
+    "submit": "Mergi la plată — 10.000 CHF",
+    "takeover_title": "Firma asta are deja un loc",
+    "takeover_body": "Cineva din firma ta a cumpărat deja locul. Îl poți prelua ca director actual. Darurile publicate deja păstrează numele celui care le-a făcut.",
+    "takeover_cta": "Preia acest loc"
+  },
+  "thanks": {
+    "title": "Locul tău se activează…",
+    "body": "Plata a fost primită. Pagina merge mai departe singură de îndată ce locul e activ.",
+    "waiting": "Se așteaptă confirmarea…"
+  },
+  "dashboard": {
+    "title": "Darurile tale",
+    "give": "Fă un dar",
+    "no_gifts": "Nu ai dăruit nimic încă.",
+    "edit": "Modifică",
+    "end_now": "Încheie darul acum",
+    "profile": "Profilul tău",
+    "company": "Firma ta",
+    "save": "Salvează",
+    "form_type": "Ce fel de dar",
+    "form_title": "Titlu",
+    "form_description": "Descriere",
+    "form_claim": "Cum se revendică",
+    "form_link": "Link (opțional)",
+    "form_valid": "Valabil până la",
+    "form_no_expiry": "Fără termen",
+    "publish": "Publică",
+    "cancel": "Renunță",
+    "seat_pending": "Locul tău nu e activ încă."
+  },
+  "company_page": {
+    "seat": "Locul",
+    "current_ceo": "Director actual",
+    "history": "Toate darurile",
+    "website": "Sit"
+  },
+  "errors": {
+    "generic": "Ceva n-a mers. Încearcă din nou.",
+    "not_signed_in": "Intră mai întâi în cont.",
+    "not_found": "Nu am găsit."
+  }
+}
