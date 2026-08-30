@@ -65,7 +65,7 @@ a{color:var(--ink);text-underline-offset:3px;text-decoration-color:var(--line);}
 a:hover{text-decoration-color:var(--accent);}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
 
-.wrap{max-width:940px;margin:0 auto;padding:0 26px;}
+.wrap{max-width:940px;margin:0 auto;padding-left:26px;padding-right:26px;}
 .narrow{max-width:660px;}
 
 /* A long domain or an unbroken word must wrap rather than push the page
@@ -96,7 +96,7 @@ body{overflow-wrap:break-word;}
   margin-left:auto;
   font-size:.9rem;
 }
-.masthead nav a{color:var(--dim);text-decoration:none;}
+.masthead nav a{color:var(--dim);text-decoration:none;white-space:nowrap;}
 .masthead nav a:hover{color:var(--ink);}
 
 .langpick{
@@ -363,7 +363,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
    the air, because 26px of nothing either side is what makes a line readable
    in the hand. */
 @media (max-width:380px){
-  .wrap{padding:0 22px;}
+  .wrap{padding-left:22px;padding-right:22px;}
   .masthead nav{gap:11px;font-size:.82rem;}
   .langpick{padding:4px 22px 4px 9px;font-size:.8rem;}
   .gift{padding:18px 16px;}

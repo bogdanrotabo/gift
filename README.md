@@ -157,13 +157,13 @@ to look, from a phone, as though a change never shipped. The stylesheet and
 the module are therefore referenced with a version query:
 
 ```html
-<link rel="stylesheet" href="/assets/style.css?v=2">
-<script type="module">import { boot } from "/assets/app.js?v=2";</script>
+<link rel="stylesheet" href="/assets/style.css?v=3">
+<script type="module">import { boot } from "/assets/app.js?v=3";</script>
 ```
 
 **Bump the number in every HTML file whenever `style.css` or `app.js`
 changes**, or the change will not reach anyone who has already visited:
 
 ```bash
-sed -i 's/?v=2/?v=3/g' *.html
+sed -i "s/?v=3/?v=4/g" *.html
 ```
