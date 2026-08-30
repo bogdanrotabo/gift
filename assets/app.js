@@ -240,8 +240,8 @@ export function mountChrome(user) {
     <div class="wrap">
       <a class="wordmark" href="/">gift<span class="dot">.</span>ceo</a>
       <nav>
-        <a href="/#gifts" data-i18n="nav.gifts">Gifts</a>
-        <a href="/#companies" data-i18n="nav.companies">Companies</a>
+        <a class="nav-jump" href="/#gifts" data-i18n="nav.gifts">Gifts</a>
+        <a class="nav-jump" href="/#companies" data-i18n="nav.companies">Companies</a>
         ${signedIn
           ? '<a href="/dashboard.html" data-i18n="nav.dashboard">Dashboard</a><a href="#" data-signout data-i18n="nav.signout">Sign out</a>'
           : '<a href="/join.html" data-i18n="nav.join">Join</a>'}

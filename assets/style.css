@@ -335,6 +335,19 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
    than the desktop rule gives it, and the cards keep their own padding on top
    of that, so nothing reads off the edge. */
 @media (max-width:560px){
+  /* The two jump links are a convenience on a wide screen and a wrapped,
+     two-line masthead on a narrow one. The page they point at is directly
+     below anyway. */
+  .masthead .nav-jump{display:none;}
+  .masthead .wrap{gap:12px;min-height:56px;flex-wrap:nowrap;}
+  .masthead nav{gap:14px;flex-shrink:0;}
+  .wordmark{font-size:1.05rem;}
+
+  /* Centred prose on a phone reaches both edges on every line at once, which
+     is what makes it feel pressed against the glass. Ragged-right gives the
+     eye somewhere to rest and a real margin to see. */
+  .lede{text-align:left;margin-top:44px;}
+  .hero-sub{text-align:left;}
   .hero{padding:52px 0 4px;}
   .section{padding:48px 0;}
   .gift{grid-template-columns:1fr;gap:0;padding:20px 18px;}
