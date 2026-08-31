@@ -166,3 +166,24 @@ test("no flag emoji is left inside a translated string", () => {
     }
   }
 });
+
+test("the flag sits in front of the text, not above it", () => {
+  // The reset makes every img display:block, so a flag without an explicit
+  // inline-block took its own line and appeared above the words instead of
+  // before them. It looks like a markup mistake and is not one; this is the
+  // line that fixes it, and the test exists so it does not get tidied away.
+  const css = readFileSync(new URL("../assets/style.css", import.meta.url), "utf8");
+  const rule = css.match(/\.flagimg\s*\{([^}]*)\}/);
+  assert.ok(rule, ".flagimg rule not found");
+  assert.match(rule[1], /display\s*:\s*inline-block/,
+    ".flagimg must override the global img{display:block} or it renders above the text");
+
+  // And the flag must come before the text in the markup, in both places.
+  const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+  for (const key of ["header.badge", "sponsors.rotabo"]) {
+    const line = html.split("\n").find(l => l.includes(`data-i18n="${key}"`));
+    assert.ok(line, `${key} not found in index.html`);
+    assert.ok(line.indexOf("flagimg") < line.indexOf(`data-i18n="${key}"`),
+      `${key}: the flag must come before the text`);
+  }
+});

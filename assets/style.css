@@ -100,12 +100,21 @@ body{overflow-wrap:break-word;}
 .masthead nav a:hover{color:var(--ink);}
 
 /* Flags are pictures, not glyphs: Windows has no flag emoji, so anything that
-   relied on the font showed two boxed letters there. 1em wide keeps it in step
-   with whatever text it sits beside. */
+   relied on the font showed two boxed letters there.
+
+   display:inline-block is doing real work. The reset at the top of this file
+   makes every img display:block, which put the flag on its own line above the
+   text instead of in front of it -- and made the vertical-align below silently
+   do nothing, since it has no meaning on a block.
+
+   Sized by height, not width: the Swiss flag is square where almost every
+   other is 2:1, so a shared width would have made this one flag half again as
+   tall as the rest. */
 .flagimg{
-  width:1.15em;height:auto;
-  vertical-align:-.15em;
-  margin-right:.4em;
+  display:inline-block;
+  height:.8em;width:auto;
+  vertical-align:-.02em;
+  margin-right:.45em;
   border-radius:2px;
 }
 
@@ -149,6 +158,12 @@ body{overflow-wrap:break-word;}
 .langpick-opt:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
 .langpick-opt[aria-selected="true"]{font-weight:600;color:var(--accent);}
 .langpick-opt > span:nth-of-type(1){flex:1;}
+.langpick-opt .flagimg,
+.langpick-btn .flagimg{
+  width:1.4em;height:.85em;
+  object-fit:contain;object-position:center;
+  margin-right:.55em;
+}
 .langpick-code{
   color:var(--faint);font-size:.75rem;letter-spacing:.06em;
   margin-left:10px;
