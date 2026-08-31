@@ -121,5 +121,12 @@
     "generic": "Kaut kas nogāja greizi. Mēģiniet vēlreiz.",
     "not_signed_in": "Vispirms piesakieties.",
     "not_found": "Nav atrasts."
+  },
+  "consent": {
+    "title": "Analītikas sīkdatnes",
+    "body": "Google Analytics parāda, kā tiek izmantota šī vietne. Tas iestata sīkdatnes. Ja atsakāties, nekas netiek saglabāts.",
+    "accept": "Piekrītu",
+    "reject": "Atteikties",
+    "privacy": "Privātums"
   }
 }

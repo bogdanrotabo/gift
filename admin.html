@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — gift.ceo</title>
+<meta name="description" content="Private.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css?v=7">
+<style>
+  .grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); margin-bottom:26px }
+  .stat { padding:16px 18px }
+  .stat b { display:block; font:700 1.9rem/1 var(--sans); letter-spacing:-.03em }
+  .stat span { display:block; margin-top:6px; color:var(--dim); font-size:.8rem; text-transform:uppercase; letter-spacing:.06em }
+  .scroll { overflow-x:auto }
+  table { border-collapse:collapse; width:100%; font-size:.88rem }
+  th { text-align:left; font-weight:600; color:var(--dim); font-size:.74rem;
+       text-transform:uppercase; letter-spacing:.06em; padding:0 14px 8px 0; white-space:nowrap }
+  td { padding:8px 14px 8px 0; border-top:1px solid var(--line); vertical-align:top }
+  td.num { font-variant-numeric:tabular-nums }
+  .muted { color:var(--dim) }
+  .bar { height:6px; background:currentColor; border-radius:3px; min-width:2px; opacity:.75 }
+  h2 { font:700 1.05rem/1.2 var(--sans); margin:0 0 12px; letter-spacing:-.01em }
+</style>
+</head>
+<body>
+
+<header class="masthead" data-chrome></header>
+
+<main class="wrap" style="padding-top:48px;padding-bottom:56px;max-width:920px">
+
+  <div class="error" id="err"></div>
+
+  <section id="needSignIn" hidden class="card">
+    <h1 style="margin:0 0 10px;font:700 1.3rem/1.25 var(--sans)">Admin</h1>
+    <p class="muted">Sign in with the account that owns the register.</p>
+    <p><button class="btn" id="signin">Sign in with Google</button></p>
+  </section>
+
+  <section id="refused" hidden class="card">
+    <h1 style="margin:0 0 10px;font:700 1.3rem/1.25 var(--sans)">Not an administrator</h1>
+    <p class="muted" id="refusedWho"></p>
+    <p><button class="btn btn--ghost" id="signout">Sign out</button></p>
+  </section>
+
+  <section id="panel" hidden>
+    <div id="body"></div>
+  </section>
+
+</main>
+
+<script type="module">
+import { boot, sb, esc, SUPABASE_URL, SUPABASE_KEY } from "/assets/app.js?v=7";
+
+const err  = document.getElementById("err");
+const body = document.getElementById("body");
+let user = null;
+
+const show = id => {
+  for (const s of ["needSignIn", "refused", "panel"]) {
+    document.getElementById(s).hidden = s !== id;
+  }
+};
+
+const fail = m => { err.textContent = m; err.style.display = m ? "block" : "none"; };
+
+// The register's own sign-in asks Google for Workspace accounts only, via the
+// hd=* hint. The administrator here is an ordinary Gmail address with no
+// Workspace domain behind it, so that hint would hide the very account this
+// page is for. It is left off deliberately, and costs nothing: this page's
+// gate is the address itself, checked server-side, not the kind of account.
+document.getElementById("signin").onclick = () => sb.auth.signInWithOAuth({
+  provider: "google",
+  options: { redirectTo: `${location.origin}/admin.html`, queryParams: { prompt: "select_account" } }
+});
+
+document.getElementById("signout").onclick = async () => {
+  await sb.auth.signOut();
+  location.reload();
+};
+
+const n = v => Number(v ?? 0).toLocaleString();
+
+// fmtDate is the register's public date format: a month name and a year, right
+// for "gave this in August 2026" and useless here. An operator asking who
+// signed in wants the hour, and two sign-ins on one day have to be separable.
+const when = v => {
+  if (!v) return "\u2014";
+  const d = new Date(v);
+  if (isNaN(d)) return "\u2014";
+  try {
+    return d.toLocaleString(undefined, {
+      year: "numeric", month: "short", day: "numeric",
+      hour: "2-digit", minute: "2-digit"
+    });
+  } catch {
+    return d.toISOString().slice(0, 16).replace("T", " ");
+  }
+};
+
+function table(head, rows, empty) {
+  if (!rows.length) return `<p class="muted">${esc(empty)}</p>`;
+  return `<div class="scroll"><table>
+    <thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead>
+    <tbody>${rows.join("")}</tbody></table></div>`;
+}
+
+function render(d) {
+  const t = d.traffic, s = d.seats;
+  const peak = Math.max(1, ...t.by_day.map(x => x.n));
+
+  const rank = (list, label) => table([label, "Views"], list.map(x =>
+    `<tr><td>${esc(x.name)}</td><td class="num">${n(x.n)}</td></tr>`), "Nothing yet.");
+
+  body.innerHTML = `
+    <div class="grid">
+      <div class="card stat"><b>${n(s.active)}</b><span>Active seats</span></div>
+      <div class="card stat"><b>${n(s.paid)}</b><span>Paid</span></div>
+      <div class="card stat"><b>${n(s.gifts)}</b><span>Gifts</span></div>
+      <div class="card stat"><b>${n(d.people.length)}</b><span>Accounts</span></div>
+      <div class="card stat"><b>${n(t.today)}</b><span>Views today</span></div>
+      <div class="card stat"><b>${n(t.last_30)}</b><span>Views, 30d</span></div>
+    </div>
+
+    <div class="card" style="margin-bottom:22px">
+      <h2>Seats and payments</h2>
+      ${table(["Company", "Domain", "Country", "Seat", "Status", "Paid", "Stripe session"],
+        s.companies.map(c => `<tr>
+          <td>${esc(c.name || "—")}</td>
+          <td class="muted">${esc(c.domain || "—")}</td>
+          <td>${esc(c.country || "—")}</td>
+          <td class="num">${c.seat_number ?? "—"}</td>
+          <td>${esc(c.seat_status || "—")}</td>
+          <td class="muted">${esc(when(c.paid_at))}</td>
+          <td class="muted" style="font-size:.8rem">${esc(c.stripe_session_id || "—")}</td>
+        </tr>`),
+        "No company has taken a seat yet.")}
+    </div>
+
+    <div class="card" style="margin-bottom:22px">
+      <h2>Who has signed in</h2>
+      ${table(["Email", "Name", "Workspace domain", "Last sign-in", "First seen"],
+        d.people.map(p => `<tr>
+          <td>${esc(p.email || "—")}</td>
+          <td>${esc(p.name || "—")}</td>
+          <td class="muted">${esc(p.hd || "— (personal account)")}</td>
+          <td class="muted">${esc(when(p.last_sign_in_at))}</td>
+          <td class="muted">${esc(when(p.created_at))}</td>
+        </tr>`),
+        "Nobody has signed in yet.")}
+    </div>
+
+    <div class="card" style="margin-bottom:22px">
+      <h2>Traffic, last ${t.window_days} days</h2>
+      ${t.capped ? `<p class="muted">Showing the most recent rows only — the window is full.</p>` : ""}
+      ${table(["Day", "Views", ""], t.by_day.map(x => `<tr>
+          <td class="muted">${esc(x.d)}</td>
+          <td class="num">${n(x.n)}</td>
+          <td style="width:60%"><div class="bar" style="width:${(x.n / peak * 100).toFixed(1)}%"></div></td>
+        </tr>`),
+        "No visits recorded yet. The counter starts from the day it ships — it cannot show traffic from before that.")}
+    </div>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+      <div class="card"><h2>Pages</h2>${rank(t.paths, "Path")}</div>
+      <div class="card"><h2>Countries</h2>${rank(t.countries, "Country")}</div>
+      <div class="card"><h2>Referrers</h2>${rank(t.referrers, "Site")}</div>
+    </div>
+
+    <p class="muted" style="margin-top:22px;font-size:.8rem">
+      Read at ${esc(when(d.as_of))}. Visits are counted without cookies or any
+      visitor identifier, so these are views, never unique people.
+    </p>`;
+}
+
+async function load() {
+  fail("");
+  if (!user) { show("needSignIn"); return; }
+
+  // user can be set from a restored session whose refresh has since failed, in
+  // which case there is no access token to send and the fetch below would throw
+  // on a null. Treat it as signed out, which is what it is.
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) { show("needSignIn"); return; }
+
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/admin-overview`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_KEY,
+      "Authorization": `Bearer ${session.access_token}`
+    },
+    body: "{}"
+  });
+  const out = await res.json().catch(() => ({}));
+
+  if (res.status === 403) {
+    document.getElementById("refusedWho").textContent =
+      `${user.email} is signed in, but is not an administrator of this register.`;
+    show("refused");
+    return;
+  }
+  if (!res.ok) { show("needSignIn"); fail(out.error || `HTTP ${res.status}`); return; }
+
+  show("panel");
+  render(out);
+}
+
+user = await boot();
+await load();
+sb.auth.onAuthStateChange(async (_e, s) => { user = s ? s.user : null; await load(); });
+</script>
+
+</body>
+</html>

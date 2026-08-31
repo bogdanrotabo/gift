@@ -121,5 +121,12 @@
     "generic": "Kuna hitilafu. Tafadhali jaribu tena.",
     "not_signed_in": "Tafadhali ingia kwanza.",
     "not_found": "Haikupatikana."
+  },
+  "consent": {
+    "title": "Vidakuzi vya uchanganuzi",
+    "body": "Google Analytics hutuonyesha jinsi tovuti hii inavyotumika. Huweka vidakuzi. Ukikataa, hakuna kinachohifadhiwa.",
+    "accept": "Kubali",
+    "reject": "Kataa",
+    "privacy": "Faragha"
   }
 }

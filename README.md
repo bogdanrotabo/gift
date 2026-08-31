@@ -32,7 +32,7 @@ assets/app.js     config, i18n, auth, card rendering
 assets/style.css
 locales/*.json    one file per language
 supabase/migrations/   the schema, in order
-supabase/functions/    claim-seat, stripe-webhook
+supabase/functions/    claim-seat, stripe-webhook, track, admin-overview
 ```
 
 ## The rule the whole thing rests on
@@ -152,6 +152,72 @@ Because the endpoint sits on rotabo.app's Stripe account, it also receives
 rotabo's own sponsor payments. That is harmless: the webhook only writes when
 `client_reference_id` matches a company row, and a rotabo sponsorship matches
 nothing.
+
+### Admin
+
+`admin.html` is the operator's view: who has signed in, every seat and what was
+paid for it, and the traffic counter below. It is `noindex, nofollow` and
+linked from nowhere.
+
+Access is decided in `admin-overview`, against the JWT Supabase has already
+verified, before a single row is read. The page checks the address too, but
+only to show a refusal instead of an empty screen — that check is decoration
+and anyone can edit it in a browser console. The list of administrators is
+`ADMIN_EMAILS` in the function's secrets, comma-separated, defaulting to the
+address that owns the project; adding a second one is a secret change, not a
+deploy.
+
+Two things make an edge function the only sensible door here. `auth.users`,
+where `last_sign_in_at` lives, is not exposed through the API at all, and
+`page_views` has RLS enabled with no policy — so both are reachable only by
+the service role, which lives in the functions and nowhere near a browser.
+
+Note that the register's own sign-in sends Google `hd=*`, asking for Workspace
+accounts only. The administrator is an ordinary Gmail address with no Workspace
+domain, so `admin.html` deliberately signs in without that hint. This is also
+why the admin account can never take a seat: no `hd` claim, no company.
+
+### Traffic
+
+`track` records one row per page view and nothing else: the path, the moment,
+the two-letter country Cloudflare has already derived, the page language, and
+the referring host when it is not this site. No cookie, no visitor identifier,
+no IP address stored. Two visits by one person cannot be told apart from visits
+by two people, which is the whole design — it answers whether anyone is
+arriving, never who.
+
+The beacon is fired from `boot()` in `assets/app.js` and never awaited, so it
+cannot slow a render; an ad blocker refusing it is a normal outcome. Bump the
+`?v=` on every page when `app.js` changes, or returning visitors keep the old
+one from cache.
+
+`privacy.html` promised analytics would be announced before they were switched
+on. That promise is kept in the same commit that added this, and the page now
+describes exactly the fields above. If the counter ever grows a visitor
+identifier, that page has to change first.
+
+### Google Analytics
+
+Off until `GA4_ID` in `assets/app.js` holds a measurement ID. While it is
+empty, no tag is fetched and no consent bar is shown; the site behaves as if
+GA4 had never been considered. Setting it switches on the tag *and* the bar
+together, and they must never be separated — the bar is what makes the tag
+lawful under the Swiss nLPD and the GDPR.
+
+The bar is not decoration. Decline means no request is made to Google at all,
+not even a cookieless one: Google's own advice is to load the tag with consent
+denied and let it ping anyway, which is reasonable for a shop and wrong for a
+register that has just told the visitor nothing is stored. On accept, only
+`analytics_storage` is granted; `ad_storage`, `ad_user_data` and
+`ad_personalization` stay denied permanently, so nothing here can feed
+advertising.
+
+The choice lives in `localStorage` under `gift.consent` and nowhere else, so it
+is per-browser and invisible to us. The five `consent.*` strings are translated
+in all 38 locales — the bar is the first thing a visitor sees, and it cannot be
+the one part of the site in English.
+
+Bump the `?v=` on every page whenever `app.js` or `style.css` changes.
 
 ## Adding a language
 

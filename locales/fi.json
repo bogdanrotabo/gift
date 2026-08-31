@@ -121,5 +121,12 @@
     "generic": "Jokin meni pieleen. Yritä uudelleen.",
     "not_signed_in": "Kirjaudu ensin sisään.",
     "not_found": "Ei löytynyt."
+  },
+  "consent": {
+    "title": "Analytiikkaevästeet",
+    "body": "Google Analytics näyttää meille, miten tätä sivustoa käytetään. Se asettaa evästeitä. Jos kieltäydyt, mitään ei tallenneta.",
+    "accept": "Hyväksy",
+    "reject": "Kieltäydy",
+    "privacy": "Tietosuoja"
   }
 }

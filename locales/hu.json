@@ -121,5 +121,12 @@
     "generic": "Valami hiba történt. Próbáld újra.",
     "not_signed_in": "Előbb jelentkezz be.",
     "not_found": "Nem található."
+  },
+  "consent": {
+    "title": "Analitikai sütik",
+    "body": "A Google Analytics megmutatja, hogyan használják ezt az oldalt. Sütiket helyez el. Elutasítás esetén semmi nem tárolódik.",
+    "accept": "Elfogadom",
+    "reject": "Elutasítom",
+    "privacy": "Adatvédelem"
   }
 }

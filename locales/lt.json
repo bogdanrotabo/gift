@@ -121,5 +121,12 @@
     "generic": "Kažkas nepavyko. Bandykite dar kartą.",
     "not_signed_in": "Pirmiausia prisijunkite.",
     "not_found": "Nerasta."
+  },
+  "consent": {
+    "title": "Analitikos slapukai",
+    "body": "Google Analytics rodo, kaip naudojama ši svetainė. Jis nustato slapukus. Atsisakius niekas nesaugoma.",
+    "accept": "Sutinku",
+    "reject": "Atsisakau",
+    "privacy": "Privatumas"
   }
 }

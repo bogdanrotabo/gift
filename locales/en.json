@@ -121,5 +121,12 @@
     "generic": "Something went wrong. Please try again.",
     "not_signed_in": "Please sign in first.",
     "not_found": "Not found."
+  },
+  "consent": {
+    "title": "Analytics cookies",
+    "body": "Google Analytics shows us how this site is used. It sets cookies. Decline and nothing is stored.",
+    "accept": "Accept",
+    "reject": "Decline",
+    "privacy": "Privacy"
   }
 }

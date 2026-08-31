@@ -121,5 +121,12 @@
     "generic": "Une erreur est survenue. Veuillez réessayer.",
     "not_signed_in": "Veuillez d'abord vous connecter.",
     "not_found": "Introuvable."
+  },
+  "consent": {
+    "title": "Cookies de mesure d'audience",
+    "body": "Google Analytics nous montre comment ce site est utilisé. Il dépose des cookies. En cas de refus, rien n'est enregistré.",
+    "accept": "Accepter",
+    "reject": "Refuser",
+    "privacy": "Confidentialité"
   }
 }

@@ -121,5 +121,12 @@
     "generic": "Noget gik galt. Prøv igen.",
     "not_signed_in": "Log ind først.",
     "not_found": "Ikke fundet."
+  },
+  "consent": {
+    "title": "Analysecookies",
+    "body": "Google Analytics viser os, hvordan dette websted bruges. Det sætter cookies. Afviser du, gemmes intet.",
+    "accept": "Accepter",
+    "reject": "Afvis",
+    "privacy": "Privatliv"
   }
 }

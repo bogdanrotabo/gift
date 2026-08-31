@@ -121,5 +121,12 @@
     "generic": "Bir şeyler ters gitti. Lütfen yeniden deneyin.",
     "not_signed_in": "Lütfen önce giriş yapın.",
     "not_found": "Bulunamadı."
+  },
+  "consent": {
+    "title": "Analiz çerezleri",
+    "body": "Google Analytics bu sitenin nasıl kullanıldığını görmemizi sağlar. Çerez yerleştirir. Reddederseniz hiçbir şey saklanmaz.",
+    "accept": "Kabul et",
+    "reject": "Reddet",
+    "privacy": "Gizlilik"
   }
 }

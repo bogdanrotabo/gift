@@ -121,5 +121,12 @@
     "generic": "Algo salió mal. Inténtalo de nuevo.",
     "not_signed_in": "Inicia sesión primero.",
     "not_found": "No encontrado."
+  },
+  "consent": {
+    "title": "Cookies de analítica",
+    "body": "Google Analytics nos muestra cómo se usa este sitio. Instala cookies. Si lo rechazas, no se guarda nada.",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "privacy": "Privacidad"
   }
 }

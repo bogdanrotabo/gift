@@ -121,5 +121,12 @@
     "generic": "Terjadi kesalahan. Silakan coba lagi.",
     "not_signed_in": "Silakan masuk terlebih dahulu.",
     "not_found": "Tidak ditemukan."
+  },
+  "consent": {
+    "title": "Cookie analitik",
+    "body": "Google Analytics menunjukkan kepada kami bagaimana situs ini digunakan. Ini menyetel cookie. Jika ditolak, tidak ada yang disimpan.",
+    "accept": "Terima",
+    "reject": "Tolak",
+    "privacy": "Privasi"
   }
 }

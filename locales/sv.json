@@ -121,5 +121,12 @@
     "generic": "Något gick fel. Försök igen.",
     "not_signed_in": "Logga in först.",
     "not_found": "Hittades inte."
+  },
+  "consent": {
+    "title": "Analyscookies",
+    "body": "Google Analytics visar oss hur den här webbplatsen används. Det sätter cookies. Avböjer du sparas ingenting.",
+    "accept": "Acceptera",
+    "reject": "Avböj",
+    "privacy": "Integritet"
   }
 }

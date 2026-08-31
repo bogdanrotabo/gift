@@ -121,5 +121,12 @@
     "generic": "Xi ħaġa marret ħażin. Erġa' pprova.",
     "not_signed_in": "Idħol l-ewwel.",
     "not_found": "Ma nstabx."
+  },
+  "consent": {
+    "title": "Cookies analitiċi",
+    "body": "Google Analytics jurina kif jintuża dan is-sit. Huwa jissettja cookies. Jekk tirrifjuta, ma jinħażen xejn.",
+    "accept": "Aċċetta",
+    "reject": "Irrifjuta",
+    "privacy": "Privatezza"
   }
 }

@@ -293,8 +293,112 @@ export function mountFooter() {
 // rebuild the masthead without the page having to hand it over again.
 let chromeUser = null;
 
+// ------------------------------------------------------------------ ga4
+
+// Empty until a GA4 property exists. While it is empty nothing below runs: no
+// tag is fetched, no banner is shown, and the site behaves exactly as it did
+// before Google Analytics was ever considered. Paste the measurement ID here
+// (the G-XXXXXXXXXX from Analytics > Admin > Data streams) and both switch on
+// together — never one without the other, because the banner is the thing that
+// makes the tag lawful in Switzerland and the EU.
+export const GA4_ID = "";
+
+const CONSENT_KEY = "gift.consent";
+
+function storedConsent() {
+  try { return localStorage.getItem(CONSENT_KEY); } catch { return null; }
+}
+
+function storeConsent(v) {
+  try { localStorage.setItem(CONSENT_KEY, v); } catch { /* private window */ }
+}
+
+// Loaded only after a yes. Google's own advice is to load the tag with consent
+// denied and let it send cookieless pings, which is fine for a shop and wrong
+// for a register that tells visitors nothing is stored if they decline. A no
+// here means no request to Google at all.
+function loadGA4() {
+  if (!GA4_ID || window.__ga4Loaded) return;
+  window.__ga4Loaded = true;
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  // Set before the tag arrives, so nothing is written on the way in. Only
+  // analytics is ever granted: the three advertising signals stay denied for
+  // good, which is what "nothing is shared with advertisers" has to mean.
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied"
+  });
+  gtag("consent", "update", { analytics_storage: "granted" });
+
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA4_ID);
+  document.head.appendChild(s);
+
+  gtag("js", new Date());
+  gtag("config", GA4_ID, { anonymize_ip: true });
+}
+
+function mountConsent() {
+  if (!GA4_ID) return;
+
+  const choice = storedConsent();
+  if (choice === "granted") { loadGA4(); return; }
+  if (choice === "denied") return;
+
+  const bar = document.createElement("div");
+  bar.className = "consent";
+  bar.setAttribute("role", "dialog");
+  bar.setAttribute("aria-live", "polite");
+  bar.innerHTML =
+    '<div class="consent__text"><strong>' + esc(t("consent.title", "Analytics cookies")) +
+    '</strong><span>' + esc(t("consent.body", "Google Analytics shows us how this site is used.")) +
+    ' <a href="/privacy.html">' + esc(t("consent.privacy", "Privacy")) + '</a></span></div>' +
+    '<div class="consent__buttons">' +
+    '<button class="btn btn--ghost" data-consent="denied">' + esc(t("consent.reject", "Decline")) + '</button>' +
+    '<button class="btn" data-consent="granted">' + esc(t("consent.accept", "Accept")) + '</button>' +
+    '</div>';
+
+  bar.addEventListener("click", (e) => {
+    const v = e.target.closest("[data-consent]")?.dataset.consent;
+    if (!v) return;
+    storeConsent(v);
+    bar.remove();
+    if (v === "granted") loadGA4();
+  });
+
+  document.body.appendChild(bar);
+}
+
+// One line per page view, sent to the `track` function and forgotten. It is
+// never awaited: a counter that can delay a render is a counter that will
+// eventually be blamed for a slow page. Failures are swallowed on purpose —
+// an ad blocker refusing this request is a normal outcome, not an error worth
+// showing anyone. /admin.html is skipped so the owner reading the numbers does
+// not become the numbers.
+function trackView() {
+  try {
+    const path = location.pathname;
+    if (path.startsWith("/admin")) return;
+    fetch(`${SUPABASE_URL}/functions/v1/track`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ path, ref: document.referrer || null, lang }),
+      keepalive: true
+    }).catch(() => {});
+  } catch { /* never the reason a page fails */ }
+}
+
 export async function boot() {
   await setLang(pickLang());
+  trackView();
+  mountConsent();
   chromeUser = await currentUser();
   mountChrome(chromeUser);
   mountFooter();
