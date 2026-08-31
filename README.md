@@ -256,7 +256,7 @@ The database side runs in the Supabase SQL editor and is one transaction ending
 in `rollback`, so it leaves no test company, reservation or event behind:
 
 ```
-supabase/tests/0009_founding_seats_test.sql
+supabase/tests/0010_founding_seats_test.sql
 ```
 
 It covers the seven cases that matter: an allowlisted domain claiming without

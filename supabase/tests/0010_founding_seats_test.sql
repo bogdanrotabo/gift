@@ -1,6 +1,6 @@
 -- gift.ceo — the founding seats, exercised end to end.
 --
--- Run in the Supabase SQL editor (as postgres) after 0009 is applied. The whole
+-- Run in the Supabase SQL editor (as postgres) after 0010 is applied. The whole
 -- file is one transaction ending in ROLLBACK, so it leaves nothing behind: no
 -- test company, no reservation, no event. Every check raises on failure, so a
 -- run that reaches the end without an error is a run that passed.
