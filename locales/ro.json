@@ -20,6 +20,12 @@
     "tagline": "Aici dăruiesc doar directorii.",
     "sub": "Un loc per firmă. 10.000 CHF, o singură dată, pentru totdeauna. Apoi dăruiești cât vrei."
   },
+  "founding": {
+    "counter": "Locuri de fondator: {n} din 10 încă libere.",
+    "note": "Primele zece companii nu plătesc nimic — publică primele, cât pagina e încă goală.",
+    "gone": "Toate cele zece locuri de fondator sunt ocupate. Un loc costă 10.000 CHF, o singură dată.",
+    "why": "Taxa e un filtru. Cei zece fondatori trec printr-un filtru diferit: dăruiesc primii."
+  },
   "intro": {
     "body": "Fiecare dar de pe acest sit e făcut personal de un director general, sub numele lui și al firmei lui. O unealtă gratuită pentru toată lumea. Un bonus pentru echipă. Acțiuni pentru oamenii care au construit firma. O zi de mentorat. Fără comunicate de presă, fără agenții — doar un director care spune: uite ce dăruim."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Făcut în Elveția · Disponibil în toată lumea"
   },
   "cta": {
-    "primary": "Fă primul tău dar. →"
+    "primary": "Fă primul tău dar. →",
+    "founding": "Ia un loc de fondator. →"
   },
   "type": {
     "world": "Un dar pentru toată lumea",

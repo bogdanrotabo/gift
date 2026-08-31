@@ -20,6 +20,12 @@
     "tagline": "Ici, seuls les PDG donnent.",
     "sub": "Une place par entreprise. 10 000 CHF, une seule fois, pour toujours. Ensuite, donnez autant que vous voulez."
   },
+  "founding": {
+    "counter": "Places de fondateur : {n} sur 10 encore libres.",
+    "note": "Les dix premières entreprises ne paient rien — elles publient les premières, quand la page est encore vide.",
+    "gone": "Les dix places de fondateur sont prises. Une place coûte 10 000 CHF, une seule fois.",
+    "why": "Les frais sont un filtre. Les dix fondateurs en passent un autre : ils donnent les premiers."
+  },
   "intro": {
     "body": "Chaque don sur ce site est fait personnellement par un PDG, sous son propre nom et celui de son entreprise. Un outil gratuit pour le monde entier. Une prime pour l'équipe. Des parts pour ceux qui ont bâti l'entreprise. Une journée de mentorat. Pas de communiqués, pas d'agences — juste un PDG qui dit : voilà ce que nous donnons."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Fait en Suisse · Disponible dans le monde entier"
   },
   "cta": {
-    "primary": "Faites votre premier don. →"
+    "primary": "Faites votre premier don. →",
+    "founding": "Prendre une place de fondateur. →"
   },
   "type": {
     "world": "Un don au monde",

@@ -20,6 +20,12 @@
     "tagline": "Di sini hanya direktur utama yang memberi.",
     "sub": "Satu kursi per perusahaan. 10 000 CHF, sekali saja, selamanya. Setelah itu berilah sebanyak yang Anda mau."
   },
+  "founding": {
+    "counter": "Kursi pendiri: {n} dari 10 masih terbuka.",
+    "note": "Sepuluh perusahaan pertama tidak membayar apa pun — mereka menerbitkan lebih dulu, saat halaman masih kosong.",
+    "gone": "Kesepuluh kursi pendiri sudah terisi. Satu kursi 10.000 CHF, sekali bayar.",
+    "why": "Biaya itu penyaring. Sepuluh pendiri melewati penyaring lain: mereka memberi lebih dulu."
+  },
   "intro": {
     "body": "Setiap pemberian di situs ini dilakukan langsung oleh seorang direktur utama, atas nama dirinya sendiri dan perusahaannya. Sebuah alat gratis untuk dunia. Bonus untuk tim. Saham bagi orang-orang yang membangun perusahaan. Satu hari pendampingan. Tanpa siaran pers, tanpa agensi — hanya seorang direktur yang berkata: inilah yang kami berikan."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Dibuat di Swiss · Tersedia di seluruh dunia"
   },
   "cta": {
-    "primary": "Berikan pemberian pertama Anda. →"
+    "primary": "Berikan pemberian pertama Anda. →",
+    "founding": "Ambil kursi pendiri. →"
   },
   "type": {
     "world": "Pemberian untuk dunia",

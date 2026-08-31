@@ -20,6 +20,12 @@
     "tagline": "Hawn jagħtu biss il-kapijiet eżekuttivi.",
     "sub": "Post wieħed għal kull kumpanija. 10 000 CHF, darba, għal dejjem. Wara tagħti kemm trid."
   },
+  "founding": {
+    "counter": "Postijiet ta' fundatur: {n} minn 10 għadhom miftuħa.",
+    "note": "L-ewwel għaxar kumpaniji ma jħallsu xejn — jippubblikaw l-ewwel, waqt li l-paġna għadha vojta.",
+    "gone": "L-għaxar postijiet ta' fundatur kollha nqabdu. Post jiswa 10,000 CHF, darba biss.",
+    "why": "It-tariffa hija filtru. L-għaxar fundaturi jgħaddu minn ieħor: jagħtu l-ewwel."
+  },
   "intro": {
     "body": "Kull rigal fuq dan is-sit jingħata personalment minn kap eżekuttiv, f'ismu u f'isem il-kumpanija tiegħu. Għodda b'xejn għad-dinja. Bonus għat-tim. Ishma għal min bena l-kumpanija. Ġurnata ta' mentoring. L-ebda stqarrija għall-istampa, l-ebda aġenzija — biss kap li jgħid: dan hu li nagħtu."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Magħmul fl-Isvizzera · Disponibbli mad-dinja kollha"
   },
   "cta": {
-    "primary": "Agħti l-ewwel rigal tiegħek. →"
+    "primary": "Agħti l-ewwel rigal tiegħek. →",
+    "founding": "Ħu post ta' fundatur. →"
   },
   "type": {
     "world": "Rigal lid-dinja",

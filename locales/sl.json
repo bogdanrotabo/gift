@@ -20,6 +20,12 @@
     "tagline": "Tu darujejo samo direktorji.",
     "sub": "Eno mesto na podjetje. 10 000 CHF, enkrat, za vedno. Nato darujete, kolikor želite."
   },
+  "founding": {
+    "counter": "Ustanovna mesta: {n} od 10 še prostih.",
+    "note": "Prvih deset podjetij ne plača nič — objavijo prva, dokler je stran še prazna.",
+    "gone": "Vseh deset ustanovnih mest je zasedenih. Mesto stane 10.000 CHF, enkratno.",
+    "why": "Pristojbina je filter. Deset ustanoviteljev prestane drugega: dajo prvi."
+  },
   "intro": {
     "body": "Vsako darilo na tem mestu da osebno glavni direktor, v svojem imenu in v imenu svojega podjetja. Brezplačno orodje za svet. Nagrada za ekipo. Deleži za ljudi, ki so zgradili podjetje. Dan mentorstva. Brez sporočil za javnost, brez agencij — le direktor, ki reče: to darujemo."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Narejeno v Švici · Na voljo po vsem svetu"
   },
   "cta": {
-    "primary": "Darujte svoje prvo darilo. →"
+    "primary": "Darujte svoje prvo darilo. →",
+    "founding": "Vzemite ustanovno mesto. →"
   },
   "type": {
     "world": "Darilo svetu",

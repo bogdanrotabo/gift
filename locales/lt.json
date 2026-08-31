@@ -20,6 +20,12 @@
     "tagline": "Čia dovanoja tik vadovai.",
     "sub": "Viena vieta įmonei. 10 000 CHF, vieną kartą, visam laikui. Paskui dovanojate, kiek norite."
   },
+  "founding": {
+    "counter": "Steigėjų vietos: {n} iš 10 dar laisvos.",
+    "note": "Pirmosios dešimt įmonių nemoka nieko — jos paskelbia pirmos, kol puslapis dar tuščias.",
+    "gone": "Visos dešimt steigėjų vietų užimtos. Vieta kainuoja 10 000 CHF, vieną kartą.",
+    "why": "Mokestis yra filtras. Dešimt steigėjų pereina kitą: jie duoda pirmi."
+  },
   "intro": {
     "body": "Kiekvieną dovaną šioje svetainėje asmeniškai dovanoja generalinis direktorius, savo ir savo įmonės vardu. Nemokamas įrankis pasauliui. Premija komandai. Dalys tiems, kurie sukūrė įmonę. Diena mentorystės. Jokių pranešimų spaudai, jokių agentūrų — tik vadovas, kuris sako: štai ką mes dovanojame."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Pagaminta Šveicarijoje · Prieinama visame pasaulyje"
   },
   "cta": {
-    "primary": "Padovanokite savo pirmąją dovaną. →"
+    "primary": "Padovanokite savo pirmąją dovaną. →",
+    "founding": "Užimk steigėjo vietą. →"
   },
   "type": {
     "world": "Dovana pasauliui",

@@ -20,6 +20,12 @@
     "tagline": "Tady dávají jen ředitelé.",
     "sub": "Jedno místo na firmu. 10 000 CHF, jednou, navždy. Potom dáváte, kolik chcete."
   },
+  "founding": {
+    "counter": "Zakladatelská místa: {n} z 10 stále volných.",
+    "note": "Prvních deset firem neplatí nic — publikují jako první, dokud je stránka ještě prázdná.",
+    "gone": "Všech deset zakladatelských míst je obsazeno. Místo stojí 10 000 CHF, jednorázově.",
+    "why": "Poplatek je filtr. Deset zakladatelů prochází jiným: dávají první."
+  },
   "intro": {
     "body": "Každý dar na tomto webu dává osobně generální ředitel, pod svým jménem a jménem své firmy. Nástroj zdarma pro celý svět. Odměna pro tým. Podíly pro lidi, kteří firmu vybudovali. Den mentoringu. Žádné tiskové zprávy, žádné agentury — jen ředitel, který říká: tohle dáváme."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Vyrobeno ve Švýcarsku · Dostupné po celém světě"
   },
   "cta": {
-    "primary": "Dejte svůj první dar. →"
+    "primary": "Dejte svůj první dar. →",
+    "founding": "Vezměte si zakladatelské místo. →"
   },
   "type": {
     "world": "Dar světu",

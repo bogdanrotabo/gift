@@ -20,6 +20,12 @@
     "tagline": "Täällä lahjoittavat vain toimitusjohtajat.",
     "sub": "Yksi paikka yritystä kohti. 10 000 CHF, kerran, ikuisesti. Sen jälkeen lahjoitat niin paljon kuin haluat."
   },
+  "founding": {
+    "counter": "Perustajapaikkoja: {n} / 10 vielä vapaana.",
+    "note": "Kymmenen ensimmäistä yritystä ei maksa mitään — ne julkaisevat ensin, kun sivu on vielä tyhjä.",
+    "gone": "Kaikki kymmenen perustajapaikkaa on varattu. Paikka maksaa 10 000 CHF, kertaluonteisesti.",
+    "why": "Maksu on suodatin. Kymmenen perustajaa läpäisee toisen: he antavat ensin."
+  },
   "intro": {
     "body": "Jokaisen tällä sivustolla olevan lahjan antaa henkilökohtaisesti toimitusjohtaja, omalla ja yrityksensä nimellä. Ilmainen työkalu maailmalle. Bonus tiimille. Osuuksia niille, jotka rakensivat yrityksen. Päivä mentorointia. Ei tiedotteita, ei toimistoja — vain toimitusjohtaja, joka sanoo: tämän me annamme."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Tehty Sveitsissä · Saatavilla maailmanlaajuisesti"
   },
   "cta": {
-    "primary": "Anna ensimmäinen lahjasi. →"
+    "primary": "Anna ensimmäinen lahjasi. →",
+    "founding": "Ota perustajapaikka. →"
   },
   "type": {
     "world": "Lahja maailmalle",

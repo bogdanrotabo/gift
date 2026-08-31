@@ -20,6 +20,12 @@
     "tagline": "Burada yalnızca genel müdürler verir.",
     "sub": "Şirket başına bir yer. 10 000 CHF, bir defa, sonsuza dek. Sonra istediğiniz kadar verirsiniz."
   },
+  "founding": {
+    "counter": "Kurucu koltukları: 10 koltuktan {n} tanesi hâlâ açık.",
+    "note": "İlk on şirket hiçbir ücret ödemez — sayfa henüz boşken ilk onlar yayımlar.",
+    "gone": "On kurucu koltuğunun tamamı doldu. Bir koltuk tek seferlik 10.000 CHF.",
+    "why": "Ücret bir filtredir. On kurucu farklı bir filtreden geçer: önce onlar verir."
+  },
   "intro": {
     "body": "Bu sitedeki her hediyeyi bir genel müdür, kendi adına ve şirketinin adına bizzat verir. Dünyaya ücretsiz bir araç. Ekibe bir ikramiye. Şirketi kuranlara hisse. Bir günlük mentorluk. Basın bülteni yok, ajans yok — sadece şunu söyleyen bir genel müdür: işte verdiğimiz bu."
   },
@@ -49,7 +55,8 @@
     "rotabo": "İsviçre'de yapıldı · Dünya genelinde kullanılabilir"
   },
   "cta": {
-    "primary": "İlk hediyenizi verin. →"
+    "primary": "İlk hediyenizi verin. →",
+    "founding": "Kurucu koltuğu al. →"
   },
   "type": {
     "world": "Dünyaya bir hediye",

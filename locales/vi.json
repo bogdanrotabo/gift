@@ -20,6 +20,12 @@
     "tagline": "Ở đây chỉ có tổng giám đốc tặng.",
     "sub": "Mỗi công ty một chỗ. 10 000 CHF, một lần, mãi mãi. Sau đó tặng bao nhiêu tùy bạn."
   },
+  "founding": {
+    "counter": "Ghế sáng lập: còn {n} trên 10.",
+    "note": "Mười công ty đầu tiên không trả gì — họ công bố trước, khi trang vẫn còn trống.",
+    "gone": "Cả mười ghế sáng lập đã có chủ. Một ghế giá 10.000 CHF, trả một lần.",
+    "why": "Khoản phí là một bộ lọc. Mười nhà sáng lập vượt qua bộ lọc khác: họ cho đi trước."
+  },
   "intro": {
     "body": "Mọi món quà trên trang này đều do một tổng giám đốc đích thân trao, dưới tên mình và tên công ty mình. Một công cụ miễn phí cho thế giới. Một khoản thưởng cho đội ngũ. Cổ phần cho những người đã dựng nên công ty. Một ngày cố vấn. Không thông cáo báo chí, không đại lý — chỉ một tổng giám đốc nói: đây là thứ chúng tôi tặng."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Làm tại Thụy Sĩ · Dùng được trên toàn thế giới"
   },
   "cta": {
-    "primary": "Trao món quà đầu tiên của bạn. →"
+    "primary": "Trao món quà đầu tiên của bạn. →",
+    "founding": "Nhận một ghế sáng lập. →"
   },
   "type": {
     "world": "Một món quà cho thế giới",

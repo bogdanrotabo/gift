@@ -204,6 +204,34 @@ Deno.serve(async (req) => {
     if (error) return json({ error: error.message }, 400);
   }
 
+  // ------------------------------------------------------- founding seat
+  //
+  // Asked before Stripe, and asked of the database rather than of the caller.
+  // Nothing in the request body says "founding": the function is handed a
+  // company id and works the rest out from the Workspace domain Google
+  // vouched for, so a client that invents a flag is not refused so much as
+  // never consulted. Called with the caller's token on purpose -- the RPC
+  // reads current_hd(), which is null for the service role.
+  //
+  // Only a granted seat short-circuits. Every other answer -- domain not on
+  // the list, all ten gone, someone else got there first -- falls through to
+  // the 10,000 CHF below, which is exactly what the eleventh reserved domain
+  // is supposed to meet.
+  const { data: founding, error: foundingErr } = await asUser
+    .rpc("claim_founding_seat", { p_company_id: companyId });
+
+  if (foundingErr) {
+    // A seat is never withheld because of a fault on this side: log it and
+    // let the caller through to the paid path, which still works.
+    console.error("claim_founding_seat failed:", foundingErr.message);
+  } else if (founding && founding.granted === true) {
+    return json({
+      founding: true,
+      founding_number: founding.founding_number,
+      deadline: founding.deadline,
+    });
+  }
+
   // The session id is not known until Stripe creates one, so it is written by
   // the webhook rather than guessed here.
   return json({ checkout_url: checkoutUrl(companyId, user.email ?? "") });

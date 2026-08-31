@@ -20,6 +20,12 @@
     "tagline": "Hier geven alleen CEO's.",
     "sub": "Eén plaats per bedrijf. 10 000 CHF, eenmalig, voor altijd. Daarna geeft u zo veel u wilt."
   },
+  "founding": {
+    "counter": "Oprichtersplaatsen: {n} van 10 nog vrij.",
+    "note": "De eerste tien bedrijven betalen niets — zij publiceren als eerste, zolang de pagina nog leeg is.",
+    "gone": "Alle tien oprichtersplaatsen zijn bezet. Een plaats kost eenmalig 10.000 CHF.",
+    "why": "De bijdrage is een filter. De eerste tien doorstaan een ander: zij geven als eerste."
+  },
   "intro": {
     "body": "Elke gift op deze site komt persoonlijk van een CEO, onder zijn eigen naam en die van zijn bedrijf. Een gratis hulpmiddel voor de wereld. Een bonus voor het team. Aandelen voor de mensen die het bedrijf hebben opgebouwd. Een dag mentorschap. Geen persberichten, geen bureaus — alleen een CEO die zegt: dit is wat wij geven."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Gemaakt in Zwitserland · Wereldwijd beschikbaar"
   },
   "cta": {
-    "primary": "Geef uw eerste gift. →"
+    "primary": "Geef uw eerste gift. →",
+    "founding": "Neem een oprichtersplaats. →"
   },
   "type": {
     "world": "Een gift aan de wereld",

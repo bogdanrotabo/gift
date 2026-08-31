@@ -20,6 +20,12 @@
     "tagline": "Tutaj dają tylko prezesi.",
     "sub": "Jedno miejsce na firmę. 10 000 CHF, raz, na zawsze. Potem dajesz, ile chcesz."
   },
+  "founding": {
+    "counter": "Miejsca założycielskie: {n} z 10 wciąż wolne.",
+    "note": "Pierwszych dziesięć firm nie płaci nic — publikują jako pierwsze, gdy strona jest jeszcze pusta.",
+    "gone": "Wszystkie dziesięć miejsc założycielskich jest zajętych. Miejsce kosztuje 10 000 CHF, jednorazowo.",
+    "why": "Opłata to filtr. Dziesięciu założycieli przechodzi inny: dają pierwsi."
+  },
   "intro": {
     "body": "Każdy dar na tej stronie przekazuje osobiście prezes, pod własnym nazwiskiem i nazwą swojej firmy. Darmowe narzędzie dla świata. Premia dla zespołu. Udziały dla ludzi, którzy zbudowali firmę. Dzień mentoringu. Żadnych komunikatów prasowych, żadnych agencji — po prostu prezes, który mówi: oto, co dajemy."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Zrobione w Szwajcarii · Dostępne na całym świecie"
   },
   "cta": {
-    "primary": "Przekaż swój pierwszy dar. →"
+    "primary": "Przekaż swój pierwszy dar. →",
+    "founding": "Zajmij miejsce założycielskie. →"
   },
   "type": {
     "world": "Dar dla świata",

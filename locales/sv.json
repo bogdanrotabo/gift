@@ -20,6 +20,12 @@
     "tagline": "Här ger bara vd:ar.",
     "sub": "En plats per företag. 10 000 CHF, en gång, för alltid. Sedan ger du så mycket du vill."
   },
+  "founding": {
+    "counter": "Grundarplatser: {n} av 10 fortfarande lediga.",
+    "note": "De tio första företagen betalar ingenting — de publicerar först, medan sidan fortfarande är tom.",
+    "gone": "Alla tio grundarplatser är tagna. En plats kostar 10 000 CHF, en gång.",
+    "why": "Avgiften är ett filter. De tio grundarna passerar ett annat: de ger först."
+  },
   "intro": {
     "body": "Varje gåva på den här sidan ges personligen av en vd, i sitt eget och sitt företags namn. Ett gratis verktyg till världen. En bonus till teamet. Andelar till dem som byggde företaget. En dag av mentorskap. Inga pressmeddelanden, inga byråer — bara en vd som säger: det här ger vi."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Gjort i Schweiz · Tillgängligt i hela världen"
   },
   "cta": {
-    "primary": "Ge din första gåva. →"
+    "primary": "Ge din första gåva. →",
+    "founding": "Ta en grundarplats. →"
   },
   "type": {
     "world": "En gåva till världen",

@@ -20,6 +20,12 @@
     "tagline": "Aqui só os presidentes executivos dão.",
     "sub": "Um lugar por empresa. 10 000 CHF, uma só vez, para sempre. Depois, dê quanto quiser."
   },
+  "founding": {
+    "counter": "Lugares de fundador: {n} de 10 ainda livres.",
+    "note": "As dez primeiras empresas não pagam nada — publicam primeiro, enquanto a página ainda está vazia.",
+    "gone": "Os dez lugares de fundador estão ocupados. Um lugar custa 10 000 CHF, uma só vez.",
+    "why": "A taxa é um filtro. Os dez fundadores passam por outro: dão primeiro."
+  },
   "intro": {
     "body": "Cada oferta neste sítio é feita pessoalmente por um presidente executivo, em nome próprio e da sua empresa. Uma ferramenta gratuita para o mundo. Um prémio para a equipa. Participações para quem construiu a empresa. Um dia de mentoria. Sem comunicados, sem agências — apenas um presidente que diz: é isto que damos."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Feito na Suíça · Disponível em todo o mundo"
   },
   "cta": {
-    "primary": "Faça a sua primeira oferta. →"
+    "primary": "Faça a sua primeira oferta. →",
+    "founding": "Ficar com um lugar de fundador. →"
   },
   "type": {
     "world": "Uma oferta ao mundo",

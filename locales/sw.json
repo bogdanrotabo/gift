@@ -20,6 +20,12 @@
     "tagline": "Hapa watoao ni wakurugenzi wakuu pekee.",
     "sub": "Kiti kimoja kwa kila kampuni. CHF 10 000, mara moja, milele. Kisha toa kadri unavyotaka."
   },
+  "founding": {
+    "counter": "Viti vya waanzilishi: {n} kati ya 10 bado wazi.",
+    "note": "Kampuni kumi za kwanza hazilipi chochote — zinachapisha kwanza, wakati ukurasa bado uko tupu.",
+    "gone": "Viti vyote kumi vya waanzilishi vimechukuliwa. Kiti kimoja ni CHF 10,000, mara moja.",
+    "why": "Ada ni kichujio. Waanzilishi kumi wanapita kichujio kingine: wanatoa kwanza."
+  },
   "intro": {
     "body": "Kila zawadi kwenye tovuti hii hutolewa na mkurugenzi mkuu mwenyewe, kwa jina lake na la kampuni yake. Zana ya bure kwa dunia. Bonasi kwa timu. Hisa kwa waliojenga kampuni. Siku moja ya ushauri. Hakuna taarifa kwa vyombo vya habari, hakuna mashirika — ni mkurugenzi tu anayesema: hiki ndicho tunachotoa."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Imetengenezwa Uswisi · Inapatikana duniani kote"
   },
   "cta": {
-    "primary": "Toa zawadi yako ya kwanza. →"
+    "primary": "Toa zawadi yako ya kwanza. →",
+    "founding": "Chukua kiti cha mwanzilishi. →"
   },
   "type": {
     "world": "Zawadi kwa dunia",

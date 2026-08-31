@@ -13,7 +13,7 @@
 <meta property="og:description" content="A public list of gifts given personally by CEOs, under their own name and their company's name.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=12">
+<link rel="stylesheet" href="/assets/style.css?v=13">
 <link rel="alternate" hreflang="ar" href="https://gift.ceo/?lang=ar">
 <link rel="alternate" hreflang="bg" href="https://gift.ceo/?lang=bg">
 <link rel="alternate" hreflang="bn" href="https://gift.ceo/?lang=bn">
@@ -65,8 +65,17 @@
     <h1>gift<span class="dot">.</span>ceo</h1>
     <p class="tagline" data-i18n="hero.tagline">Only CEOs give here.</p>
     <p class="hero-sub" data-i18n="hero.sub">One seat per company. 10,000 CHF, once, forever. Then give as much as you like.</p>
+    <!-- The English text is in the markup rather than fetched into an empty
+         element: the site is static, so this is what a crawler, a reader with
+         no JavaScript, and the first paint all get. app.js corrects the figure
+         from the database a moment later. Ten is the honest starting state --
+         nothing reserved, nothing claimed. -->
+    <p class="founding" aria-live="polite">
+      <b data-founding-line>Founding seats: 10 of 10 still open.</b>
+      <span data-founding-note>The first ten companies pay nothing — they publish first, while the page is still empty.</span>
+    </p>
     <div class="hero-actions">
-      <a class="btn" href="/join.html" data-i18n="cta.primary">Give your first gift. &rarr;</a>
+      <a class="btn" href="/join.html" data-founding-cta>Take a founding seat. &rarr;</a>
       <a class="btn btn--ghost" href="#gifts" data-i18n="nav.gifts">Gifts</a>
     </div>
     <p class="lede" data-i18n="intro.body">Every gift on this site is given personally by a CEO, under their own name and their company's name.</p>
@@ -85,6 +94,7 @@
     <div class="why">
       <h3 data-i18n="why.title">Why 10,000 CHF, once</h3>
       <p data-i18n="why.body"></p>
+      <p class="founding-why" data-founding-why>The fee is a filter. The founding ten pass a different filter, by giving first.</p>
     </div>
   </section>
 
@@ -102,7 +112,7 @@
   </section>
 
   <section class="section wrap" style="text-align:center">
-    <a class="btn btn--gold" href="/join.html" data-i18n="cta.primary">Give your first gift. &rarr;</a>
+    <a class="btn btn--gold" href="/join.html" data-founding-cta>Take a founding seat. &rarr;</a>
   </section>
 
   <section class="wrap sponsors" id="sponsors">
@@ -119,7 +129,7 @@
 <footer class="foot" data-footer></footer>
 
 <script type="module">
-import { boot, sb, giftCard, companyCard, t } from "/assets/app.js?v=12";
+import { boot, sb, giftCard, companyCard, t, mountFoundingSeats } from "/assets/app.js?v=13";
 
 const feed = document.getElementById("feed");
 const companies = document.getElementById("companyList");
@@ -154,6 +164,10 @@ async function load() {
 }
 
 await boot();
+// Not awaited together with load(): the counter is the one claim on this page
+// an outreach email asks a CEO to go and check, so it must not wait behind a
+// hundred gift rows.
+mountFoundingSeats();
 await load();
 // A language change rewrites the static copy; the cards are built in JS, so
 // they have to be rebuilt to follow it.

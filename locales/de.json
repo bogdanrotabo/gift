@@ -20,6 +20,12 @@
     "tagline": "Hier schenken nur CEOs.",
     "sub": "Ein Platz pro Unternehmen. Einmalig 10 000 CHF, für immer. Danach schenken Sie, so viel Sie wollen."
   },
+  "founding": {
+    "counter": "Gründerplätze: {n} von 10 noch frei.",
+    "note": "Die ersten zehn Unternehmen zahlen nichts — sie veröffentlichen zuerst, solange die Seite noch leer ist.",
+    "gone": "Alle zehn Gründerplätze sind vergeben. Ein Platz kostet einmalig 10.000 CHF.",
+    "why": "Die Gebühr ist ein Filter. Die ersten zehn bestehen einen anderen: Sie geben zuerst."
+  },
   "intro": {
     "body": "Jedes Geschenk auf dieser Seite stammt persönlich von einem CEO, unter seinem eigenen Namen und dem seines Unternehmens. Ein kostenloses Werkzeug für alle. Ein Bonus für das Team. Anteile für die Menschen, die das Unternehmen aufgebaut haben. Ein Tag Mentoring. Keine Pressemitteilungen, keine Agenturen — nur ein CEO, der sagt: das schenken wir."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Aus der Schweiz · Weltweit verfügbar"
   },
   "cta": {
-    "primary": "Machen Sie Ihr erstes Geschenk. →"
+    "primary": "Machen Sie Ihr erstes Geschenk. →",
+    "founding": "Gründerplatz sichern. →"
   },
   "type": {
     "world": "Ein Geschenk an die Welt",

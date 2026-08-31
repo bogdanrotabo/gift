@@ -156,6 +156,24 @@ body{overflow-wrap:break-word;}
 }
 .hero-sub{margin:14px auto 0;max-width:34em;color:var(--dim);}
 
+/* The counter is the one claim on this page an outreach email asks a CEO to
+   go and verify, so it is set to be read as a fact rather than a banner: the
+   figure in the accent colour, the explanation in the same dim tone as the
+   line above it, no box and no badge. */
+.founding{
+  margin:18px auto 0;max-width:34em;
+  font-size:.95rem;line-height:1.6;
+}
+.founding b{color:var(--accent);font-weight:600;}
+.founding [data-founding-note]{display:block;color:var(--dim);margin-top:2px;}
+.founding [hidden]{display:none;}
+
+.founding-why{
+  margin:12px 0 0;color:var(--dim);max-width:40em;
+  font-size:.93rem;
+}
+.founding-why[hidden]{display:none;}
+
 .hero-actions{margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 
 .lede{

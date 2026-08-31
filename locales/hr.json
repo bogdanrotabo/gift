@@ -20,6 +20,12 @@
     "tagline": "Ovdje daruju samo direktori.",
     "sub": "Jedno mjesto po tvrtki. 10 000 CHF, jednom, zauvijek. Zatim darujete koliko želite."
   },
+  "founding": {
+    "counter": "Osnivačka mjesta: {n} od 10 još slobodnih.",
+    "note": "Prvih deset tvrtki ne plaća ništa — objavljuju prve, dok je stranica još prazna.",
+    "gone": "Svih deset osnivačkih mjesta je zauzeto. Mjesto stoji 10.000 CHF, jednokratno.",
+    "why": "Naknada je filtar. Deset osnivača prolazi drugi: daju prvi."
+  },
   "intro": {
     "body": "Svaki dar na ovoj stranici daje osobno glavni direktor, pod svojim imenom i imenom svoje tvrtke. Besplatan alat za svijet. Nagrada za tim. Udjeli za ljude koji su izgradili tvrtku. Dan mentorstva. Bez priopćenja za medije, bez agencija — samo direktor koji kaže: ovo darujemo."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Napravljeno u Švicarskoj · Dostupno u cijelom svijetu"
   },
   "cta": {
-    "primary": "Darujte svoj prvi dar. →"
+    "primary": "Darujte svoj prvi dar. →",
+    "founding": "Uzmi osnivačko mjesto. →"
   },
   "type": {
     "world": "Dar svijetu",

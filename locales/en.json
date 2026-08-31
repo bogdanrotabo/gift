@@ -20,6 +20,12 @@
     "tagline": "Only CEOs give here.",
     "sub": "One seat per company. 10,000 CHF, once, forever. Then give as much as you like."
   },
+  "founding": {
+    "counter": "Founding seats: {n} of 10 still open.",
+    "note": "The first ten companies pay nothing — they publish first, while the page is still empty.",
+    "gone": "All ten founding seats are taken. A seat is 10,000 CHF, once.",
+    "why": "The fee is a filter. The founding ten pass a different filter, by giving first."
+  },
   "intro": {
     "body": "Every gift on this site is given personally by a CEO, under their own name and their company's name. A free tool for the world. A bonus for the team. Equity for the people who built the company. A day of mentoring. No press releases, no agencies — just a CEO saying: here is what we give."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Swiss made · Available worldwide"
   },
   "cta": {
-    "primary": "Give your first gift. →"
+    "primary": "Give your first gift. →",
+    "founding": "Take a founding seat. →"
   },
   "type": {
     "world": "A gift to the world",

@@ -20,6 +20,12 @@
     "tagline": "Siin kingivad ainult tegevjuhid.",
     "sub": "Üks koht ettevõtte kohta. 10 000 CHF, üks kord, igaveseks. Seejärel kingite nii palju, kui soovite."
   },
+  "founding": {
+    "counter": "Asutajakohti: {n} 10-st veel vaba.",
+    "note": "Esimesed kümme ettevõtet ei maksa midagi — nad avaldavad esimesena, kui leht on veel tühi.",
+    "gone": "Kõik kümme asutajakohta on hõivatud. Koht maksab 10 000 CHF, ühekordselt.",
+    "why": "Tasu on filter. Kümme asutajat läbivad teise: nad annavad esimesena."
+  },
   "intro": {
     "body": "Iga kingi sellel saidil teeb isiklikult tegevjuht, oma ja oma ettevõtte nimel. Tasuta tööriist maailmale. Preemia meeskonnale. Osalus neile, kes ettevõtte üles ehitasid. Üks päev mentorlust. Ei pressiteateid, ei agentuure — ainult tegevjuht, kes ütleb: seda me kingime."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Valmistatud Šveitsis · Saadaval üle maailma"
   },
   "cta": {
-    "primary": "Tee oma esimene kink. →"
+    "primary": "Tee oma esimene kink. →",
+    "founding": "Võta asutajakoht. →"
   },
   "type": {
     "world": "Kink maailmale",

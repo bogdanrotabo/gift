@@ -20,6 +20,12 @@
     "tagline": "Qui donano solo gli amministratori delegati.",
     "sub": "Un posto per azienda. 10 000 CHF, una volta sola, per sempre. Poi dona quanto vuoi."
   },
+  "founding": {
+    "counter": "Posti fondatori: {n} su 10 ancora liberi.",
+    "note": "Le prime dieci aziende non pagano nulla — pubblicano per prime, quando la pagina è ancora vuota.",
+    "gone": "Tutti e dieci i posti fondatori sono occupati. Un posto costa 10.000 CHF, una volta sola.",
+    "why": "La quota è un filtro. I dieci fondatori ne superano un altro: donano per primi."
+  },
   "intro": {
     "body": "Ogni dono su questo sito è fatto personalmente da un amministratore delegato, a proprio nome e a nome della sua azienda. Uno strumento gratuito per tutti. Un bonus per la squadra. Quote per chi ha costruito l'azienda. Una giornata di mentoring. Niente comunicati stampa, niente agenzie — solo un amministratore che dice: ecco cosa doniamo."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Fatto in Svizzera · Disponibile in tutto il mondo"
   },
   "cta": {
-    "primary": "Fai il tuo primo dono. →"
+    "primary": "Fai il tuo primo dono. →",
+    "founding": "Prendi un posto da fondatore. →"
   },
   "type": {
     "world": "Un dono al mondo",

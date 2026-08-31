@@ -20,6 +20,12 @@
     "tagline": "Šeit dāvina tikai vadītāji.",
     "sub": "Viena vieta uz uzņēmumu. 10 000 CHF, vienu reizi, uz visiem laikiem. Pēc tam dāvinat, cik vēlaties."
   },
+  "founding": {
+    "counter": "Dibinātāju vietas: {n} no 10 vēl brīvas.",
+    "note": "Pirmie desmit uzņēmumi nemaksā neko — tie publicē pirmie, kamēr lapa vēl ir tukša.",
+    "gone": "Visas desmit dibinātāju vietas ir aizņemtas. Vieta maksā 10 000 CHF, vienreiz.",
+    "why": "Maksa ir filtrs. Desmit dibinātāji iziet citu: viņi dod pirmie."
+  },
   "intro": {
     "body": "Katru dāvanu šajā vietnē personīgi dāvina izpilddirektors, savā un sava uzņēmuma vārdā. Bezmaksas rīks pasaulei. Prēmija komandai. Daļas tiem, kas uzbūvēja uzņēmumu. Viena mentoringa diena. Nekādu paziņojumu presei, nekādu aģentūru — tikai vadītājs, kurš saka: lūk, ko mēs dāvinām."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Ražots Šveicē · Pieejams visā pasaulē"
   },
   "cta": {
-    "primary": "Uzdāviniet savu pirmo dāvanu. →"
+    "primary": "Uzdāviniet savu pirmo dāvanu. →",
+    "founding": "Aizņem dibinātāja vietu. →"
   },
   "type": {
     "world": "Dāvana pasaulei",

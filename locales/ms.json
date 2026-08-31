@@ -20,6 +20,12 @@
     "tagline": "Di sini hanya ketua pegawai eksekutif yang memberi.",
     "sub": "Satu tempat bagi setiap syarikat. 10 000 CHF, sekali sahaja, selamanya. Selepas itu berilah sebanyak yang anda mahu."
   },
+  "founding": {
+    "counter": "Kerusi pengasas: {n} daripada 10 masih terbuka.",
+    "note": "Sepuluh syarikat pertama tidak membayar apa-apa — mereka menerbitkan dahulu, semasa halaman masih kosong.",
+    "gone": "Kesemua sepuluh kerusi pengasas telah diambil. Satu kerusi 10,000 CHF, sekali sahaja.",
+    "why": "Yuran itu penapis. Sepuluh pengasas melalui penapis lain: mereka memberi dahulu."
+  },
   "intro": {
     "body": "Setiap pemberian di laman ini dibuat sendiri oleh seorang ketua pegawai eksekutif, atas namanya dan nama syarikatnya. Alat percuma untuk dunia. Bonus untuk pasukan. Ekuiti untuk mereka yang membina syarikat. Sehari bimbingan. Tiada kenyataan akhbar, tiada agensi — hanya seorang ketua yang berkata: inilah yang kami beri."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Dibuat di Switzerland · Tersedia di seluruh dunia"
   },
   "cta": {
-    "primary": "Berikan pemberian pertama anda. →"
+    "primary": "Berikan pemberian pertama anda. →",
+    "founding": "Ambil kerusi pengasas. →"
   },
   "type": {
     "world": "Pemberian kepada dunia",

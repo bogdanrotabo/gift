@@ -20,7 +20,7 @@ export const sb = createClient(SUPABASE_URL, SUPABASE_KEY, {
   auth: { flowType: "pkce", persistSession: true, autoRefreshToken: true }
 });
 
-export const SUPPORT_EMAIL = "gift.ceo.support@gmail.com";
+export const SUPPORT_EMAIL = "support@gift.ceo";
 
 // ------------------------------------------------------------------ languages
 
@@ -95,11 +95,25 @@ function pickLang() {
   return "en";
 }
 
-// A missing key shows the key, not an empty space: a hole in the wording is a
-// bug worth seeing rather than a gap the eye slides over.
+function lookup(source, key) {
+  const val = key.split(".").reduce((o, k) => (o == null ? undefined : o[k]), source);
+  return typeof val === "string" ? val : undefined;
+}
+
+// A key missing from the reader's language falls back to English, because a
+// Japanese visitor reading one English line has still been told the thing,
+// and a visitor reading "founding.counter" has not.
+//
+// The key itself is still the last resort, and still the point: if English is
+// missing it too, the hole is a bug worth seeing rather than a gap the eye
+// slides over.
 export function t(key, fallback) {
-  const val = key.split(".").reduce((o, k) => (o == null ? undefined : o[k]), dict);
-  if (typeof val === "string") return val;
+  const own = lookup(dict, key);
+  if (own !== undefined) return own;
+
+  const english = lookup(cache.en, key);
+  if (english !== undefined) return english;
+
   return fallback !== undefined ? fallback : key;
 }
 
@@ -152,6 +166,11 @@ export async function setLang(code) {
     code = "en";
     dict = await fetchDict("en");
   }
+  // The per-key fallback in t() needs English in the cache, and a visitor
+  // whose language is German never fetches en.json otherwise. Fetched in the
+  // background and never awaited: a slow or failed request must not hold up
+  // the page, and t() copes with cache.en being absent.
+  if (code !== "en" && !cache.en) fetchDict("en").catch(() => {});
   lang = code;
   document.documentElement.lang = code;
   document.documentElement.dir = RTL.has(code) ? "rtl" : "ltr";
@@ -583,6 +602,94 @@ export async function boot() {
     mountChrome(chromeUser);
   });
   return chromeUser;
+}
+
+// ------------------------------------------------------- founding seats
+
+// The number of free seats left, straight from the database. Everything else
+// about the founding ten is private -- which domains are reserved, who was
+// approached -- and this single integer is the only part that is not.
+//
+// Returns null rather than a number when the request fails, and the counter
+// leaves whatever is already on the page alone. A visitor briefly reading a
+// stale ten is a smaller problem than a visitor reading a blank line where a
+// verifiable claim is supposed to be.
+export async function foundingSeatsRemaining() {
+  try {
+    const { data, error } = await sb.rpc("founding_seats_remaining");
+    if (error) return null;
+    const n = Number(data);
+    if (!Number.isFinite(n)) return null;
+    return Math.max(0, Math.min(10, Math.trunc(n)));
+  } catch (e) {
+    return null;
+  }
+}
+
+// The last figure fetched, so a language change can repaint without asking the
+// database again.
+let seatsLeft = null;
+
+// What the page should say for a given number of seats left. Split out from
+// the painting because this is the part with a decision in it -- the note and
+// the "why" line describe an offer, so once the seats are gone they must not
+// merely change wording, they must go, or the page contradicts itself. Pure,
+// takes its translator, and is what the tests exercise.
+export function foundingCopy(n, tr = t) {
+  if (n > 0) {
+    return {
+      line: tr("founding.counter").replace("{n}", String(n)),
+      note: tr("founding.note"),
+      why:  tr("founding.why"),
+      cta:  tr("cta.founding"),
+      offering: true
+    };
+  }
+  return {
+    line: tr("founding.gone"),
+    note: null,
+    why:  null,
+    cta:  tr("cta.primary"),
+    offering: false
+  };
+}
+
+// Paints whatever is currently known. The markup ships with the English text
+// already in it, so a reader with no JavaScript, and a crawler, still see a
+// real sentence rather than an empty element waiting to be filled.
+export function paintFoundingSeats(root = document) {
+  if (seatsLeft === null) return;
+  const copy = foundingCopy(seatsLeft);
+
+  root.querySelectorAll("[data-founding-line]").forEach(el => {
+    el.textContent = copy.line;
+  });
+  root.querySelectorAll("[data-founding-note]").forEach(el => {
+    el.hidden = !copy.offering;
+    if (copy.note !== null) el.textContent = copy.note;
+  });
+  root.querySelectorAll("[data-founding-why]").forEach(el => {
+    el.hidden = !copy.offering;
+    if (copy.why !== null) el.textContent = copy.why;
+  });
+  root.querySelectorAll("[data-founding-cta]").forEach(el => {
+    el.textContent = copy.cta;
+  });
+}
+
+// Fetch, paint, and keep it honest afterwards: the figure is repainted when
+// the language changes, and refetched when the tab is looked at again, so a
+// page left open all morning does not go on promising a seat that is gone.
+export async function mountFoundingSeats() {
+  const refresh = async () => {
+    const n = await foundingSeatsRemaining();
+    if (n !== null) { seatsLeft = n; paintFoundingSeats(); }
+  };
+  await refresh();
+  document.addEventListener("i18n:applied", () => paintFoundingSeats());
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") refresh();
+  });
 }
 
 // ------------------------------------------------------------------ render

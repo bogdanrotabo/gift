@@ -20,6 +20,12 @@
     "tagline": "Itt csak vezérigazgatók adnak.",
     "sub": "Egy hely cégenként. 10 000 CHF, egyszer, örökre. Utána annyit adsz, amennyit akarsz."
   },
+  "founding": {
+    "counter": "Alapítói helyek: {n} a 10-ből még szabad.",
+    "note": "Az első tíz vállalat semmit sem fizet — ők tesznek közzé először, amíg az oldal még üres.",
+    "gone": "Mind a tíz alapítói hely elkelt. Egy hely 10 000 CHF, egyszeri díj.",
+    "why": "A díj egy szűrő. A tíz alapító másikon megy át: ők adnak először."
+  },
   "intro": {
     "body": "Ezen az oldalon minden ajándékot személyesen egy vezérigazgató ad, a saját és a cége nevében. Ingyenes eszköz a világnak. Jutalom a csapatnak. Részesedés azoknak, akik felépítették a céget. Egy nap mentorálás. Se sajtóközlemény, se ügynökség — csak egy vezérigazgató, aki azt mondja: ezt adjuk."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Svájcban készült · Világszerte elérhető"
   },
   "cta": {
-    "primary": "Add az első ajándékodat. →"
+    "primary": "Add az első ajándékodat. →",
+    "founding": "Foglalj alapítói helyet. →"
   },
   "type": {
     "world": "Ajándék a világnak",

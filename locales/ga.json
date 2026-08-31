@@ -20,6 +20,12 @@
     "tagline": "Ní bhronnann anseo ach príomhfheidhmeannaigh.",
     "sub": "Suíochán amháin an chuideachta. 10 000 CHF, uair amháin, go deo. Ansin bronn an oiread agus is mian leat."
   },
+  "founding": {
+    "counter": "Suíocháin bhunaithe: {n} as 10 fós ar fáil.",
+    "note": "Ní íocann na chéad deich gcuideachta faic — foilsíonn siad ar dtús, agus an leathanach fós folamh.",
+    "gone": "Tá na deich suíochán bunaithe go léir tógtha. Cosnaíonn suíochán 10,000 CHF, uair amháin.",
+    "why": "Scagaire is ea an táille. Téann an deichniúr bunaithe trí cheann eile: tugann siad ar dtús."
+  },
   "intro": {
     "body": "Tugann príomhfheidhmeannach go pearsanta gach bronntanas ar an suíomh seo, faoina ainm féin agus faoi ainm a chuideachta. Uirlis saor in aisce don domhan. Bónas don fhoireann. Scaireanna dóibh siúd a thóg an chuideachta. Lá meantóireachta. Gan preasráitis, gan gníomhaireachtaí — díreach príomhfheidhmeannach a deir: seo a bhronnaimid."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Déanta san Eilvéis · Ar fáil ar fud an domhain"
   },
   "cta": {
-    "primary": "Bronn do chéad bhronntanas. →"
+    "primary": "Bronn do chéad bhronntanas. →",
+    "founding": "Tóg suíochán bunaithe. →"
   },
   "type": {
     "world": "Bronntanas don domhan",

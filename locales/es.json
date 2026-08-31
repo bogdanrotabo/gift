@@ -20,6 +20,12 @@
     "tagline": "Aquí solo dan los directores ejecutivos.",
     "sub": "Una plaza por empresa. 10 000 CHF, una sola vez, para siempre. Después, da todo lo que quieras."
   },
+  "founding": {
+    "counter": "Plazas fundadoras: {n} de 10 aún libres.",
+    "note": "Las diez primeras empresas no pagan nada — publican primero, cuando la página aún está vacía.",
+    "gone": "Las diez plazas fundadoras están ocupadas. Una plaza cuesta 10.000 CHF, una sola vez.",
+    "why": "La tarifa es un filtro. Los diez fundadores pasan otro distinto: dan primero."
+  },
   "intro": {
     "body": "Cada regalo de este sitio lo hace personalmente un director ejecutivo, con su propio nombre y el de su empresa. Una herramienta gratuita para todo el mundo. Una prima para el equipo. Participaciones para quienes construyeron la empresa. Un día de mentoría. Sin notas de prensa, sin agencias — solo un director que dice: esto es lo que damos."
   },
@@ -49,7 +55,8 @@
     "rotabo": "Hecho en Suiza · Disponible en todo el mundo"
   },
   "cta": {
-    "primary": "Haz tu primer regalo. →"
+    "primary": "Haz tu primer regalo. →",
+    "founding": "Toma una plaza fundadora. →"
   },
   "type": {
     "world": "Un regalo al mundo",
