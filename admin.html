@@ -17,7 +17,7 @@
   table { border-collapse:collapse; width:100%; font-size:.88rem }
   th { text-align:left; font-weight:600; color:var(--dim); font-size:.74rem;
        text-transform:uppercase; letter-spacing:.06em; padding:0 14px 8px 0; white-space:nowrap }
-  td { padding:8px 14px 8px 0; border-top:1px solid var(--line, #e6e3dc); vertical-align:top }
+  td { padding:8px 14px 8px 0; border-top:1px solid var(--line); vertical-align:top }
   td.num { font-variant-numeric:tabular-nums }
   .muted { color:var(--dim) }
   .bar { height:6px; background:currentColor; border-radius:3px; min-width:2px; opacity:.75 }
@@ -51,7 +51,7 @@
 </main>
 
 <script type="module">
-import { boot, sb, esc, fmtDate, SUPABASE_URL, SUPABASE_KEY } from "/assets/app.js?v=6";
+import { boot, sb, esc, SUPABASE_URL, SUPABASE_KEY } from "/assets/app.js?v=6";
 
 const err  = document.getElementById("err");
 const body = document.getElementById("body");
@@ -81,7 +81,23 @@ document.getElementById("signout").onclick = async () => {
 };
 
 const n = v => Number(v ?? 0).toLocaleString();
-const when = v => v ? fmtDate(v) : "—";
+
+// fmtDate is the register's public date format: a month name and a year, right
+// for "gave this in August 2026" and useless here. An operator asking who
+// signed in wants the hour, and two sign-ins on one day have to be separable.
+const when = v => {
+  if (!v) return "\u2014";
+  const d = new Date(v);
+  if (isNaN(d)) return "\u2014";
+  try {
+    return d.toLocaleString(undefined, {
+      year: "numeric", month: "short", day: "numeric",
+      hour: "2-digit", minute: "2-digit"
+    });
+  } catch {
+    return d.toISOString().slice(0, 16).replace("T", " ");
+  }
+};
 
 function table(head, rows, empty) {
   if (!rows.length) return `<p class="muted">${esc(empty)}</p>`;
@@ -162,7 +178,12 @@ async function load() {
   fail("");
   if (!user) { show("needSignIn"); return; }
 
+  // user can be set from a restored session whose refresh has since failed, in
+  // which case there is no access token to send and the fetch below would throw
+  // on a null. Treat it as signed out, which is what it is.
   const { data: { session } } = await sb.auth.getSession();
+  if (!session) { show("needSignIn"); return; }
+
   const res = await fetch(`${SUPABASE_URL}/functions/v1/admin-overview`, {
     method: "POST",
     headers: {

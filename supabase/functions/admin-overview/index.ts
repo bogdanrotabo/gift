@@ -84,11 +84,21 @@ Deno.serve(async (req) => {
   // ---------------------------------------------------------------- sign-ins
   // auth.users is the only place last_sign_in_at lives; profiles mirrors the
   // rest of it but is written on signup and never updated on return visits.
-  const { data: userList, error: listErr } =
-    await admin.auth.admin.listUsers({ page: 1, perPage: 200 });
-  if (listErr) return json({ error: listErr.message }, 500);
+  // Paged through rather than taking the first 200: the page is meant to answer
+  // "who has signed in", and a silently truncated list answers it wrongly and
+  // looks right. The ceiling is there so a runaway cannot hang the request.
+  const PAGE = 200, MAX_PAGES = 10;
+  const accounts: Array<Record<string, any>> = [];
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const { data, error: listErr } =
+      await admin.auth.admin.listUsers({ page, perPage: PAGE });
+    if (listErr) return json({ error: listErr.message }, 500);
+    const batch = data?.users ?? [];
+    accounts.push(...batch);
+    if (batch.length < PAGE) break;
+  }
 
-  const people = (userList?.users ?? []).map(u => ({
+  const people = accounts.map(u => ({
     email: u.email ?? null,
     name: u.user_metadata?.full_name ?? null,
     hd: u.user_metadata?.hd ?? u.user_metadata?.custom_claims?.hd ?? null,
@@ -128,8 +138,15 @@ Deno.serve(async (req) => {
     byDay.set(d, (byDay.get(d) ?? 0) + 1);
   }
 
-  const day = (n: number) =>
-    rows.filter(r => r.created_at >= new Date(Date.now() - n * 864e5).toISOString()).length;
+  // Compared as instants, not as strings. PostgREST renders a timestamptz as
+  // "...T10:55:13.607889+00:00" while Date.toISOString() gives
+  // "...T10:55:13.607Z": same moment, different spelling, and lexically the
+  // first sorts *before* the second because '8' < 'Z'. Rows landing in the
+  // same second as the cutoff were being dropped.
+  const day = (n: number) => {
+    const cutoff = Date.now() - n * 864e5;
+    return rows.filter(r => Date.parse(r.created_at) >= cutoff).length;
+  };
 
   return json({
     as_of: new Date().toISOString(),
