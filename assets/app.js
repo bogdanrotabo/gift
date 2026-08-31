@@ -4,7 +4,16 @@
 
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-export const SUPABASE_URL = "https://gcfurwexhxqxuveojoih.supabase.co";
+// The project's custom domain, active since 31 August 2026. The generated
+// gcfurwexhxqxuveojoih.supabase.co address still works and always will, but it
+// is what Google shows a visitor on the sign-in screen — twenty characters of
+// randomness where a company name belongs. Auth only travels through the domain
+// the client is pointed at, so this line is what actually moves it.
+//
+// The Stripe webhook deliberately stays on the generated address: that is the
+// endpoint registered with Stripe, and re-pointing it would mean a new endpoint
+// and a new signing secret for no gain.
+export const SUPABASE_URL = "https://api.gift.ceo";
 export const SUPABASE_KEY = "sb_publishable_e5BQ_LFaIGCE-QJlKIxVgg_NkzlUgET";
 
 export const sb = createClient(SUPABASE_URL, SUPABASE_KEY, {
