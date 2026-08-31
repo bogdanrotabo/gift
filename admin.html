@@ -7,7 +7,7 @@
 <meta name="description" content="Private.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=7">
+<link rel="stylesheet" href="/assets/style.css?v=8">
 <style>
   .grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); margin-bottom:26px }
   .stat { padding:16px 18px }
@@ -51,7 +51,7 @@
 </main>
 
 <script type="module">
-import { boot, sb, esc, SUPABASE_URL, SUPABASE_KEY } from "/assets/app.js?v=7";
+import { boot, sb, esc, askToReturnTo, SUPABASE_URL, SUPABASE_KEY } from "/assets/app.js?v=8";
 
 const err  = document.getElementById("err");
 const body = document.getElementById("body");
@@ -70,10 +70,17 @@ const fail = m => { err.textContent = m; err.style.display = m ? "block" : "none
 // Workspace domain behind it, so that hint would hide the very account this
 // page is for. It is left off deliberately, and costs nothing: this page's
 // gate is the address itself, checked server-side, not the kind of account.
-document.getElementById("signin").onclick = () => sb.auth.signInWithOAuth({
-  provider: "google",
-  options: { redirectTo: `${location.origin}/admin.html`, queryParams: { prompt: "select_account" } }
-});
+document.getElementById("signin").onclick = () => {
+  // Supabase ignores a redirectTo that is not in the project's allow list and
+  // drops the visitor on the Site URL instead. Asking to be returned here makes
+  // that fallback invisible: boot() runs on whichever page they land on, sees
+  // the request, and finishes the trip. Costs nothing when the entry is there.
+  askToReturnTo("/admin.html");
+  return sb.auth.signInWithOAuth({
+    provider: "google",
+    options: { redirectTo: `${location.origin}/admin.html`, queryParams: { prompt: "select_account" } }
+  });
+};
 
 document.getElementById("signout").onclick = async () => {
   await sb.auth.signOut();

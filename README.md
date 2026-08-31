@@ -177,6 +177,17 @@ accounts only. The administrator is an ordinary Gmail address with no Workspace
 domain, so `admin.html` deliberately signs in without that hint. This is also
 why the admin account can never take a seat: no `hd` claim, no company.
 
+Supabase honours a `redirectTo` only if it appears in the project's allow list
+(*Authentication → URL Configuration → Redirect URLs*) and falls back to the
+Site URL without saying so otherwise — which looks exactly like a broken
+sign-in, when in fact the sign-in worked and the visitor landed on the home
+page. `admin.html` therefore records where it wants to be returned to before it
+leaves, and `boot()` completes the trip on whichever page the round trip lands
+on; the session is already established by then, because `detectSessionInUrl`
+exchanges the PKCE code wherever it arrives. Adding `https://gift.ceo/**` to
+that list is still worth doing — it saves a redirect — but nothing depends on
+it.
+
 ### Traffic
 
 `track` records one row per page view and nothing else: the path, the moment,
