@@ -22,8 +22,14 @@ const SITE_URL     = Deno.env.get("SITE_URL") ?? "https://gift.ceo";
 // minted through the API. It means no secret key has to live anywhere near
 // this function: the link is public by design, and the only thing we add to it
 // is the company id, which comes back on the webhook as client_reference_id.
-const PAYMENT_LINK = Deno.env.get("STRIPE_PAYMENT_LINK") ??
-  "https://buy.stripe.com/4gMbIUbNcbZbf5490o0co08";
+//
+// There is deliberately no fallback. This used to default to rotabo.app's
+// *Platinum* tier, which is also 10,000 CHF and so looked harmless, but it
+// charged the buyer for the wrong product: the money landed on rotabo's books
+// and the receipt read "Platinum sponsor" rather than a gift.ceo seat. A
+// misconfigured deploy must refuse to sell rather than sell the wrong thing,
+// so an unset link is a 503 below and no checkout is handed out at all.
+const PAYMENT_LINK = Deno.env.get("STRIPE_PAYMENT_LINK") ?? "";
 
 const CORS = {
   "Access-Control-Allow-Origin": SITE_URL,
@@ -72,6 +78,13 @@ function checkoutUrl(companyId: string, email: string): string {
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
   if (req.method !== "POST") return json({ error: "POST only" }, 405);
+
+  // Checked before anything is written, so a deploy without a payment link
+  // leaves no half-claimed rows behind for the caller to trip over on retry.
+  if (!PAYMENT_LINK) {
+    console.error("STRIPE_PAYMENT_LINK is not set; refusing to start checkout");
+    return json({ error: "Checkout is temporarily unavailable." }, 503);
+  }
 
   const auth = req.headers.get("Authorization") ?? "";
   if (!auth.startsWith("Bearer ")) return json({ error: "Sign in first." }, 401);
