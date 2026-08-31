@@ -449,7 +449,14 @@ function trackView() {
     fetch(`${SUPABASE_URL}/functions/v1/track`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ path, ref: document.referrer || null, lang }),
+      body: JSON.stringify({
+        path,
+        ref: document.referrer || null,
+        lang,
+        // The one location signal that never involves an IP address. Absent in
+        // browsers that refuse it, which is fine: the row is still counted.
+        tz: Intl.DateTimeFormat().resolvedOptions().timeZone || null
+      }),
       keepalive: true
     }).catch(() => {});
   } catch { /* never the reason a page fails */ }
