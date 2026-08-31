@@ -113,3 +113,56 @@ test("the counter starts at the honest number", () => {
   const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
   assert.match(html.match(/data-founding-line>([^<]*)</)[1], /\b10 of 10\b/);
 });
+
+test("every language has a flag picture", () => {
+  // Flags are images because Windows has no flag glyphs. The emoji stays in
+  // LANGS as the readable source and the file name is derived from it, so a
+  // language added without its PNG would show nothing at all rather than
+  // falling back to something. This is the check that catches that.
+  const src = readFileSync(new URL("../assets/app.js", import.meta.url), "utf8");
+  const langs = src.match(/export const LANGS = \[[\s\S]*?\n\];/);
+  assert.ok(langs, "LANGS not found in app.js");
+
+  const rows = [...langs[0].matchAll(/code:\s*"([a-z]{2})"[^}]*flag:\s*"([^"]+)"/g)];
+  assert.equal(rows.length, 38, "expected 38 languages");
+
+  const RI_A = 0x1F1E6;
+  for (const [, code, escaped] of rows) {
+    const cps = [...escaped.matchAll(/\\u\{([0-9A-Fa-f]+)\}/g)].map(m => parseInt(m[1], 16));
+    assert.equal(cps.length, 2, `${code}: flag is not a regional indicator pair`);
+    const iso = String.fromCharCode(65 + cps[0] - RI_A, 65 + cps[1] - RI_A).toLowerCase();
+    const png = new URL(`../flags/${iso}.png`, import.meta.url);
+    assert.doesNotThrow(() => readFileSync(png), `${code}: flags/${iso}.png is missing`);
+  }
+
+  // The badge and the sponsor line both fly the Swiss flag.
+  assert.doesNotThrow(() => readFileSync(new URL("../flags/ch.png", import.meta.url)),
+    "flags/ch.png is missing");
+});
+
+test("no flag emoji is left inside a translated string", () => {
+  // A flag is not translatable content. While it lived in header.badge it was
+  // thirty-eight copies of one emoji, and a blank space on every Windows
+  // machine, and nobody could put an image there without editing all of them.
+  const dir = new URL("../locales/", import.meta.url);
+  const codes = readFileSync(new URL("../index.html", import.meta.url), "utf8")
+    .match(/hreflang="([a-z-]+)"/g).map(m => m.slice(10, -1)).filter(c => c !== "x-default");
+
+  const FLAG = /[\u{1F1E6}-\u{1F1FF}]{2}/u;
+  const flat = (o, p = "", out = {}) => {
+    for (const k of Object.keys(o)) {
+      const v = o[k], kk = p ? `${p}.${k}` : k;
+      if (v && typeof v === "object") flat(v, kk, out); else out[kk] = v;
+    }
+    return out;
+  };
+
+  for (const code of codes) {
+    const d = flat(JSON.parse(readFileSync(new URL(`${code}.json`, dir), "utf8")));
+    for (const [key, val] of Object.entries(d)) {
+      if (typeof val === "string" && FLAG.test(val)) {
+        assert.fail(`${code}: ${key} still contains a flag emoji — use <img class="flagimg"> in the markup instead`);
+      }
+    }
+  }
+});

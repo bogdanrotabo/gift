@@ -226,6 +226,37 @@ export function el(html) {
   return tpl.content.firstElementChild;
 }
 
+// ------------------------------------------------------------------ flags
+
+// Windows has no flag glyphs. Microsoft never shipped them in Segoe UI Emoji,
+// so a regional indicator pair renders there as two boxed letters -- which is
+// what "the flags don't show" means every time somebody reports it. The emoji
+// stays in the source above because it is the readable way to write a flag;
+// the picture is worked out from it rather than by hand-editing thirty-eight
+// rows and getting one of them wrong.
+//
+// A regional indicator is just 'A' plus an offset, so the two letters are
+// already in there.
+const RI_A = 0x1F1E6;
+
+export function isoFromFlag(f) {
+  const cps = [...String(f || "")].map(c => c.codePointAt(0));
+  if (cps.length !== 2) return "";
+  if (cps.some(c => c < RI_A || c > RI_A + 25)) return "";
+  return String.fromCharCode(65 + cps[0] - RI_A, 65 + cps[1] - RI_A).toLowerCase();
+}
+
+// An <img>, not a glyph, so every platform draws the same thing. alt is empty
+// on purpose wherever the language name sits beside it: a screen reader that
+// says "flag of Germany Deutsch" is worse than one that says "Deutsch".
+export function flagImg(iso, alt = "") {
+  const cc = String(iso || "").toLowerCase();
+  if (!/^[a-z]{2}$/.test(cc)) return "";
+  return `<img class="flagimg" src="/flags/${cc}.png" alt="${esc(alt)}" decoding="async" loading="lazy">`;
+}
+
+export const flagImgFor = (emoji, alt = "") => flagImg(isoFromFlag(emoji), alt);
+
 // ------------------------------------------------------------------ auth
 
 export async function currentUser() {
@@ -262,21 +293,107 @@ export async function signOut() {
 
 // ------------------------------------------------------------------ chrome
 
+// A native <select> cannot hold an <img>, and an <option> is plain text by
+// specification -- so the flags had to be emoji, and emoji flags do not exist
+// on Windows. Hence a listbox built by hand, the same shape rotabo.app uses.
+//
+// What the native control gave away for free and has to be paid back here:
+// keyboard, focus, Escape, and closing when the reader clicks elsewhere.
 function buildLangPicker() {
-  const sel = document.createElement("select");
-  sel.className = "langpick";
-  sel.setAttribute("data-i18n-label", "nav.language");
-  sel.setAttribute("aria-label", "Language");
+  const wrap = document.createElement("div");
+  wrap.className = "langpick";
+
+  const current = LANGS.find(l => l.code === lang) || LANGS[0];
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "langpick-btn";
+  btn.setAttribute("aria-haspopup", "listbox");
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("data-i18n-label", "nav.language");
+  btn.innerHTML = `${flagImgFor(current.flag)}<span>${esc(current.name)}</span>`;
+
+  const list = document.createElement("div");
+  list.className = "langpick-list";
+  list.setAttribute("role", "listbox");
+  list.hidden = true;
+
   for (const l of LANGS) {
     if (!READY.has(l.code)) continue;
-    const opt = document.createElement("option");
-    opt.value = l.code;
-    opt.textContent = `${l.flag}  ${l.name}`;
-    sel.appendChild(opt);
+    const opt = document.createElement("button");
+    opt.type = "button";
+    opt.className = "langpick-opt";
+    opt.setAttribute("role", "option");
+    opt.setAttribute("aria-selected", String(l.code === lang));
+    opt.dataset.code = l.code;
+    opt.innerHTML = `${flagImgFor(l.flag)}<span>${esc(l.name)}</span>` +
+                    `<span class="langpick-code">${esc(l.code.toUpperCase())}</span>`;
+    opt.addEventListener("click", () => { close(); setLang(l.code); });
+    list.appendChild(opt);
   }
-  sel.value = lang;
-  sel.addEventListener("change", () => setLang(sel.value));
-  return sel;
+
+  function open() {
+    list.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+    const sel = list.querySelector('[aria-selected="true"]') || list.firstElementChild;
+    if (sel) sel.focus();
+  }
+  function close(focusBtn = false) {
+    list.hidden = true;
+    btn.setAttribute("aria-expanded", "false");
+    if (focusBtn) btn.focus();
+  }
+
+  btn.addEventListener("click", () => (list.hidden ? open() : close()));
+
+  // Up and down walk the list; Escape gives the reader their focus back where
+  // they left it, which is the one thing a hand-built menu usually forgets.
+  list.addEventListener("keydown", e => {
+    const opts = [...list.querySelectorAll(".langpick-opt")];
+    const i = opts.indexOf(document.activeElement);
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      const next = e.key === "ArrowDown" ? i + 1 : i - 1;
+      (opts[(next + opts.length) % opts.length] || opts[0]).focus();
+    } else if (e.key === "Escape") {
+      e.preventDefault();
+      close(true);
+    } else if (e.key === "Home" || e.key === "End") {
+      e.preventDefault();
+      (e.key === "Home" ? opts[0] : opts[opts.length - 1]).focus();
+    }
+  });
+  btn.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown") { e.preventDefault(); open(); }
+  });
+
+  bindOutsideClose();
+  wrap.append(btn, list);
+  return wrap;
+}
+
+// Bound once, on the first picker built, and never again. mountChrome rebuilds
+// the chrome on every language change and every auth change, so a listener
+// added per picker would pile up a closure over a detached element each time --
+// and binding it at module scope instead would touch `document` on import,
+// which is exactly what stops this file being read by anything but a browser.
+//
+// Pointer down rather than click: a drag that starts inside the list and
+// finishes outside it is not the reader leaving.
+let outsideCloseBound = false;
+function bindOutsideClose() {
+  if (outsideCloseBound) return;
+  outsideCloseBound = true;
+  document.addEventListener("pointerdown", e => {
+    document.querySelectorAll(".langpick").forEach(pick => {
+      if (pick.contains(e.target)) return;
+      const list = pick.querySelector(".langpick-list");
+      if (!list || list.hidden) return;
+      list.hidden = true;
+      const btn = pick.querySelector(".langpick-btn");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    });
+  });
 }
 
 // The masthead is the same on every page, so it is built rather than pasted:
