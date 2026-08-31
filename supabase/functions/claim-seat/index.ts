@@ -23,13 +23,14 @@ const SITE_URL     = Deno.env.get("SITE_URL") ?? "https://gift.ceo";
 // this function: the link is public by design, and the only thing we add to it
 // is the company id, which comes back on the webhook as client_reference_id.
 //
-// There is deliberately no fallback. This used to default to rotabo.app's
-// *Platinum* tier, which is also 10,000 CHF and so looked harmless, but it
-// charged the buyer for the wrong product: the money landed on rotabo's books
-// and the receipt read "Platinum sponsor" rather than a gift.ceo seat. A
-// misconfigured deploy must refuse to sell rather than sell the wrong thing,
-// so an unset link is a 503 below and no checkout is handed out at all.
-const PAYMENT_LINK = Deno.env.get("STRIPE_PAYMENT_LINK") ?? "";
+// This must stay pointed at the link named "gift.ceo - Company seat". It was
+// briefly rotabo.app's *Platinum* tier, which is also exactly 10,000 CHF and so
+// looked harmless, but it charged the buyer for the wrong product: revenue
+// booked against rotabo, and a receipt reading "Platinum sponsor" rather than a
+// gift.ceo seat. The price lives in Stripe, not here — changing what a seat
+// costs means editing the link, not this line.
+const PAYMENT_LINK = (Deno.env.get("STRIPE_PAYMENT_LINK") ??
+  "https://buy.stripe.com/4gMcMYaJ8d3f0aa90o0co0e").trim();
 
 const CORS = {
   "Access-Control-Allow-Origin": SITE_URL,
@@ -79,10 +80,12 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
   if (req.method !== "POST") return json({ error: "POST only" }, 405);
 
-  // Checked before anything is written, so a deploy without a payment link
-  // leaves no half-claimed rows behind for the caller to trip over on retry.
+  // Only reachable if the secret is set but blank, which would otherwise throw
+  // inside new URL() further down — after rows have been written. Fail before
+  // anything is persisted, so a retry finds a clean slate rather than a
+  // half-claimed seat.
   if (!PAYMENT_LINK) {
-    console.error("STRIPE_PAYMENT_LINK is not set; refusing to start checkout");
+    console.error("STRIPE_PAYMENT_LINK is set but empty; refusing to start checkout");
     return json({ error: "Checkout is temporarily unavailable." }, 503);
   }
 

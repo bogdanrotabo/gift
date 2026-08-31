@@ -91,17 +91,23 @@ is used or stored anywhere in this project. `claim-seat` appends
 `?client_reference_id=<company id>` to the link; Stripe echoes that back on the
 webhook, which is how a payment is matched to a seat.
 
-The link is read from `STRIPE_PAYMENT_LINK` in Supabase → *Edge Functions →
-Secrets*. It must be the link named **gift.ceo — Company seat**, on the
-rotabo.app Stripe account, priced at 10,000 CHF.
+The link is the one named **gift.ceo — Company seat**, on the rotabo.app
+Stripe account, priced at 10,000 CHF:
 
-There is **no fallback in the code, on purpose.** `claim-seat` used to default
-to rotabo.app's *Platinum* tier — also exactly 10,000 CHF, which is why it went
-unnoticed. It took the right amount of money for the wrong product: revenue
-booked against rotabo, and a receipt reading *Platinum sponsor* rather than a
-gift.ceo seat. With the secret unset, `claim-seat` now answers `503
-Checkout is temporarily unavailable.` and hands out no checkout at all. A
-deploy that cannot sell is cheaper than one that sells the wrong thing.
+```
+https://buy.stripe.com/4gMcMYaJ8d3f0aa90o0co0e
+```
+
+It is the default in `claim-seat`, and `STRIPE_PAYMENT_LINK` in Supabase →
+*Edge Functions → Secrets* overrides it when set — useful for pointing a
+deploy at a test-mode link without touching code.
+
+Until 31 August 2026 the default was rotabo.app's *Platinum* tier instead.
+That link is also exactly 10,000 CHF, which is why the mistake went unnoticed:
+it charged the right amount for the wrong product, booking revenue against
+rotabo and issuing a receipt reading *Platinum sponsor* rather than a gift.ceo
+seat. If a seat ever needs a different price, change it on the Stripe link —
+the amount is not written down anywhere in this repo.
 
 The link also needs **After payment → Redirect customers to a page you host →
 `https://gift.ceo/thank-you.html`**, set on the link itself in Stripe. Without
