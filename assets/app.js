@@ -293,8 +293,28 @@ export function mountFooter() {
 // rebuild the masthead without the page having to hand it over again.
 let chromeUser = null;
 
+// One line per page view, sent to the `track` function and forgotten. It is
+// never awaited: a counter that can delay a render is a counter that will
+// eventually be blamed for a slow page. Failures are swallowed on purpose —
+// an ad blocker refusing this request is a normal outcome, not an error worth
+// showing anyone. /admin.html is skipped so the owner reading the numbers does
+// not become the numbers.
+function trackView() {
+  try {
+    const path = location.pathname;
+    if (path.startsWith("/admin")) return;
+    fetch(`${SUPABASE_URL}/functions/v1/track`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ path, ref: document.referrer || null, lang }),
+      keepalive: true
+    }).catch(() => {});
+  } catch { /* never the reason a page fails */ }
+}
+
 export async function boot() {
   await setLang(pickLang());
+  trackView();
   chromeUser = await currentUser();
   mountChrome(chromeUser);
   mountFooter();
