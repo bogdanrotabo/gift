@@ -79,15 +79,19 @@ review — **do not upload a logo to the branding page**, and keep the
 authorised domains under ten: either would push the app into verification and
 take sign-in down until it passed.
 
-`gift.ceo.support@gmail.com` is the contact address on the site, and it is the
-mailbox outreach is actually sent from. `support@gift.ceo` exists too — a
-Porkbun forward on the domain that delivers into this same Gmail — but sending
-*as* it needs the Gmail alias configured, and until that is done a reply would
-arrive from the Gmail anyway. The site shows the address the recipient will
-really see, rather than one that only works in one direction.
+`gift.ceo.support@gmail.com` is the contact address, on the site and in the
+signature of anything sent out. One address, in both directions, so what a
+recipient sees in the From line is what the site tells them to write to.
 
-Either way the mailbox has no Workspace and therefore no `hd` claim, so the
-contact address can never itself take a seat here.
+There is a `support@gift.ceo` forward on the domain at Porkbun, left over from
+an earlier plan. Nothing points at it any more. Sending *as* it would need the
+Gmail alias set up, and without that a reply arrives from the Gmail regardless
+— an address that works in one direction only is worse than a plain one that
+works in both. The forward can be deleted at Porkbun whenever; it costs
+nothing and breaks nothing either way.
+
+The mailbox has no Workspace and therefore no `hd` claim, so the contact
+address can never itself take a seat here.
 
 ## What still needs a human
 
