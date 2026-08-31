@@ -200,9 +200,22 @@ administrator is not trapped on the panel afterwards.
 ### Traffic
 
 `track` records one row per page view and nothing else: the path, the moment,
-the two-letter country Cloudflare has already derived, the page language, and
-the referring host when it is not this site. No cookie, no visitor identifier,
-no IP address stored. Two visits by one person cannot be told apart from visits
+the browser's time zone, the region in its Accept-Language header, the page
+language, and the referring host when it is not this site. No cookie, no
+visitor identifier, no IP address read or stored.
+
+The first version read `cf-ipcountry`. Cloudflare does sit in front of these
+functions — `cf-connecting-ip`, `cf-ray` and `cf-visitor` all arrive — but
+Supabase does not forward the country header, so every row was written with a
+null country and the panel's geography was permanently empty. The time zone
+replaces it, and is the better fit: it never involves the address at all, and
+it separates `Europe/Zurich` from `Asia/Kolkata`, which is the question this
+register needs answered. It is client-supplied, so it is validated against an
+IANA-shaped pattern before it is stored, and nothing is decided on it.
+
+Time zone and browser region answer different questions and the panel keeps
+them apart: one is where somebody is, the other is what language they have set,
+which is often somewhere else entirely. Two visits by one person cannot be told apart from visits
 by two people, which is the whole design — it answers whether anyone is
 arriving, never who.
 

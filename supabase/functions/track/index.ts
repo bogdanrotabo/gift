@@ -1,9 +1,8 @@
 // track — the whole of gift.ceo's analytics, and deliberately not much.
 //
-// One row per page view: which page, when, which country, which site sent the
-// visit. No cookie is set, no visitor identifier is minted, and the IP address
-// is never stored — it is read only in the form Cloudflare has already reduced
-// to a two-letter country before the request arrives here. Two visits by one
+// One row per page view: which page, when, roughly where from, in which
+// language, and which site sent the visit. No cookie is set, no visitor
+// identifier is minted, and no IP address is read or stored. Two visits by one
 // person are indistinguishable from two visits by two people. That is the
 // point: this answers "is anyone arriving, and from where", which is the only
 // traffic question a register of 10,000 CHF seats actually needs.
@@ -52,6 +51,25 @@ function refHost(raw: unknown): string | null {
   }
 }
 
+// An IANA zone, e.g. "Europe/Zurich". Checked rather than trusted: it is sent
+// by the browser, and this is the one field a visitor could otherwise use to
+// write whatever they liked into the table.
+function cleanTz(raw: unknown): string | null {
+  const s = String(raw ?? "").trim();
+  if (!s || s.length > 64) return null;
+  return /^[A-Za-z][A-Za-z0-9_+-]*(\/[A-Za-z0-9_+-]+){0,2}$/.test(s) ? s : null;
+}
+
+// The region of the browser's first language preference, when it has one:
+// "de-CH,de;q=0.9" gives CH. This describes language settings, not where
+// somebody is — a Romanian in Zurich may well send ro-RO — so the admin panel
+// labels it "browser region" and the time zone above carries the location.
+function regionFromAcceptLanguage(req: Request): string | null {
+  const first = (req.headers.get("accept-language") ?? "").split(",")[0].trim();
+  const m = /^[A-Za-z]{2,3}-([A-Za-z]{2})\b/.exec(first);
+  return m ? m[1].toUpperCase() : null;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
 
@@ -66,18 +84,13 @@ Deno.serve(async (req) => {
     const path = cleanPath(body.path);
     if (!path) return done();
 
-    // Set by Cloudflare in front of the function; absent when it cannot tell.
-    // This is the only thing derived from the visitor's address, and the
-    // address itself is not read, passed on, or stored.
-    const country = (req.headers.get("cf-ipcountry") ?? "").slice(0, 2).toUpperCase() || null;
-    const lang = String(body.lang ?? "").slice(0, 8) || null;
-
     const admin = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
     const { error } = await admin.from("page_views").insert({
       path,
       ref_host: refHost(body.ref),
-      country: country === "XX" || country === "T1" ? null : country,
-      lang,
+      tz: cleanTz(body.tz),
+      country: regionFromAcceptLanguage(req),
+      lang: String(body.lang ?? "").slice(0, 8) || null,
     });
     if (error) console.error("track:", error.message);
   } catch (e) {

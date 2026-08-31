@@ -126,7 +126,7 @@ Deno.serve(async (req) => {
   const since = new Date(Date.now() - VIEW_WINDOW_DAYS * 864e5).toISOString();
   const { data: views } = await admin
     .from("page_views")
-    .select("path,ref_host,country,created_at")
+    .select("path,ref_host,country,tz,created_at")
     .gte("created_at", since)
     .order("created_at", { ascending: false })
     .limit(VIEW_ROW_CAP);
@@ -167,6 +167,10 @@ Deno.serve(async (req) => {
       last_30: day(30),
       by_day: [...byDay.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([d, n]) => ({ d, n })),
       paths: tally(rows, "path"),
+      // Two different questions. A time zone is where somebody is; a browser
+      // region is what language they have set, which is often somewhere else
+      // entirely. The panel labels them apart rather than blending them.
+      zones: tally(rows, "tz"),
       countries: tally(rows, "country"),
       referrers: tally(rows, "ref_host"),
     },
