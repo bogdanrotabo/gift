@@ -69,7 +69,7 @@ from the code:
 | Owner account | bogdan.tanase.ch@gmail.com |
 | Developer contact | gift.ceo.support@gmail.com |
 | OAuth client | *gift.ceo web*, `628322664029-cmsgm4fcj6g5spua88rbdn1q9q6cgu7m.apps.googleusercontent.com` |
-| Redirect URI | `https://gcfurwexhxqxuveojoih.supabase.co/auth/v1/callback` |
+| Redirect URIs | `https://api.gift.ceo/auth/v1/callback` and `https://gcfurwexhxqxuveojoih.supabase.co/auth/v1/callback` |
 | JS origin | `https://gift.ceo` |
 | Supabase site URL | `https://gift.ceo`, allow-list `https://gift.ceo/**` |
 
@@ -147,6 +147,12 @@ Supabase → *Edge Functions → Secrets* as `STRIPE_WEBHOOK_SECRET`.
 Never paste that value into a chat window — type it straight into the Supabase
 secrets page. Until it exists, the webhook rejects every delivery as unsigned,
 which means a paid seat will not go live.
+
+That URL keeps the generated `gcfurwexhxqxuveojoih.supabase.co` address even
+though the project now answers on `api.gift.ceo` as well. It is the endpoint
+registered with Stripe, and both domains serve the same functions, so moving it
+would mean creating a new endpoint and installing a new signing secret to gain
+nothing. Leave it.
 
 Because the endpoint sits on rotabo.app's Stripe account, it also receives
 rotabo's own sponsor payments. That is harmless: the webhook only writes when
