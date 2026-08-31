@@ -67,7 +67,7 @@ from the code:
 |---|---|
 | Google Cloud project | `gift-ceo` (`electric-nomad-507111-m5`) |
 | Owner account | bogdan.tanase.ch@gmail.com |
-| Developer contact | support@gift.ceo |
+| Developer contact | gift.ceo.support@gmail.com |
 | OAuth client | *gift.ceo web*, `628322664029-cmsgm4fcj6g5spua88rbdn1q9q6cgu7m.apps.googleusercontent.com` |
 | Redirect URIs | `https://api.gift.ceo/auth/v1/callback` and `https://gcfurwexhxqxuveojoih.supabase.co/auth/v1/callback` |
 | JS origin | `https://gift.ceo` |
@@ -79,11 +79,15 @@ review — **do not upload a logo to the branding page**, and keep the
 authorised domains under ten: either would push the app into verification and
 take sign-in down until it passed.
 
-`support@gift.ceo` is a Porkbun forward on the gift.ceo domain, delivering
-into a plain Gmail account. That matters twice over. It is a real address on
-the domain, so a CEO who replies is writing to gift.ceo rather than to
-someone's Gmail — and the mailbox behind it has no Workspace and therefore no
-`hd` claim, so the contact address can never itself take a seat here.
+`gift.ceo.support@gmail.com` is the contact address on the site, and it is the
+mailbox outreach is actually sent from. `support@gift.ceo` exists too — a
+Porkbun forward on the domain that delivers into this same Gmail — but sending
+*as* it needs the Gmail alias configured, and until that is done a reply would
+arrive from the Gmail anyway. The site shows the address the recipient will
+really see, rather than one that only works in one direction.
+
+Either way the mailbox has no Workspace and therefore no `hd` claim, so the
+contact address can never itself take a seat here.
 
 ## What still needs a human
 

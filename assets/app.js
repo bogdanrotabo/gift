@@ -20,7 +20,7 @@ export const sb = createClient(SUPABASE_URL, SUPABASE_KEY, {
   auth: { flowType: "pkce", persistSession: true, autoRefreshToken: true }
 });
 
-export const SUPPORT_EMAIL = "support@gift.ceo";
+export const SUPPORT_EMAIL = "gift.ceo.support@gmail.com";
 
 // ------------------------------------------------------------------ languages
 
@@ -434,6 +434,25 @@ export function mountFooter() {
   applyTranslations(host);
 }
 
+function bindMailtoCopy() {
+  document.addEventListener("click", e => {
+    const a = e.target.closest?.('a[href^="mailto:"]');
+    if (!a) return;
+    const addr = a.getAttribute("href").slice(7).split("?")[0];
+    // Never preventDefault: if a mail client does open, that is the better
+    // outcome and it still happens.
+    try {
+      navigator.clipboard?.writeText(addr).then(() => {
+        if (a.dataset.copied) return;
+        a.dataset.copied = "1";
+        const was = a.textContent;
+        a.textContent = was + " \u2713";
+        setTimeout(() => { a.textContent = was; delete a.dataset.copied; }, 1600);
+      }, () => {});
+    } catch (err) { /* no clipboard permission; the mailto still stands */ }
+  });
+}
+
 // Every page calls this first: language before paint, then the chrome, then
 // its own work. The signed-in user is kept here so a language change can
 // rebuild the masthead without the page having to hand it over again.
@@ -699,6 +718,7 @@ function trackView() {
 }
 
 export async function boot() {
+  bindMailtoCopy();
   await setLang(pickLang());
   // Before the counter, because a click has to be remembered whether or not
   // the counter's request ever leaves the browser.
