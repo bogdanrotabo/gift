@@ -215,6 +215,7 @@ export function hdOf(user) {
 }
 
 export async function signIn(redirectTo) {
+  routeAfterSignIn("auto");
   return sb.auth.signInWithOAuth({
     provider: "google",
     options: {
@@ -293,40 +294,63 @@ export function mountFooter() {
 // rebuild the masthead without the page having to hand it over again.
 let chromeUser = null;
 
-// --------------------------------------------------------------- return-to
+// ------------------------------------------------------------- after sign-in
 
-// Supabase only honours a redirectTo that appears in the project's allow list,
-// and silently falls back to the Site URL when it does not. That turns a
-// missing entry for /admin.html into "sign-in is broken", when in fact the
-// sign-in worked and the visitor simply landed on the home page.
+// Where to go once Google sends the visitor back. Two problems share one
+// mechanism. Supabase honours a redirectTo only if it is in the project's
+// allow list and otherwise drops the visitor on the Site URL without a word,
+// which reads as a broken sign-in; and the administrator should land on the
+// panel wherever they signed in from, which cannot be decided in advance
+// because nobody knows who is signing in until they have.
 //
-// So the page asks to be returned to before it leaves, and boot() carries out
-// the request on whichever page the round trip actually lands on. The session
-// is already established by then: detectSessionInUrl exchanges the PKCE code
-// wherever it arrives, and persistSession keeps it. With the allow-list entry
-// this never fires, because the visitor is already where they asked to be.
-const RETURN_KEY = "gift.returnTo";
+// So the intent is recorded before leaving and acted on when the session
+// appears: an explicit path if a page asked for one, otherwise "auto", which
+// means "decide from the account".
+const ROUTE_KEY = "gift.routeAfterSignIn";
 
-export function askToReturnTo(path) {
-  try { localStorage.setItem(RETURN_KEY, path); } catch { /* private window */ }
+// Routing, never permission. admin-overview decides who may read the panel,
+// against a JWT, on the server. This list only spares the one person who can
+// from typing the address, and editing it in a console buys nothing but a
+// page that answers 403.
+const ADMIN_EMAILS = ["bogdan.tanase.ch@gmail.com"];
+
+const isAdmin = (user) =>
+  ADMIN_EMAILS.includes(String(user?.email ?? "").trim().toLowerCase());
+
+export function routeAfterSignIn(where = "auto") {
+  try { localStorage.setItem(ROUTE_KEY, where); } catch { /* private window */ }
 }
 
-function honourReturnTo(user) {
+// Runs on every page, does nothing on almost all of them. Only a stored intent
+// plus a resolved session moves anyone, and the intent is consumed the first
+// time both are true — so this fires once per sign-in and never traps the
+// administrator on the panel afterwards.
+function honourRoute(user) {
+  // Checked before the key is read, not after. getUser() can resolve null
+  // while detectSessionInUrl is still exchanging the PKCE code; consuming the
+  // intent then would throw it away a moment before it became usable. The
+  // caller runs this again from onAuthStateChange, when the session lands.
+  if (!user) return;
+
   let want = null;
-  try { want = localStorage.getItem(RETURN_KEY); } catch { return; }
+  try { want = localStorage.getItem(ROUTE_KEY); } catch { return; }
   if (!want) return;
 
-  // Cleared before the jump, not after: a path that somehow cannot be reached
-  // must not leave the visitor bouncing between two pages forever.
-  try { localStorage.removeItem(RETURN_KEY); } catch { /* ignore */ }
+  // Consumed before the jump, so a destination that cannot be reached leaves
+  // nobody bouncing between two pages.
+  try { localStorage.removeItem(ROUTE_KEY); } catch { /* ignore */ }
 
-  // Same-origin, absolute, and ours. "//evil.com" is a valid URL that a
-  // browser reads as another host, so a leading slash alone is not enough.
-  if (!user) return;
-  if (!want.startsWith("/") || want.startsWith("//")) return;
-  if (want === location.pathname) return;
+  const target = want === "auto"
+    ? (isAdmin(user) ? "/admin.html" : null)
+    : want;
 
-  location.replace(want);
+  if (!target) return;
+  // Same-origin and ours. "//evil.com" begins with a slash and is read by
+  // browsers as another host, so that test alone would be an open redirect.
+  if (!target.startsWith("/") || target.startsWith("//")) return;
+  if (target === location.pathname) return;
+
+  location.replace(target);
 }
 
 // ------------------------------------------------------------------ ga4
@@ -436,7 +460,7 @@ export async function boot() {
   trackView();
   mountConsent();
   chromeUser = await currentUser();
-  honourReturnTo(chromeUser);
+  honourRoute(chromeUser);
   mountChrome(chromeUser);
   mountFooter();
   document.addEventListener("i18n:applied", () => {
@@ -445,6 +469,7 @@ export async function boot() {
   });
   sb.auth.onAuthStateChange((_event, session) => {
     chromeUser = session ? session.user : null;
+    honourRoute(chromeUser);
     mountChrome(chromeUser);
   });
   return chromeUser;
