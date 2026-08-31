@@ -382,7 +382,14 @@ revoke all on public.founding_seats_state from anon, authenticated;
 
 -- The counter, and only the counter.
 grant execute on function public.founding_seats_remaining() to anon, authenticated;
-grant execute on function public.claim_founding_seat(uuid)  to authenticated;
+
+-- Revoke before granting. Postgres gives EXECUTE to PUBLIC on every new
+-- function and anon inherits it, so granting to authenticated afterwards does
+-- not take anything away -- the claim endpoint stayed reachable anonymously.
+-- Harmless in practice (it returns no_workspace_domain at the first line,
+-- before reading anything) but an endpoint nobody needs.
+revoke all   on function public.claim_founding_seat(uuid) from public, anon;
+grant execute on function public.claim_founding_seat(uuid) to authenticated;
 
 -- PostgREST publishes every function in `public` as an RPC endpoint, and 0003
 -- established that anything not meant for a client gets its endpoint taken
