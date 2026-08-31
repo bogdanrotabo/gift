@@ -7,7 +7,7 @@
 <meta name="description" content="What gift.ceo collects, why, and who else sees it.">
 <link rel="canonical" href="https://gift.ceo/privacy.html">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=11">
+<link rel="stylesheet" href="/assets/style.css?v=12">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
 <main class="wrap narrow prose" style="padding-top:48px;padding-bottom:20px">
 
   <h1>Privacy</h1>
-  <p class="updated">Last updated 30 August 2026. English is the binding version; any translation is for convenience only.</p>
+  <p class="updated">Last updated 31 August 2026. English is the binding version; any translation is for convenience only.</p>
 
   <h2>The short version</h2>
   <p>This site is a public record, so most of what a chief executive enters here is meant to be seen: their name, their company, and the gifts they give. Everything else — the sign-in address, the payment — is kept because the site cannot work without it, and is not sold, shared for advertising, or used to build a profile of anyone.</p>
@@ -30,7 +30,19 @@
   </ul>
   <p>No advertising trackers are used.</p>
 
-  <p><strong>Our own counter.</strong> This page promised it would say so before any analytics were switched on, so: each page view is counted. What is recorded is the page, the moment, the two-letter country your network resolves to, the language the page was shown in, and the address of the site that linked you here, if any. No cookie is set, no identifier is stored in your browser, and your IP address is not kept &mdash; it is used only to derive the country, before the request reaches us, and then discarded. Nothing links one visit to another, so two visits by you cannot be told apart from visits by two people. These counts are visible only to the operator of the site.</p>
+  <p><strong>Our own counter.</strong> This page promised it would say so before any analytics were switched on, so: each page view is counted. What is recorded is the page, the moment, your browser’s time zone, the region set in your browser’s language preference, the language the page was shown in, the address of the site that linked you here, if any, and — if you arrived from one of our own adverts — the name of the campaign that carried you. No cookie is set, no identifier is stored in your browser by the counter, and your IP address is neither read nor kept. A campaign name is shared by everyone who clicks the same advert, so it says which advert worked and nothing about who you are. Nothing links one visit to another, so two visits by you cannot be told apart from visits by two people. These counts are visible only to the operator of the site.</p>
+
+  <p><strong>If you arrived from a Google advert.</strong> Google adds a click
+  identifier to the address of the page you land on. Unlike the campaign name
+  above, that one is unique to your click. It is kept in your own browser, for
+  ninety days, and it is not sent anywhere while you are only reading: if you
+  look around and leave, it is stored on no server of ours and expires where it
+  sits. It leaves your browser once, and only if you go on to take a seat — at
+  which point it is saved against your company’s record, alongside the name,
+  company and address you are handing over in the same breath, so that we can
+  tell Google which advert led to a seat. It is never attached to a page view,
+  never used to build a profile, and never shared with anyone but Google, whose
+  click it was. Clearing this site’s data in your browser removes it.</p>
 
   <p><strong>Google Analytics.</strong> Only if you accept it. On your first
   visit a bar asks; nothing from Google is loaded until you answer, and if you
@@ -78,7 +90,7 @@
 <footer class="foot" data-footer></footer>
 
 <script type="module">
-import { boot } from "/assets/app.js?v=11";
+import { boot } from "/assets/app.js?v=12";
 await boot();
 </script>
 

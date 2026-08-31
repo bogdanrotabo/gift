@@ -225,6 +225,23 @@ which is often somewhere else entirely. Two visits by one person cannot be told 
 by two people, which is the whole design — it answers whether anyone is
 arriving, never who.
 
+**Ad attribution.** A Google Ads click lands with two different things on the
+URL and they are treated differently on purpose. The `utm_*` labels name a
+campaign, are shared by everyone who clicks the same advert, and ride along with
+the page view into `page_views` — the table still identifies nobody. The `gclid`
+identifies one click, is never sent to `track`, and waits in `localStorage`
+under `gift.attrib` for ninety days; it reaches the server only through
+`claim-seat`, which writes it onto the company row once (`attributed_at is
+null`, so the first claim wins) and never overwrites it. A visitor who reads and
+leaves is stored nowhere. `privacy.html` was updated in the same commit, which
+is the rule this repo keeps: the page changes before the behaviour does.
+
+The campaign labels only exist because the CH campaign carries a final URL
+suffix — `utm_source=google&utm_medium=cpc&utm_campaign=search-ch`, set on the
+campaign in Google Ads, not here. A campaign without one still delivers a
+`gclid`, because auto-tagging is on at account level; it just arrives
+unlabelled.
+
 The beacon is fired from `boot()` in `assets/app.js` and never awaited, so it
 cannot slow a render; an ad blocker refusing it is a normal outcome. Bump the
 `?v=` on every page when `app.js` changes, or returning visitors keep the old
@@ -237,11 +254,17 @@ identifier, that page has to change first.
 
 ### Google Analytics
 
-Off until `GA4_ID` in `assets/app.js` holds a measurement ID. While it is
-empty, no tag is fetched and no consent bar is shown; the site behaves as if
-GA4 had never been considered. Setting it switches on the tag *and* the bar
-together, and they must never be separated — the bar is what makes the tag
-lawful under the Swiss nLPD and the GDPR.
+On since 31 August 2026: `GA4_ID` in `assets/app.js` holds `G-8DBKJWE5ZD` —
+property **gift.ceo** in the Rotabo Analytics account, stream *gift.ceo web*
+(15532758002), linked to Google Ads 190-558-5049 with personalised advertising
+left **off**. Emptying the constant turns the tag *and* the consent bar off
+again, and they must never be separated — the bar is what makes the tag lawful
+under the Swiss nLPD and the GDPR.
+
+Worth knowing before reading anything into the reports: nothing loads until a
+visitor accepts, so GA4 sees a subset of a site that gets a handful of visits a
+day. The counter below is the honest number. GA4 is here for the Google Ads
+link, not for its charts.
 
 The bar is not decoration. Decline means no request is made to Google at all,
 not even a cookieless one: Google's own advice is to load the tag with consent
