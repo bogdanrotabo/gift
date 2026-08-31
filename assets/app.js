@@ -293,6 +293,42 @@ export function mountFooter() {
 // rebuild the masthead without the page having to hand it over again.
 let chromeUser = null;
 
+// --------------------------------------------------------------- return-to
+
+// Supabase only honours a redirectTo that appears in the project's allow list,
+// and silently falls back to the Site URL when it does not. That turns a
+// missing entry for /admin.html into "sign-in is broken", when in fact the
+// sign-in worked and the visitor simply landed on the home page.
+//
+// So the page asks to be returned to before it leaves, and boot() carries out
+// the request on whichever page the round trip actually lands on. The session
+// is already established by then: detectSessionInUrl exchanges the PKCE code
+// wherever it arrives, and persistSession keeps it. With the allow-list entry
+// this never fires, because the visitor is already where they asked to be.
+const RETURN_KEY = "gift.returnTo";
+
+export function askToReturnTo(path) {
+  try { localStorage.setItem(RETURN_KEY, path); } catch { /* private window */ }
+}
+
+function honourReturnTo(user) {
+  let want = null;
+  try { want = localStorage.getItem(RETURN_KEY); } catch { return; }
+  if (!want) return;
+
+  // Cleared before the jump, not after: a path that somehow cannot be reached
+  // must not leave the visitor bouncing between two pages forever.
+  try { localStorage.removeItem(RETURN_KEY); } catch { /* ignore */ }
+
+  // Same-origin, absolute, and ours. "//evil.com" is a valid URL that a
+  // browser reads as another host, so a leading slash alone is not enough.
+  if (!user) return;
+  if (!want.startsWith("/") || want.startsWith("//")) return;
+  if (want === location.pathname) return;
+
+  location.replace(want);
+}
+
 // ------------------------------------------------------------------ ga4
 
 // Empty until a GA4 property exists. While it is empty nothing below runs: no
@@ -400,6 +436,7 @@ export async function boot() {
   trackView();
   mountConsent();
   chromeUser = await currentUser();
+  honourReturnTo(chromeUser);
   mountChrome(chromeUser);
   mountFooter();
   document.addEventListener("i18n:applied", () => {
