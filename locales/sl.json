@@ -121,5 +121,12 @@
     "generic": "Nekaj je šlo narobe. Poskusite znova.",
     "not_signed_in": "Najprej se prijavite.",
     "not_found": "Ni najdeno."
+  },
+  "consent": {
+    "title": "Analitični piškotki",
+    "body": "Google Analytics nam pokaže, kako se ta stran uporablja. Nastavi piškotke. Če zavrnete, se nič ne shrani.",
+    "accept": "Sprejmem",
+    "reject": "Zavrnem",
+    "privacy": "Zasebnost"
   }
 }

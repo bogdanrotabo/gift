@@ -121,5 +121,12 @@
     "generic": "Có lỗi xảy ra. Vui lòng thử lại.",
     "not_signed_in": "Vui lòng đăng nhập trước.",
     "not_found": "Không tìm thấy."
+  },
+  "consent": {
+    "title": "Cookie phân tích",
+    "body": "Google Analytics cho chúng tôi biết trang này được sử dụng như thế nào. Nó đặt cookie. Nếu từ chối, không có gì được lưu.",
+    "accept": "Chấp nhận",
+    "reject": "Từ chối",
+    "privacy": "Quyền riêng tư"
   }
 }

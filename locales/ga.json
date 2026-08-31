@@ -121,5 +121,12 @@
     "generic": "Chuaigh rud éigin amú. Bain triail eile as.",
     "not_signed_in": "Logáil isteach ar dtús.",
     "not_found": "Níor aimsíodh é."
+  },
+  "consent": {
+    "title": "Fianáin anailísíochta",
+    "body": "Taispeánann Google Analytics dúinn conas a úsáidtear an suíomh seo. Socraíonn sé fianáin. Má dhiúltaíonn tú, ní stóráiltear aon rud.",
+    "accept": "Glac leis",
+    "reject": "Diúltaigh",
+    "privacy": "Príobháideacht"
   }
 }

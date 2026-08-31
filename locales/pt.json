@@ -121,5 +121,12 @@
     "generic": "Algo correu mal. Tente novamente.",
     "not_signed_in": "Entre primeiro.",
     "not_found": "Não encontrado."
+  },
+  "consent": {
+    "title": "Cookies de análise",
+    "body": "O Google Analytics mostra-nos como este site é usado. Define cookies. Se recusar, nada é guardado.",
+    "accept": "Aceitar",
+    "reject": "Recusar",
+    "privacy": "Privacidade"
   }
 }

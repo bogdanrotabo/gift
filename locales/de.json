@@ -121,5 +121,12 @@
     "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     "not_signed_in": "Bitte melden Sie sich zuerst an.",
     "not_found": "Nicht gefunden."
+  },
+  "consent": {
+    "title": "Analyse-Cookies",
+    "body": "Google Analytics zeigt uns, wie diese Website genutzt wird. Dabei werden Cookies gesetzt. Bei Ablehnung wird nichts gespeichert.",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen",
+    "privacy": "Datenschutz"
   }
 }

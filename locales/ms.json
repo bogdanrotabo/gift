@@ -121,5 +121,12 @@
     "generic": "Ada sesuatu tidak kena. Sila cuba lagi.",
     "not_signed_in": "Sila log masuk dahulu.",
     "not_found": "Tidak dijumpai."
+  },
+  "consent": {
+    "title": "Kuki analitik",
+    "body": "Google Analytics menunjukkan cara tapak ini digunakan. Ia menetapkan kuki. Jika ditolak, tiada apa-apa disimpan.",
+    "accept": "Terima",
+    "reject": "Tolak",
+    "privacy": "Privasi"
   }
 }

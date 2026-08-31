@@ -121,5 +121,12 @@
     "generic": "Niečo sa pokazilo. Skúste to znova.",
     "not_signed_in": "Najprv sa prihláste.",
     "not_found": "Nenájdené."
+  },
+  "consent": {
+    "title": "Analytické súbory cookie",
+    "body": "Google Analytics nám ukazuje, ako sa táto stránka používa. Nastavuje súbory cookie. Pri odmietnutí sa nič neuloží.",
+    "accept": "Prijať",
+    "reject": "Odmietnuť",
+    "privacy": "Súkromie"
   }
 }

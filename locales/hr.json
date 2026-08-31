@@ -121,5 +121,12 @@
     "generic": "Nešto je pošlo po zlu. Pokušajte ponovno.",
     "not_signed_in": "Najprije se prijavite.",
     "not_found": "Nije pronađeno."
+  },
+  "consent": {
+    "title": "Analitički kolačići",
+    "body": "Google Analytics pokazuje nam kako se ova stranica koristi. Postavlja kolačiće. Ako odbijete, ništa se ne pohranjuje.",
+    "accept": "Prihvati",
+    "reject": "Odbij",
+    "privacy": "Privatnost"
   }
 }

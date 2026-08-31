@@ -121,5 +121,12 @@
     "generic": "Qualcosa è andato storto. Riprova.",
     "not_signed_in": "Accedi prima.",
     "not_found": "Non trovato."
+  },
+  "consent": {
+    "title": "Cookie di analisi",
+    "body": "Google Analytics ci mostra come viene usato questo sito. Imposta cookie. Se rifiuti, non viene memorizzato nulla.",
+    "accept": "Accetta",
+    "reject": "Rifiuta",
+    "privacy": "Privacy"
   }
 }

@@ -181,6 +181,29 @@ on. That promise is kept in the same commit that added this, and the page now
 describes exactly the fields above. If the counter ever grows a visitor
 identifier, that page has to change first.
 
+### Google Analytics
+
+Off until `GA4_ID` in `assets/app.js` holds a measurement ID. While it is
+empty, no tag is fetched and no consent bar is shown; the site behaves as if
+GA4 had never been considered. Setting it switches on the tag *and* the bar
+together, and they must never be separated — the bar is what makes the tag
+lawful under the Swiss nLPD and the GDPR.
+
+The bar is not decoration. Decline means no request is made to Google at all,
+not even a cookieless one: Google's own advice is to load the tag with consent
+denied and let it ping anyway, which is reasonable for a shop and wrong for a
+register that has just told the visitor nothing is stored. On accept, only
+`analytics_storage` is granted; `ad_storage`, `ad_user_data` and
+`ad_personalization` stay denied permanently, so nothing here can feed
+advertising.
+
+The choice lives in `localStorage` under `gift.consent` and nowhere else, so it
+is per-browser and invisible to us. The five `consent.*` strings are translated
+in all 38 locales — the bar is the first thing a visitor sees, and it cannot be
+the one part of the site in English.
+
+Bump the `?v=` on every page whenever `app.js` or `style.css` changes.
+
 ## Adding a language
 
 Two steps, and nothing else in the site needs to know:

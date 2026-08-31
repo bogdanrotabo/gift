@@ -121,5 +121,12 @@
     "generic": "Ceva n-a mers. Încearcă din nou.",
     "not_signed_in": "Intră mai întâi în cont.",
     "not_found": "Nu am găsit."
+  },
+  "consent": {
+    "title": "Cookie-uri de analiză",
+    "body": "Google Analytics ne arată cum este folosit acest site. Setează cookie-uri. Dacă refuzi, nu se stochează nimic.",
+    "accept": "Accept",
+    "reject": "Refuz",
+    "privacy": "Confidențialitate"
   }
 }

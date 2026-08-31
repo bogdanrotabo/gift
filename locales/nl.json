@@ -121,5 +121,12 @@
     "generic": "Er ging iets mis. Probeer het opnieuw.",
     "not_signed_in": "Log eerst in.",
     "not_found": "Niet gevonden."
+  },
+  "consent": {
+    "title": "Analytische cookies",
+    "body": "Google Analytics laat ons zien hoe deze site wordt gebruikt. Het plaatst cookies. Bij weigeren wordt niets opgeslagen.",
+    "accept": "Accepteren",
+    "reject": "Weigeren",
+    "privacy": "Privacy"
   }
 }

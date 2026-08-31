@@ -121,5 +121,12 @@
     "generic": "問題が発生しました。もう一度お試しください。",
     "not_signed_in": "先にログインしてください。",
     "not_found": "見つかりません。"
+  },
+  "consent": {
+    "title": "分析用 Cookie",
+    "body": "Google Analytics は、このサイトの利用状況を把握するために使われ、Cookie を設定します。拒否した場合、何も保存されません。",
+    "accept": "同意する",
+    "reject": "拒否する",
+    "privacy": "プライバシー"
   }
 }

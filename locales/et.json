@@ -121,5 +121,12 @@
     "generic": "Midagi läks valesti. Proovi uuesti.",
     "not_signed_in": "Logi kõigepealt sisse.",
     "not_found": "Ei leitud."
+  },
+  "consent": {
+    "title": "Analüütikaküpsised",
+    "body": "Google Analytics näitab meile, kuidas seda saiti kasutatakse. See seab küpsiseid. Keeldumisel ei salvestata midagi.",
+    "accept": "Nõustun",
+    "reject": "Keeldun",
+    "privacy": "Privaatsus"
   }
 }
