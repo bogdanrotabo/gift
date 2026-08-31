@@ -370,7 +370,13 @@ function honourRoute(user) {
 // (the G-XXXXXXXXXX from Analytics > Admin > Data streams) and both switch on
 // together — never one without the other, because the banner is the thing that
 // makes the tag lawful in Switzerland and the EU.
-export const GA4_ID = "";
+//
+// Set on 31 August 2026: property "gift.ceo" in the Rotabo Analytics account,
+// stream "gift.ceo web" (15532758002). The property is linked to Google Ads
+// 190-558-5049 with personalised advertising left OFF, which is the same line
+// the three denied signals below draw — audiences are never published to the
+// ad account, whatever a visitor accepts here.
+export const GA4_ID = "G-8DBKJWE5ZD";
 
 const CONSENT_KEY = "gift.consent";
 
@@ -445,6 +451,88 @@ function mountConsent() {
   document.body.appendChild(bar);
 }
 
+// --------------------------------------------------------------- attribution
+
+// Which ad, if any, brought somebody here. Two different things arrive on the
+// landing URL of a Google Ads click, and they are kept apart on purpose.
+//
+// The utm_* labels name a campaign. Everyone who clicks the same ad carries
+// the same three, so they describe an ad and never a person; they ride along
+// with the page view below and change nothing about what page_views is — the
+// table still cannot tell two visits by one person from visits by two people.
+//
+// The gclid is the opposite: Google mints one per click and it identifies that
+// click. It is never sent to `track`. It waits here, in this browser, and goes
+// to the server only if this visitor claims a seat — a step where they hand
+// over their name, their company and their Workspace address anyway. Somebody
+// who reads and leaves is stored nowhere, which is what the privacy page says
+// and has to keep meaning.
+//
+// Ninety days because that is Google Ads' own conversion window: an older
+// click has stopped meaning anything and is dropped rather than credited.
+const ATTRIB_KEY = "gift.attrib";
+const ATTRIB_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000;
+
+const cleanUtm = (v) =>
+  (typeof v === "string" && /^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$/.test(v)) ? v.toLowerCase() : null;
+
+const cleanGclid = (v) =>
+  (typeof v === "string" && /^[A-Za-z0-9_-]{1,200}$/.test(v)) ? v : null;
+
+// The campaign behind THIS page view, read from the URL every time and never
+// from storage: arriving later from a bookmark is an unlabelled visit, not a
+// second visit from the ad.
+function currentCampaign() {
+  try {
+    const q = new URLSearchParams(location.search);
+    return {
+      utm_source: cleanUtm(q.get("utm_source")),
+      utm_medium: cleanUtm(q.get("utm_medium")),
+      utm_campaign: cleanUtm(q.get("utm_campaign"))
+    };
+  } catch { return {}; }
+}
+
+// Called once, before anything else in boot(). Only a URL that actually
+// carries a click overwrites what is stored, so coming back from a bookmark
+// cannot erase the ad that started it.
+function captureAttribution() {
+  try {
+    const q = new URLSearchParams(location.search);
+    const gclid = cleanGclid(q.get("gclid"));
+    const utm_source = cleanUtm(q.get("utm_source"));
+    if (!gclid && !utm_source) return;
+    localStorage.setItem(ATTRIB_KEY, JSON.stringify({
+      gclid,
+      utm_source,
+      utm_medium: cleanUtm(q.get("utm_medium")),
+      utm_campaign: cleanUtm(q.get("utm_campaign")),
+      at: Date.now()
+    }));
+  } catch { /* private window, storage denied: attribution is never load-bearing */ }
+}
+
+// What join.html sends with a seat claim. Empty for everyone who did not
+// arrive from an ad, which is the normal case.
+export function storedAttribution() {
+  try {
+    const raw = localStorage.getItem(ATTRIB_KEY);
+    if (!raw) return {};
+    const a = JSON.parse(raw);
+    if (!a || typeof a.at !== "number" || Date.now() - a.at > ATTRIB_MAX_AGE_MS) {
+      localStorage.removeItem(ATTRIB_KEY);
+      return {};
+    }
+    const out = {};
+    for (const k of ["gclid", "utm_source", "utm_medium", "utm_campaign"]) {
+      if (a[k]) out[k] = a[k];
+    }
+    return out;
+  } catch { return {}; }
+}
+
+// ---------------------------------------------------------------- the counter
+
 // One line per page view, sent to the `track` function and forgotten. It is
 // never awaited: a counter that can delay a render is a counter that will
 // eventually be blamed for a slow page. Failures are swallowed on purpose —
@@ -464,7 +552,10 @@ function trackView() {
         lang,
         // The one location signal that never involves an IP address. Absent in
         // browsers that refuse it, which is fine: the row is still counted.
-        tz: Intl.DateTimeFormat().resolvedOptions().timeZone || null
+        tz: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
+        // Campaign labels only, and only this visit's. The function rejects
+        // anything that is not one of ours rather than storing it.
+        ...currentCampaign()
       }),
       keepalive: true
     }).catch(() => {});
@@ -473,6 +564,9 @@ function trackView() {
 
 export async function boot() {
   await setLang(pickLang());
+  // Before the counter, because a click has to be remembered whether or not
+  // the counter's request ever leaves the browser.
+  captureAttribution();
   trackView();
   mountConsent();
   chromeUser = await currentUser();
