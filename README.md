@@ -181,12 +181,21 @@ Supabase honours a `redirectTo` only if it appears in the project's allow list
 (*Authentication → URL Configuration → Redirect URLs*) and falls back to the
 Site URL without saying so otherwise — which looks exactly like a broken
 sign-in, when in fact the sign-in worked and the visitor landed on the home
-page. `admin.html` therefore records where it wants to be returned to before it
-leaves, and `boot()` completes the trip on whichever page the round trip lands
-on; the session is already established by then, because `detectSessionInUrl`
-exchanges the PKCE code wherever it arrives. Adding `https://gift.ceo/**` to
-that list is still worth doing — it saves a redirect — but nothing depends on
-it.
+page. Adding `https://gift.ceo/**` to that list saves a redirect, but nothing
+depends on it.
+
+Instead, the intent is recorded before leaving and acted on when the session
+appears, in `honourRoute()`. A page may ask for a path — `admin.html` asks for
+itself — or for `"auto"`, which the site's own sign-in uses because nobody
+knows who is signing in until they have. `"auto"` sends an administrator to the
+panel and leaves everyone else where Supabase put them.
+
+`ADMIN_EMAILS` in `app.js` is routing, never permission: it spares the one
+person who may read the panel from typing the address. Editing it in a console
+buys a page that answers 403, because the list that matters is the one in
+`admin-overview`, checked against a JWT on the server. The intent is consumed
+the first time a session resolves, so this fires once per sign-in — the
+administrator is not trapped on the panel afterwards.
 
 ### Traffic
 
