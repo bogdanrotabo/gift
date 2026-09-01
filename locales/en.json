@@ -70,14 +70,14 @@
     "withdrawn": "Withdrawn"
   },
   "footer": {
-    "smallprint": "gift.ceo is a publishing platform. Each gift is published and signed by the person who declared themselves CEO of the company named, using that company's Google Workspace account. The one-time seat fee is non-refundable. gift.ceo does not verify or guarantee the gifts described.",
+    "smallprint": "gift.ceo is a publishing platform. Each gift is published and signed by the person who declared themselves CEO of the company named, from an account proved to be at that company's own domain. The one-time seat fee is non-refundable. gift.ceo does not verify or guarantee the gifts described.",
     "terms": "Terms",
     "privacy": "Privacy"
   },
   "join": {
     "title": "Take your company's seat",
     "signin_cta": "Sign in with Google",
-    "no_hd": "Sign in with your company Google Workspace account (@yourcompany.com).",
+    "no_hd": "Prove the company is yours: sign in with Google Workspace, or have a code sent to your address at the company's own domain.",
     "domain_mismatch": "That website does not match your Google Workspace domain.",
     "company_name": "Company name",
     "website": "Company website",

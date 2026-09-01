@@ -264,10 +264,23 @@ export async function currentUser() {
   return data && data.user ? data.user : null;
 }
 
-// Google puts the Workspace domain in `hd`. Supabase files provider claims it
-// does not have a column for under custom_claims, so look in both places.
-export function hdOf(user) {
+// What the site has to know is not "which Google Workspace domain" but "which
+// domain has this person proved they hold an account at". Those were the same
+// question while Google was the only way in, and stopped being the same the
+// moment a one-time code to name@company.com became the other way. A company
+// on Proton or Microsoft or its own mail server has no hd claim and never
+// will — it was not refused a seat, it was unable to reach one.
+//
+// handle_new_user() writes whichever route proved it into profiles.hd, so ask
+// the server rather than reading a claim that only one of the two routes sets.
+export async function hdOf(user) {
   if (!user) return null;
+  const { data } = await sb.from("profiles").select("hd")
+    .eq("user_id", user.id).maybeSingle();
+  if (data && data.hd) return String(data.hd).toLowerCase();
+
+  // Straight back from the OAuth redirect that row can lag by a moment. The
+  // Google claim rides on the user object itself, so it covers the gap.
   const m = user.user_metadata || {};
   const raw = m.hd || (m.custom_claims && m.custom_claims.hd) || null;
   return raw ? String(raw).toLowerCase() : null;
@@ -283,6 +296,22 @@ export async function signIn(redirectTo) {
       // a guarantee — the real check is the hd claim, server-side.
       queryParams: { hd: "*", prompt: "select_account" }
     }
+  });
+}
+
+// The other way in, for every company Google cannot vouch for. Supabase sends
+// the code itself, which is exactly why this is a code and not a link to some
+// service of ours: it needs no sending infrastructure to exist.
+//
+// Nothing here decides whether an address counts. It only has to arrive.
+// handle_new_user() checks the domain against free_mail_domains and refuses
+// to hand out one that proves nothing — server-side, where a caller cannot
+// reach round it.
+export async function signInWithEmail(email, redirectTo) {
+  routeAfterSignIn("auto");
+  return sb.auth.signInWithOtp({
+    email: String(email || "").trim().toLowerCase(),
+    options: { emailRedirectTo: redirectTo || `${location.origin}/dashboard.html` }
   });
 }
 
