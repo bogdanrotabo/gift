@@ -13,7 +13,7 @@
 <meta property="og:description" content="A public list of gifts given personally by CEOs, under their own name and their company's name.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <link rel="alternate" hreflang="ar" href="https://gift.ceo/?lang=ar">
 <link rel="alternate" hreflang="bg" href="https://gift.ceo/?lang=bg">
 <link rel="alternate" hreflang="bn" href="https://gift.ceo/?lang=bn">
@@ -117,7 +117,13 @@
 
   <section class="wrap sponsors" id="sponsors">
     <h2 data-i18n="sponsors.title">Sponsors</h2>
+    <!-- Rotabo's own mark, from Rotabo's own server: it stays right if they
+         change it, and there is no second copy here to go stale. If the file
+         ever moves the image removes itself and the wordmark carries the pill
+         alone, which is what it did before there was a mark at all. -->
     <a class="sponsor" href="https://rotabo.app" target="_blank" rel="noopener">
+      <img class="sponsor__logo" src="https://rotabo.app/icons/icon-512.png"
+           alt="" decoding="async" onerror="this.remove()">
       <span>rotabo<span class="dot">.</span>app
         <small><img class="flagimg" src="/flags/ch.png" alt="" decoding="async"><span data-i18n="sponsors.rotabo">Swiss made · Available worldwide</span></small>
       </span>

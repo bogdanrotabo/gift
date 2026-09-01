@@ -412,6 +412,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
 .sponsor:hover{border-color:var(--accent);}
 .sponsor .dot{color:var(--accent);}
 .sponsor small{display:block;font-weight:400;color:var(--dim);font-size:.82rem;letter-spacing:0;}
+/* The sponsor's own mark, at the size the pill can hold. Contained rather than
+   cropped: the marks that turn up here are app icons of their own proportions,
+   and one that is not square should be letterboxed, not stretched. */
+.sponsor__logo{width:26px;height:26px;flex:0 0 auto;display:block;object-fit:contain;}
 
 /* On a phone the text sat almost against the glass. The column gets more air
    than the desktop rule gives it, and the cards keep their own padding on top
