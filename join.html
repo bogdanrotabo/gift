@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Take your company's seat — gift.ceo</title>
-<meta name="description" content="Sign in with your company Google Workspace account and take your company's seat on gift.ceo.">
+<meta name="description" content="Prove your company with Google Workspace or a code to your company email address, and take your company's seat on gift.ceo.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://gift.ceo/join.html">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,17 +20,46 @@
 
   <div class="error" id="err"></div>
 
-  <!-- Step 1: not signed in -->
+  <!-- Step 1: not signed in.
+
+       Two ways in, because a company is not the same thing as a Google
+       Workspace customer. Both prove one fact and the same fact: that this
+       person holds an account at the company's own domain. Google proves it
+       with the hd claim; the code proves it by arriving. -->
   <section class="card" id="stepSignIn" hidden>
-    <p data-i18n="join.no_hd">Sign in with your company Google Workspace account (@yourcompany.com).</p>
-    <p><button class="btn" id="btnSignIn" data-i18n="join.signin_cta">Sign in with Google</button></p>
-    <p class="note" data-i18n="how.step1"></p>
+    <p>Prove the company is yours, whichever way suits you.</p>
+
+    <p><button class="btn" id="btnSignIn">Sign in with Google</button></p>
+    <p class="note">Works if your company is on Google Workspace.</p>
+
+    <p class="note" style="margin:18px 0 10px">or</p>
+
+    <form id="emailForm" novalidate>
+      <label for="workEmail">Your company email address</label>
+      <input id="workEmail" type="email" inputmode="email" autocomplete="email"
+             placeholder="you@yourcompany.com" required>
+      <p><button class="btn btn--ghost" type="submit" id="btnEmail">Email me a sign-in code</button></p>
+      <p class="note">Any mail provider — Proton, Microsoft, your own server. It has
+        to be an address at your company's domain, not a personal one.</p>
+    </form>
+
+    <p class="note" id="emailSent" hidden></p>
   </section>
 
-  <!-- Step 2: signed in with a personal account -->
+  <!-- Step 2: signed in, but nothing here proves a company -->
   <section class="card" id="stepNoHd" hidden>
-    <p class="error" style="margin-top:0" data-i18n="join.no_hd"></p>
-    <p><button class="btn btn--ghost btn--sm" id="btnSwitch" data-i18n="join.signin_cta">Sign in with Google</button></p>
+    <p class="error" style="margin-top:0" id="noHdMsg"></p>
+    <p>Sign in again with an account at your company's own domain — either way below.</p>
+    <p><button class="btn btn--ghost btn--sm" id="btnSwitch">Sign in with Google</button></p>
+
+    <form id="emailForm2" novalidate>
+      <label for="workEmail2">Your company email address</label>
+      <input id="workEmail2" type="email" inputmode="email" autocomplete="email"
+             placeholder="you@yourcompany.com" required>
+      <p><button class="btn btn--ghost btn--sm" type="submit">Email me a sign-in code</button></p>
+    </form>
+
+    <p class="note" id="emailSent2" hidden></p>
   </section>
 
   <!-- Step 3: the form -->
@@ -92,7 +121,7 @@
 <footer class="foot" data-footer></footer>
 
 <script type="module">
-import { boot, sb, t, hdOf, signIn, storedAttribution, SUPABASE_URL, SUPABASE_KEY, lang } from "/assets/app.js?v=16";
+import { boot, sb, t, hdOf, signIn, signInWithEmail, storedAttribution, SUPABASE_URL, SUPABASE_KEY, lang } from "/assets/app.js?v=17";
 
 const err = document.getElementById("err");
 const show = id => document.getElementById(id).hidden = false;
@@ -123,9 +152,9 @@ function fillCountries(selected) {
   sel.value = selected || "CH";
 }
 
-// The seat is tied to the Google Workspace domain, so the website field is
-// only ever a courtesy: whatever is typed, the domain must be the one Google
-// vouched for, and the database enforces that too.
+// The seat is tied to the proved domain, so the website field is
+// only ever a courtesy: whatever is typed, the domain must be the one that was
+// proved -- by Google, or by a code that arrived -- and the database enforces it.
 function domainOf(raw) {
   try {
     const u = new URL(/^https?:\/\//i.test(raw) ? raw : "https://" + raw);
@@ -156,8 +185,16 @@ async function render() {
 
   if (!user) { show("stepSignIn"); return; }
 
-  hd = hdOf(user);
-  if (!hd) { show("stepNoHd"); return; }
+  hd = await hdOf(user);
+  if (!hd) {
+    // Say which address failed and why. "Sign in with your company account"
+    // is useless to someone who believes they just did.
+    document.getElementById("noHdMsg").textContent =
+      `${user.email} is a personal or free-mail address, so it does not show `
+      + `which company you run.`;
+    show("stepNoHd");
+    return;
+  }
 
   // Already holds a seat here? Then this is a handover, not a purchase.
   const { data: existing } = await sb.from("companies")
@@ -181,6 +218,54 @@ async function render() {
 
 document.getElementById("btnSignIn").addEventListener("click", () => signIn(location.href));
 document.getElementById("btnSwitch").addEventListener("click", () => signIn(location.href));
+
+// The email route. Both forms behave identically -- one sits on the
+// not-signed-in card, the other on the wrong-account card -- so they share a
+// handler rather than a copy of one.
+//
+// The obvious free-mail addresses are caught here purely so the person is not
+// made to wait for a mail that was never going to help. It is a courtesy, not
+// a check: the real one is handle_new_user(), server-side, against the whole
+// free_mail_domains table.
+const OBVIOUS_FREE = ["gmail.com","googlemail.com","outlook.com","hotmail.com","live.com",
+  "yahoo.com","icloud.com","me.com","proton.me","protonmail.com","pm.me","aol.com",
+  "gmx.de","gmx.net","web.de","mail.com","yandex.ru","qq.com"];
+
+function wireEmailForm(formId, inputId, noteId) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    err.textContent = "";
+    const note = document.getElementById(noteId);
+    const address = (document.getElementById(inputId).value || "").trim().toLowerCase();
+    const at = address.lastIndexOf("@");
+
+    if (at < 1 || at === address.length - 1) { fail("Enter a full email address."); return; }
+    if (OBVIOUS_FREE.includes(address.slice(at + 1))) {
+      fail("That is a personal address. Use one at your company's own domain — "
+         + "it is the only thing that shows which company is yours.");
+      return;
+    }
+
+    const btn = form.querySelector("button[type=submit]");
+    btn.disabled = true;
+    try {
+      const { error } = await signInWithEmail(address, location.href);
+      if (error) throw error;
+      form.hidden = true;
+      note.hidden = false;
+      note.textContent = `Sent. Open ${address} and follow the code or link in it — `
+        + `this page will pick up from there.`;
+    } catch (ex) {
+      fail(ex.message || "Could not send the code. Try again in a moment.");
+      btn.disabled = false;
+    }
+  });
+}
+
+wireEmailForm("emailForm", "workEmail", "emailSent");
+wireEmailForm("emailForm2", "workEmail2", "emailSent2");
 
 document.getElementById("form").addEventListener("submit", async e => {
   e.preventDefault();
