@@ -315,7 +315,15 @@ export async function signInWithEmail(email, redirectTo) {
   });
 }
 
+// Whether the signed-in address is the administrator, remembered for the tab.
+// Read by revealAdminLink further down and cleared here; declared beside the
+// clearing so the two are not a search apart.
+const ADMIN_PROBE_KEY = "giftceo.isadmin";
+
 export async function signOut() {
+  // Signing out and back in as somebody else happens in the same tab, and the
+  // cached answer would outlive the account it was about.
+  try { sessionStorage.removeItem(ADMIN_PROBE_KEY); } catch (e) { /* denied */ }
   await sb.auth.signOut();
   location.href = "/";
 }
@@ -446,6 +454,55 @@ export function mountChrome(user) {
   const out = host.querySelector("[data-signout]");
   if (out) out.addEventListener("click", e => { e.preventDefault(); signOut(); });
   applyTranslations(host);
+  if (signedIn) revealAdminLink(host);
+}
+
+// /admin.html was reachable only by remembering the URL, which meant the one
+// person who is allowed in was the one having to keep it in his head. The link
+// now finds him instead.
+//
+// This shows or hides a link and nothing else. The gate stays where it was,
+// server-side in admin-overview against the verified JWT: someone who forces
+// this link into the page still gets a 403 from the endpoint, exactly as they
+// did before there was a link. Failure is silent on purpose -- a masthead is
+// not the place to report that a background check timed out.
+//
+// The answer is cached for the tab because admin-overview has no cheap mode:
+// asking it costs a pass over every user, every seat and ninety days of views,
+// and asking that on every page load to decide whether to draw one anchor
+// would be absurd. Whether an address is an administrator does not change
+// while somebody browses, so once per tab is the right frequency. sessionStorage
+// rather than localStorage: it dies with the tab, so signing out and back in as
+// somebody else cannot leave a stale yes behind.
+async function revealAdminLink(host) {
+  try {
+    let known = null;
+    try { known = sessionStorage.getItem(ADMIN_PROBE_KEY); } catch (e) { /* denied */ }
+    if (known === "no") return;
+
+    if (known !== "yes") {
+      const { data: { session } } = await sb.auth.getSession();
+      if (!session) return;
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/admin-overview`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${session.access_token}`
+        }
+      });
+      try { sessionStorage.setItem(ADMIN_PROBE_KEY, res.ok ? "yes" : "no"); } catch (e) { /* denied */ }
+      if (!res.ok) return;
+    }
+
+    const nav = host.querySelector("nav");
+    if (!nav || nav.querySelector("[data-admin-link]")) return;
+    const a = document.createElement("a");
+    a.href = "/admin.html";
+    a.textContent = "Admin";
+    a.setAttribute("data-admin-link", "");
+    nav.insertBefore(a, nav.firstChild);
+  } catch (e) { /* no link, same as before */ }
 }
 
 export function mountFooter() {
