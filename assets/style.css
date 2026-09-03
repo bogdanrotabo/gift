@@ -6,10 +6,19 @@
   --paper:#ffffff;
   --ink:#1c1b19;
   --dim:#6b6864;
-  --faint:#94908a;
+  /* 3.0:1 against the page, and it carries the section headings -- "How it
+     works", "The feed", "Companies with a seat". A heading nobody can read is
+     a page with no structure in it. 4.6:1 now, same grey. */
+  --faint:#75726d;
   --line:#e6e3de;
   --line-soft:#f0ede8;
-  --accent:#9a6f10;
+  /* The gold, taken down a step. It was #9a6f10, which is 4.3:1 against the
+     page -- under the 4.5 somebody with poor sight needs -- and the line it
+     carries is "Founding seats: 10 of 10 still open", which is the one line
+     on this page a visitor is meant to act on. It is also the fill behind the
+     white on the gold button, and that was 4.5 exactly. 4.9 and 5.2 now, and
+     it is the same gold. */
+  --accent:#8d6610;
   --accent-soft:#f5efe1;
   --ok:#2f6f4f;
   --warn:#8a5a20;
