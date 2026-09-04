@@ -1,11 +1,20 @@
 // track — the whole of gift.ceo's analytics, and deliberately not much.
 //
 // One row per page view: which page, when, roughly where from, in which
-// language, and which site sent the visit. No cookie is set, no visitor
-// identifier is minted, and no IP address is read or stored. Two visits by one
-// person are indistinguishable from two visits by two people. That is the
-// point: this answers "is anyone arriving, and from where", which is the only
-// traffic question a register of 10,000 CHF seats actually needs.
+// language, which site sent the visit, and — since the ads started — which
+// campaign. No cookie is set, no visitor identifier is minted, and no IP
+// address is read or stored. Two visits by one person are indistinguishable
+// from two visits by two people. That is the point: this answers "is anyone
+// arriving, and from where", which is the only traffic question a register of
+// 10,000 CHF seats actually needs.
+//
+// The campaign fields keep that promise. utm_source/medium/campaign are labels
+// the campaign puts on its own links — "google", "cpc", "search-ch" — shared by
+// everyone who clicks the same ad, so they narrow a visit to a campaign and
+// never to a person. The gclid does the opposite: it is minted per click and
+// identifies one. It is deliberately NOT accepted here. It reaches the database
+// only through claim-seat, on the companies row, where a name and an email have
+// already been given anyway.
 //
 // Public on purpose (verify_jwt is off): a visitor who has never signed in is
 // exactly the visitor worth counting. Nothing it writes is readable through
@@ -60,6 +69,17 @@ function cleanTz(raw: unknown): string | null {
   return /^[A-Za-z][A-Za-z0-9_+-]*(\/[A-Za-z0-9_+-]+){0,2}$/.test(s) ? s : null;
 }
 
+// A campaign label as we write it into our own ad links: short, lowercase, and
+// drawn from a small alphabet. Checked for the same reason cleanTz is — it
+// arrives from the browser, and anyone can put anything in a query string.
+// Rejected rather than trimmed into shape: a mislabelled visit is worse than an
+// unlabelled one, because it quietly credits the wrong campaign.
+function cleanUtm(raw: unknown): string | null {
+  const s = String(raw ?? "").trim().toLowerCase();
+  if (!s || s.length > 64) return null;
+  return /^[a-z0-9][a-z0-9._-]*$/.test(s) ? s : null;
+}
+
 // The region of the browser's first language preference, when it has one:
 // "de-CH,de;q=0.9" gives CH. This describes language settings, not where
 // somebody is — a Romanian in Zurich may well send ro-RO — so the admin panel
@@ -91,6 +111,9 @@ Deno.serve(async (req) => {
       tz: cleanTz(body.tz),
       country: regionFromAcceptLanguage(req),
       lang: String(body.lang ?? "").slice(0, 8) || null,
+      utm_source: cleanUtm(body.utm_source),
+      utm_medium: cleanUtm(body.utm_medium),
+      utm_campaign: cleanUtm(body.utm_campaign),
     });
     if (error) console.error("track:", error.message);
   } catch (e) {
