@@ -410,8 +410,12 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
 .sponsors{
   border-top:1px solid var(--line-soft);
   padding:44px 0 0;text-align:center;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
 }
-.sponsors h2{margin-bottom:18px;}
+/* flex-basis:100% keeps the heading on its own row above the pills instead
+   of joining their wrap -- .sponsors is flex now that there is more than one
+   to lay out and centre together. */
+.sponsors h2{flex-basis:100%;margin-bottom:18px;}
 .sponsor{
   display:inline-flex;align-items:center;gap:10px;
   border:1px solid var(--line);border-radius:999px;
