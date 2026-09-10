@@ -12,6 +12,17 @@ const SERVICE_KEY    = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const SIGNING_SECRET = Deno.env.get("STRIPE_WEBHOOK_SECRET") ?? "";
 const TOLERANCE_S    = 300;
 
+// A seat is 10,000 CHF, once. The webhook sits on the Stripe account shared
+// with rotabo.app, which also sells 100–750 CHF products through Payment
+// Links that accept a client_reference_id — so a signed, genuinely-paid
+// session for one of those, carrying a gift company's id, was enough to flip
+// a 10,000 CHF seat to active for a fraction of the price. The price and
+// currency of the seat are the gate: nothing short of a full CHF seat
+// payment activates one. Env-overridable so a change of price is one
+// setting, not a redeploy.
+const SEAT_MIN_AMOUNT = Number(Deno.env.get("SEAT_MIN_AMOUNT") ?? "1000000"); // rappen
+const SEAT_CURRENCY   = (Deno.env.get("SEAT_CURRENCY") ?? "chf").toLowerCase();
+
 const enc = new TextEncoder();
 
 function timingSafeEqual(a: string, b: string): boolean {
@@ -94,7 +105,25 @@ Deno.serve(async (req) => {
       const s = event.data?.object ?? {};
       const companyId = s.metadata?.company_id ?? s.client_reference_id ?? null;
 
-      if (companyId && s.payment_status === "paid") {
+      // Paid, and paid for a seat: the full seat price, in the seat's
+      // currency. A smaller amount is a payment for something else on the
+      // shared account that happens to name a company — acknowledged (200,
+      // so Stripe stops retrying) but never activating a seat. Logged so a
+      // genuine mismatch is visible rather than silent.
+      const amount = Number(s.amount_total);
+      const currency = String(s.currency ?? "").toLowerCase();
+      const paidForSeat = s.payment_status === "paid"
+        && Number.isFinite(amount) && amount >= SEAT_MIN_AMOUNT
+        && currency === SEAT_CURRENCY;
+
+      if (companyId && s.payment_status === "paid" && !paidForSeat) {
+        console.warn(
+          `stripe-webhook: paid session ${s.id} for company ${companyId} is not a seat ` +
+          `(amount=${amount} ${currency}, need >=${SEAT_MIN_AMOUNT} ${SEAT_CURRENCY}); not activating`,
+        );
+      }
+
+      if (companyId && paidForSeat) {
         // seat_number and activated_at are set by the trigger on the way in,
         // so the number reflects the order money actually landed.
         await patchCompany(companyId, {
