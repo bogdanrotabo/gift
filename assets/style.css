@@ -391,6 +391,14 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
 .foot .links{display:flex;gap:18px;flex-wrap:wrap;}
 .foot a{color:var(--faint);}
 
+/* PeerPush draws its own badge under the footer -- the site's live standing
+   there, so the picture comes from peerpush.com and is never copied or
+   proxied. Sized in the markup, 230x65, half the PNG's 460x130, so nothing
+   shifts when it lands; max-width keeps a phone from overflowing. */
+.peerpush{padding-bottom:56px;}
+.peerpush-badge{display:inline-block;width:230px;max-width:100%;}
+.peerpush-badge img{display:block;width:100%;height:auto;}
+
 .prose h1{font:700 2rem/1.2 var(--sans);letter-spacing:-.025em;margin:0 0 8px;}
 .prose h2{
   font:600 1.1rem/1.3 var(--sans);letter-spacing:-.01em;
