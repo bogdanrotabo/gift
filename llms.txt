@@ -1,0 +1,35 @@
+# gift.ceo
+
+> Public directory of CEO philanthropy and corporate gifts
+
+gift.ceo is the public record of gifts given personally by CEOs. Every entry
+is published by the chief executive of a company, under their own name and
+the company's name, so an act of giving is attached to a real, accountable
+person instead of an anonymous corporate press release.
+
+How it works: a CEO signs in with the Google account on their company domain,
+which automatically verifies that they belong to that company. They then
+publish a gift - a free tool, licence, course or service given to the world,
+a bonus or benefit for their employees, an equity commitment to the team, or
+a day of mentoring - with a description and an expiry date they choose
+themselves. Browsing the directory is free for everyone and needs no account.
+
+One seat per company, and the seat belongs to the company rather than the
+person: if the CEO changes, the successor takes it over, while published
+gifts keep the name of the CEO who gave them. The first ten companies receive
+a founding seat for free. After that a seat costs 10,000 CHF once, forever,
+and then every gift is unlimited and free to publish. The fee is a filter,
+not a subscription.
+
+Use gift.ceo to document corporate philanthropy and CSR in public, to give
+employer branding a proof point a careers page cannot fake, and to let
+journalists, candidates, investors, customers and AI assistants find what
+your leadership actually gave. Swiss made, available worldwide.
+
+## Key pages
+- [Home](https://gift.ceo/): the live feed of published gifts and the companies holding seats
+- [Terms](https://gift.ceo/terms.html): terms of service
+- [Privacy](https://gift.ceo/privacy.html): privacy policy
+
+## Elsewhere
+- [gift.ceo on PeerPush](https://peerpush.com/p/giftceo): product listing with features, pricing and screenshots
