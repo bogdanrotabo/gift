@@ -170,133 +170,45 @@ rotabo's own sponsor payments. That is harmless: the webhook only writes when
 `client_reference_id` matches a company row, and a rotabo sponsorship matches
 nothing.
 
-### Founding seats
+### Founding seats — closed
 
-Ten seats that cost nothing, granted first-come first-served, permanent. The
-10,000 CHF is a filter; the founding ten pass a different one, by giving first
-while the page is still empty. The obligation replaces the money: **publish a
-gift within thirty days or the seat is revoked** and goes back in the pool.
+**Closed on 13 September 2026, by the owner's decision: there are no free seats
+any more.** Every company pays for its seat — 10,000 CHF, once, through the
+Payment Link above — and nothing else puts a company on the site.
 
-There is no admin UI, on purpose. A seat is reserved with one statement in the
-Supabase SQL editor, when a CEO answers an outreach email and asks for one.
+The two companies that took a founding seat before it closed keep it for good:
+**Cyberbotics Ltd. (seat #1)** and **Rotabo (seat #2)**. Both are still marked
+`is_founding` and keep their numbers.
 
-#### Reserve a domain
+What closed it, in `0012_close_founding_seats.sql`:
 
-Bare host, lowercase, no scheme and no `www` — the shape Google's `hd` claim
-arrives in. (A trigger normalises it anyway, so a pasted URL is not a disaster.)
+- `claim_founding_seat()` always answers `{"granted": false, "reason":
+  "founding_closed"}`. `claim-seat` still asks it before Stripe, so every
+  company — reserved domain or not — falls through to the Payment Link. It is
+  closed in the database rather than only on the page, so a cached homepage or a
+  hand-made request cannot mint a free seat.
+- `founding_seats_remaining()` returns `0`.
+- The daily `revoke-expired-founding-seats` job is unscheduled. It only ever
+  revoked a founding seat with no gift inside thirty days, and both founding
+  companies have given; with the programme over there is nothing left for it to
+  watch.
+- The homepage no longer shows a founding counter or offer; its buttons read
+  "Take your company's seat" (`join.title`, already translated into every
+  locale), and the `founding.*` and `cta.founding` strings are gone from all
+  thirty-eight locale files.
 
-```sql
-insert into founding_domains (domain, company_name, note)
-values ('proton.me', 'Proton', 'Andy Yen — replied 02.09.2026');
-```
-
-Nothing else happens now. The next time someone signs in with a `@proton.me`
-Workspace account and completes the join form, `claim-seat` asks the database,
-the database sees the reservation, and the seat is granted without Stripe ever
-being reached. If they never sign in, the row simply sits there.
-
-The allowlist is the one table in this project with row-level security on and
-**no policy at all**: anon and authenticated get an empty set whatever they ask.
-A company that was approached and has not answered yet is not public knowledge.
-
-#### Check the state of all ten
+The tables stay as the record of who held a founding seat:
 
 ```sql
 select * from founding_seats_state;
-```
-
-One row per founding company in seat order: number, reserved domain, company,
-seat status, when it was claimed, the deadline, and how many gifts it has
-published. A row with `gift_count = 0` and a `founding_deadline` in the past is
-about to lose its seat.
-
-To see what is still free, and what the homepage counter is showing right now:
-
-```sql
-select founding_seats_remaining();
-```
-
-And the history, including refusals once the pool is empty:
-
-```sql
 select * from founding_events order by at desc limit 50;
 ```
 
-#### The thirty-day expiry
-
-`pg_cron` runs `revoke_expired_founding_seats()` daily at **03:00 UTC**. For
-each founding company past its deadline with no gift at all, it:
-
-- sets `founding_revoked_at`, and `seat_status` to `suspended` — the second one
-  is what actually closes the door, because `gifts_before_insert` lets only an
-  active seat give;
-- releases the `founding_domains` row back to unclaimed, so the same company
-  could be given another chance by simply signing in again;
-- frees the founding number, which the next company then takes. The revoked row
-  keeps the number it held, so the table still records who was seat three; the
-  unique index only covers seats that have not been revoked.
-
-A company that published even one gift inside the thirty days is never touched
-again. A paid seat is never revoked — the function will not look at a row with
-`paid_at` set, whatever else is true of it.
-
-To run it by hand, now, rather than waiting for 03:00:
-
-```sql
-select revoke_expired_founding_seats();
-```
-
-It returns the number of seats it revoked, and is safe to run repeatedly: a
-seat already revoked no longer matches.
-
-To check the schedule is really there, or to change the hour:
-
-```sql
-select jobid, schedule, jobname, active from cron.job
- where jobname = 'revoke-expired-founding-seats';
-```
-
-#### Tests
-
-Two suites, neither of which needs anything installed.
-
-The database side runs in the Supabase SQL editor and is one transaction ending
-in `rollback`, so it leaves no test company, reservation or event behind:
+The check that it is closed runs in the Supabase SQL editor and rolls back:
 
 ```
-supabase/tests/0010_founding_seats_test.sql
+supabase/tests/0012_founding_closed_test.sql
 ```
-
-It covers the seven cases that matter: an allowlisted domain claiming without
-reaching Stripe, an unlisted one falling through, the eleventh reserved domain
-being refused, a lapsed seat being revoked and its number reused, a company that
-gave on day 29 surviving day 31, a paid seat never being touched, and a client
-forging `is_founding` on the way in and again afterwards.
-
-The wording side runs in Node with no dependencies:
-
-```sh
-node --test 'tests/*.test.mjs'
-```
-
-It checks the counter at 10, 7, 1 and 0, that the CTA follows, that all
-thirty-eight locale files kept the `{n}` placeholder, and that the English baked
-into `index.html` still matches `en.json`.
-
-#### The counter on the homepage
-
-`founding_seats_remaining()` is the only part of this that anon may call. It
-returns one integer and nothing else — never which domains are reserved.
-
-The site is static, so the English sentence is in `index.html` itself: a
-crawler and a reader with no JavaScript both get real text rather than an empty
-element. `app.js` corrects the figure from the database a moment later, repaints
-it on a language change, and refetches when the tab is looked at again.
-
-**Before sending an outreach email that quotes a number, open gift.ceo and read
-what it actually says.** The whole point of the counter is that the claim in the
-email can be checked; a mail saying seven when the page says ten is worse than
-one that never mentioned it.
 
 ### Admin
 

@@ -16,10 +16,9 @@ themselves. Browsing the directory is free for everyone and needs no account.
 
 One seat per company, and the seat belongs to the company rather than the
 person: if the CEO changes, the successor takes it over, while published
-gifts keep the name of the CEO who gave them. The first ten companies receive
-a founding seat for free. After that a seat costs 10,000 CHF once, forever,
-and then every gift is unlimited and free to publish. The fee is a filter,
-not a subscription.
+gifts keep the name of the CEO who gave them. A seat costs 10,000 CHF, paid
+once, forever, and then every gift is unlimited and free to publish. The fee
+is a filter, not a subscription.
 
 Use gift.ceo to document corporate philanthropy and CSR in public, to give
 employer branding a proof point a careers page cannot fake, and to let
