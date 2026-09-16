@@ -23,6 +23,7 @@
  *                                     size; needs no sharp
  */
 import { readFileSync, existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -77,11 +78,20 @@ if (process.argv.includes('--check')) {
     process.exit(1);
   }
   console.log('make-og: og-image.png present and 1200x630.');
+  for (const size of [192, 512]) {
+    const icon = pngSize(readFileSync(join(root, `icon-${size}.png`)));
+    if (!icon || icon[0] !== size || icon[1] !== size) throw new Error(`Invalid ${size}px brand icon`);
+  }
+  console.log('make-og: original-mark PNG icons verified.');
   process.exit(0);
 }
 
 let sharp;
-try { sharp = (await import('sharp')).default; }
+try {
+  const require = createRequire(process.env.BRAND_RENDERER_NODE_MODULES
+    ? join(process.env.BRAND_RENDERER_NODE_MODULES, '__brand.cjs') : import.meta.url);
+  sharp = require('sharp');
+}
 catch {
   console.error('make-og: needs sharp to draw the card. Run: npm i --no-save sharp');
   process.exit(2);
@@ -94,3 +104,9 @@ await sharp(Buffer.from(card()), { density: 144 })
   .png({ compressionLevel: 9 })
   .toFile(OUT);
 console.log('make-og: og-image.png  (1200 x 630)');
+// Raster fallbacks use the authoritative SVG, not a newly drawn substitute.
+for (const size of [192, 512]) {
+  await sharp(readFileSync(join(root, 'favicon.svg')), { density: 768 })
+    .resize(size, size).png().toFile(join(root, `icon-${size}.png`));
+  console.log(`make-og: icon-${size}.png`);
+}
