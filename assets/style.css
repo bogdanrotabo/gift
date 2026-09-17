@@ -429,6 +429,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
 .sponsor:hover{border-color:var(--accent);}
 .sponsor .dot{color:var(--accent);}
 .sponsor small{display:block;font-weight:400;color:var(--dim);font-size:.82rem;letter-spacing:0;}
+/* Two pills now, rotabo and AutoSport Event: a little air between them, and
+   below each so they do not touch when a narrow screen stacks them. */
+.sponsors .sponsor{margin:0 5px 10px;}
 /* The sponsor's own mark, at the size the pill can hold. Contained rather than
    cropped: the marks that turn up here are app icons of their own proportions,
    and one that is not square should be letterboxed, not stretched. */
