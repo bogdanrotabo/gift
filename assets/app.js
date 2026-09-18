@@ -514,6 +514,7 @@ export function mountFooter() {
       <div class="links">
         <a href="/terms.html" data-i18n="footer.terms">Terms</a>
         <a href="/privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="/admin.html">Admin</a>
         <a href="mailto:${SUPPORT_EMAIL}">${SUPPORT_EMAIL}</a>
       </div>
     </div>`;
